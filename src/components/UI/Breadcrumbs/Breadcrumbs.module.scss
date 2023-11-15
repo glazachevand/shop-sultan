@@ -1,0 +1,39 @@
+@import "styles/vars.scss";
+
+.breadcrumb {
+  height: 112px;
+  @media (max-width: $lg) {
+    height: 80px;
+  }
+  @media (max-width: $sm) {
+    display: none;
+  }
+  &__list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    color: $darkBlue;
+    white-space: nowrap;
+    li:first-child > a {
+      padding-left: 0;
+    }
+    li:not(:last-child) > a {
+      border-right: 1px dotted rgba(63, 78, 101, 0.3);
+    }
+    li:last-child > div {
+      opacity: 50%;
+    }
+  }
+  &__link {
+    padding: 5px 10px;
+    transition: all 0.3s;
+    &:hover {
+      color: $yellow;
+      transition: all 0.3s;
+    }
+  }
+  &__item {
+    padding: 5px 10px;
+  }
+}

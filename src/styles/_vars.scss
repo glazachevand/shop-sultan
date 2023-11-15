@@ -1,0 +1,29 @@
+// font
+$fontFamily: "Inter";
+$fontSize: 0.875rem;
+$lineHeight: normal;
+
+// container
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1370px;
+
+// breakpoints
+$xxl: 1536px;
+$xl: 1280px;
+$lg: 1024px;
+$md: 768px;
+$sm: 640px;
+
+//color
+$dark: #111111;
+$white: #ffffff;
+$backgroundColor: #fff;
+$yellow: #ffc85e;
+$hoverYellow: #f5c158;
+$blueGrey: #5c6370;
+$darkBlue: #3f4e65;
+$grey: #bdc6d0;
+$whisperColor: #ededed;
+$malachiteColor: #1fd85d;
+$gradientColor: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);

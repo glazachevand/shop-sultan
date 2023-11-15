@@ -1,0 +1,50 @@
+@import "styles/vars.scss";
+
+.header {
+}
+.row {
+  border-bottom: 2px solid rgba(63, 78, 101, 0.2);
+  display: block;
+  @media (max-width: $lg) {
+    display: none;
+  }
+}
+.topContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  @media (max-width: $xl) {
+    column-gap: 20px;
+  }
+}
+.menu {
+  margin-left: auto;
+  @media (max-width: $lg) {
+    padding: 25px 0 22px;
+    border-top: 1px dashed rgba(63, 78, 101, 0.2);
+  }
+}
+.botttomContainer {
+}
+.logo {
+  margin-right: 38px;
+  width: 156px;
+  @media (max-width: $xl) {
+    margin-right: 0;
+  }
+  @media (max-width: $lg) {
+    width: 97px;
+  }
+}
+.rowMobail {
+  border-bottom: 2px solid rgba(63, 78, 101, 0.2);
+  display: none;
+  @media (max-width: $lg) {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    z-index: 50;
+  }
+}
