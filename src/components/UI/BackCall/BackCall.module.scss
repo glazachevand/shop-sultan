@@ -3,6 +3,7 @@
 .backCall {
   white-space: nowrap;
   line-height: 1.5;
+  text-align: right;
   @media (max-width: $lg) {
     line-height: normal;
   }

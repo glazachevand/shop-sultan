@@ -67,45 +67,6 @@ body {
     font-size: 1.1rem;
   }
 }
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-family: $fontFamily;
-  line-height: normal;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.yellow-btn {
-  font-weight: bold;
-  color: #fff;
-  border-radius: 79px;
-  background-color: $yellow;
-  &:hover {
-    background-color: $hoverYellow;
-    color: #fff !important;
-  }
-}
-.search-input {
-  border-radius: 36px;
-  background-color: $whisperColor;
-}
-.search-btn {
-  background-color: $yellow;
-  border-radius: 50%;
-  width: 39px;
-  height: 39px;
-  &:hover {
-    background-color: $hoverYellow;
-    color: #fff !important;
-  }
-  svg {
-    margin-top: 5px;
-    width: 19px;
-    height: 19px;
-    stroke: #fff;
-  }
-}
 .pink-bg {
   background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
   border-radius: 1000px;

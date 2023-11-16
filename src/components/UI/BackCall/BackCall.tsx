@@ -10,7 +10,7 @@ interface BackCallProps {
 }
 
 export const BackCall = (props: BackCallProps) => {
-  const { className, color, isIcon, isText } = props;
+  const { className = '', color, isIcon, isText } = props;
   const mods = {
     [cls[color]]: true,
   }

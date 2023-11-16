@@ -27,9 +27,19 @@
   }
 }
 .botttomContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 15px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  @media (max-width: $xl) {
+    justify-content: space-between;
+    column-gap: 15px;
+  }
 }
 .logo {
-  margin-right: 38px;
+  flex-shrink: 0;
   width: 156px;
   @media (max-width: $xl) {
     margin-right: 0;
@@ -38,13 +48,69 @@
     width: 97px;
   }
 }
+.catalog {
+  width: 192px;
+  height: 59px;
+  @media (max-width: $lg) {
+    display: flex;
+    gap: 6px;
+    width: auto;
+    height: auto;
+  }
+}
+.backCall {
+  @media (max-width: $xl) {
+    display: none;
+  }
+}
+.callImg {
+  flex-shrink: 0;
+  width: 70px;
+  height: 92px;
+  object-fit: contain;
+  @media (max-width: $xl) {
+    display: none;
+  }
+  img {
+    width: 100%;
+  }
+}
+.priceList {
+  width: 200px;
+  height: 59px;
+}
+.cartBtn {
+  flex-shrink: 0;
+}
 .rowMobail {
-  border-bottom: 2px solid rgba(63, 78, 101, 0.2);
   display: none;
+  border-bottom: 2px solid rgba(63, 78, 101, 0.2);
   @media (max-width: $lg) {
     position: relative;
     display: block;
     background-color: #fff;
     z-index: 50;
   }
+}
+.topContainerMobail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.botttomContainerMobail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  @media (max-width: $sm) {
+    height: 40px;
+  }
+}
+.search {
+  display: flex;
+  gap: 6px;
 }

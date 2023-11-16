@@ -1,0 +1,78 @@
+@import "styles/vars.scss";
+
+$time: 0.1s;
+$width: 10px;
+$height: 10px;
+$lineHeightIcon: 2px;
+$spacing: 2px;
+
+.burger {
+  z-index: 100;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: $yellow;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.navIcon,
+.navIconActive {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  height: $height;
+  span {
+    position: relative;
+    width: $width;
+    height: $lineHeightIcon;
+  }
+  span::before,
+  span::after {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 0;
+    width: $width;
+    height: $lineHeightIcon;
+    background-color: $white;
+    transition:
+      transform $time ease-in,
+      top $time linear $time;
+  }
+}
+.navIcon {
+  span {
+    background-color: $white;
+    &:before {
+      top: calc(-1 * ($lineHeightIcon + $spacing));
+    }
+    &::after {
+      top: calc($lineHeightIcon + $spacing);
+    }
+  }
+}
+.navIconActive {
+  span {
+    background-color: transparent;
+    &::before,
+    &::after {
+      top: 0;
+      background-color: $white;
+      transition:
+        top $time linear,
+        transform $time ease-in $time;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

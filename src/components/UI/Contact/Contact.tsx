@@ -12,7 +12,7 @@ interface ContactProps {
 }
 
 export const Contact = (props: ContactProps) => {
-  const { className, type, color, isIcon } = props;
+  const { className = '', type, color, isIcon = false } = props;
   const mods = {
     [cls[color]]: true,
   }
