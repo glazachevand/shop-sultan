@@ -1,6 +1,7 @@
 @import "styles/vars.scss";
 
 .header {
+  z-index: $headerZIndex;
 }
 .row {
   border-bottom: 2px solid rgba(63, 78, 101, 0.2);
@@ -101,13 +102,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 60px;
+  height: 40px;
   font-size: 12px;
   font-weight: 600;
   line-height: normal;
-  @media (max-width: $sm) {
-    height: 40px;
-  }
 }
 .search {
   display: flex;

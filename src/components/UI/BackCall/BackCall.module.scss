@@ -3,7 +3,6 @@
 .backCall {
   white-space: nowrap;
   line-height: 1.5;
-  text-align: right;
   @media (max-width: $lg) {
     line-height: normal;
   }
@@ -23,6 +22,12 @@
 .dark,
 .dark a {
   color: $darkBlue;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
 }
 .number {
   font-weight: 600;

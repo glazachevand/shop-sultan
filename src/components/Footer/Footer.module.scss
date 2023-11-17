@@ -1,0 +1,84 @@
+@import "styles/vars.scss";
+
+.footer {
+  background-color: $darkBlue;
+  padding: 71px 0 116px;
+  color: #fff;
+  @media (max-width: $xl) {
+    padding: 30px 0 30px;
+  }
+  @media (max-width: $md) {
+    padding: 16px 0 15px;
+  }
+  // a {
+  //   color: #fff;
+  // }
+  // a:hover {
+  //   color: $yellow;
+  // }
+  h3 {
+    margin-bottom: 25px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+    @media (max-width: $md) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.container {
+  position: relative;
+  display: flex;
+  column-gap: 4.3%;
+  @media (max-width: $md) {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+.logoCol {
+  flex: 0 1 23.4%;
+  @media (max-width: $lg) {
+    flex: 0 1 35%;
+  }
+}
+.logo {
+  display: inline-block;
+  margin-bottom: 15px;
+  img {
+    width: 156px;
+    @media (max-width: $md) {
+      width: 97px;
+    }
+  }
+}
+.description {
+  margin-bottom: 45px;
+  font-size: 1rem;
+  line-height: 1.5;
+  @media (max-width: $md) {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+}
+.contentCol {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 25px 6%;
+  @media (max-width: $xl) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (max-width: $sm) {
+    gap: 25px 0;
+  }
+}
+.priceList {
+  margin-bottom: 20px;
+  width: 214px;
+  height: 59px;
+}
+.contactsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}

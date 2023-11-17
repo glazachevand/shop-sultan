@@ -15,7 +15,7 @@ import { Burger } from 'components/Burger/Burger';
 export const Header = () => {
 
   return (
-    <header className={cls.header}>
+    <header className={cls.header} id="header">
       <div className={cls.row}>
         <div className={`${cls.topContainer} _container`}>
           <Contact type='location' color='dark' isIcon={true} />
@@ -30,7 +30,7 @@ export const Header = () => {
             <Button text='Каталог' icon='catalog' />
           </Link>
           <Search size='big' />
-          <BackCall color='dark' isIcon={false} isText={true} className={cls.backCall} />
+          <BackCall color='dark' isIcon={false} isText={true} className={cls.backCall} aligh='right' />
           <div className={cls.callImg}><img src={Call} alt="call" /></div>
           <Link to="#!" className={cls.priceList}>
             <Button text='Прайс-лист' icon='download' />

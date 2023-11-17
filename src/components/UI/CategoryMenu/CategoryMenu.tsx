@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { classNames } from "utils/classNames/classNames";
-import cls from "./Menu.module.scss";
-import { MenuList } from "types/const/menu";
+import cls from "./CategoryMenu.module.scss";
+import { CategoryMenuList } from "types/const/categoryGlobal";
 
-interface MenuProps {
+interface CategoryMenuProps {
   className?: string;
-  type: 'footer' | 'header';
+  type: 'footer';
 }
 
-export const Menu = (props: MenuProps) => {
+export const CategoryMenu = (props: CategoryMenuProps) => {
   const { className = '', type } = props;
-  const menuElem = MenuList.map(item => (
+  const categoryMenuElem = CategoryMenuList.map(item => (
     <li key={item.elem}><Link to={item.path} className={cls.link}>{item.elem}</Link></li>
   ));
   const mods = {
@@ -18,9 +18,9 @@ export const Menu = (props: MenuProps) => {
   }
 
   return (
-    <nav className={classNames(cls.menu, mods, [className])}>
+    <nav className={classNames(cls.categoryMenu, mods, [className])}>
       <ul className={cls.list}>
-        {menuElem}
+        {categoryMenuElem}
       </ul>
     </nav>
   );

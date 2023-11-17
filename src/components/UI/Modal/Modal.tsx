@@ -6,13 +6,14 @@ import { Portal } from "../Portal/Portal";
 
 interface ModalProps {
   className?: string;
+  isCloseBtn?: boolean;
   isOpen?: boolean;
   onClose?: () => void;
   children?: ReactNode;
 }
 
 export const Modal = (props: ModalProps) => {
-  const { className, isOpen, onClose, children } = props;
+  const { className, isCloseBtn = false, isOpen, onClose, children } = props;
   const mods = {
     [cls.opened]: isOpen,
   };
@@ -25,9 +26,11 @@ export const Modal = (props: ModalProps) => {
             className={cls.content}
             onClick={(e) => e.stopPropagation()}
           >
-            <button type="button" onClick={onClose}>
-              <img src={Close} alt="close" />
-            </button>
+            {isCloseBtn && (
+              <button className={cls.closeBtn} type="button" onClick={onClose}>
+                <img src={Close} alt="close" />
+              </button>
+            )}
             {children}
           </div>
         </div>

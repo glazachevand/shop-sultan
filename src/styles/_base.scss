@@ -40,6 +40,28 @@ body {
 .main {
   flex: 1 1 auto;
 }
+.footerMenuCol {
+  color: #fff;
+  .list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    @media (max-width: $lg) {
+      row-gap: 17px;
+    }
+  }
+  .link {
+    line-height: 1.5;
+    color: #fff;
+    @media (max-width: $md) {
+      font-size: 12px;
+    }
+    &:hover {
+      color: $yellow;
+      transition: all 0.3s ease;
+    }
+  }
+}
 .title1 {
   font-family: $fontFamily;
   font-weight: 500;

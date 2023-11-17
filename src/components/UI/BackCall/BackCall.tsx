@@ -7,12 +7,14 @@ interface BackCallProps {
   isIcon: boolean;
   isText: boolean;
   color: 'dark' | 'white';
+  aligh?: 'right' | 'left';
 }
 
 export const BackCall = (props: BackCallProps) => {
-  const { className = '', color, isIcon, isText } = props;
+  const { className = '', color, isIcon, isText, aligh = 'left' } = props;
   const mods = {
     [cls[color]]: true,
+    [cls[aligh]]: true,
   }
 
   return (

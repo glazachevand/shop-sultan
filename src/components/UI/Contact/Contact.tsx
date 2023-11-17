@@ -39,10 +39,12 @@ export const Contact = (props: ContactProps) => {
         (<a href="tel:+77774900091">
           {isIcon && (<img src={IconSales} alt="sales department" />)}
           <div>
-            Отдел продаж
-            <p>+7 (777) 490-00-91</p>
+            <div>
+              Отдел продаж
+              <p>+7 (777) 490-00-91</p>
+            </div>
+            <p className={cls.hour}>время работы: 9:00-20:00</p>
           </div>
-          <p>время работы: 9:00-20:00</p>
         </a>)}
     </div>
   );

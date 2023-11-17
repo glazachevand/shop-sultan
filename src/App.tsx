@@ -1,3 +1,7 @@
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { ROUTES } from 'types/const/routes';
+import { Footer } from 'components/Footer/Footer';
 import { Header } from 'components/Header/Header';
 import { AdminPage } from 'pages/AdminPage/AdminPage';
 import { CartPage } from 'pages/CartPage/CartPage';
@@ -5,9 +9,6 @@ import { CatalogPage } from 'pages/CatalogPage/CatalogPage';
 import { FullProductPage } from 'pages/FullProductPage/FullProductPage';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { ROUTES } from 'types/const/routes';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
             <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
           </Routes>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
