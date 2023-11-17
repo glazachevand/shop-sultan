@@ -4,8 +4,6 @@
   position: relative;
 }
 .big {
-  // aspect-ratio: 263 / 59;
-  // width: 19.2%;
   width: 263px;
   height: 59px;
   @media (max-width: $sm) {
@@ -38,6 +36,11 @@
   background-color: $whisperColor;
   @media (max-width: $sm) {
     display: none;
+  }
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.5;
+    color: $blueGrey;
   }
 }
 .btn {

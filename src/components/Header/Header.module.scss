@@ -50,14 +50,16 @@
   }
 }
 .catalog {
-  width: 192px;
-  height: 59px;
   @media (max-width: $lg) {
     display: flex;
     gap: 6px;
     width: auto;
     height: auto;
   }
+}
+.catalogBtn {
+  width: 192px;
+  height: 59px;
 }
 .backCall {
   @media (max-width: $xl) {

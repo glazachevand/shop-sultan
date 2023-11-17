@@ -1,0 +1,12 @@
+.bankCards {
+  display: flex;
+  column-gap: 5px;
+}
+.card {
+  flex-shrink: 0;
+  width: 61px;
+  height: 39px;
+  img {
+    width: 100%;
+  }
+}

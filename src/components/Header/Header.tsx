@@ -26,14 +26,14 @@ export const Header = () => {
       <div className={cls.row}>
         <div className={`${cls.botttomContainer} _container`}>
           <Link to="/catalog" className={cls.logo}><img src={Logo} alt="logo" /></Link>
-          <Link to="/catalog" className={cls.catalog}>
-            <Button text='Каталог' icon='catalog' />
+          <Link to="/catalog">
+            <Button text='Каталог' icon='catalog' className={cls.catalogBtn} />
           </Link>
           <Search size='big' />
           <BackCall color='dark' isIcon={false} isText={true} className={cls.backCall} aligh='right' />
           <div className={cls.callImg}><img src={Call} alt="call" /></div>
-          <Link to="#!" className={cls.priceList}>
-            <Button text='Прайс-лист' icon='download' />
+          <Link to="#!">
+            <Button text='Прайс-лист' icon='download' className={cls.priceList} />
           </Link>
           <CartBtn isText={true} className={cls.cartBtn} />
         </div>

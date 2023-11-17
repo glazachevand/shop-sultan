@@ -1,0 +1,37 @@
+@import "styles/vars.scss";
+
+.subscription {
+  position: relative;
+  width: 282px;
+  @media (max-width: $md) {
+    width: 290px;
+  }
+}
+.label {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.input {
+  padding: 13px 50px 13px 20px;
+  width: 100%;
+  height: 59px;
+  font-size: 1rem;
+  color: $darkBlue;
+  background-color: #fff;
+  border-radius: 36px;
+  @media (max-width: $md) {
+    padding: 20px;
+  }
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.5;
+    color: $blueGrey;
+  }
+}
+.btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}

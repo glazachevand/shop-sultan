@@ -10,12 +10,6 @@
   @media (max-width: $md) {
     padding: 16px 0 15px;
   }
-  // a {
-  //   color: #fff;
-  // }
-  // a:hover {
-  //   color: $yellow;
-  // }
   h3 {
     margin-bottom: 25px;
     font-size: 1.25rem;
@@ -72,10 +66,34 @@
     gap: 25px 0;
   }
 }
+.priceListCol {
+  @media (max-width: $xl) {
+    order: 1;
+  }
+}
+.priceListTitle {
+  @media (max-width: $md) {
+    display: none;
+  }
+}
 .priceList {
   margin-bottom: 20px;
   width: 214px;
   height: 59px;
+  @media (max-width: $md) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media (max-width: $md) {
+      width: 149px;
+      height: 40px;
+      column-gap: 5px;
+      font-size: 12px;
+    }
+  }
+}
+.contactsTitle {
+  margin-bottom: 25px !important;
 }
 .contactsCol {
   display: flex;
