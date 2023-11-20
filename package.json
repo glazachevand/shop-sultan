@@ -91,9 +91,11 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react-router-dom": "^5.3.3",
+    "@types/webpack-bundle-analyzer": "^4.6.3",
     "eslint": "^8.53.0",
     "sass": "^1.69.5",
-    "sass-loader": "^13.3.2"
+    "sass-loader": "^13.3.2",
+    "webpack-bundle-analyzer": "^4.10.1"
   },
   "jest": {
     "roots": [
