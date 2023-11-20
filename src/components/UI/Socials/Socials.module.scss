@@ -1,22 +1,26 @@
-@import "styles/vars.scss";
+@import "styles/vars";
 
 .socials {
-  @media (max-width: 400px) {
+  @media (width <= 400px) {
     margin-left: 26px;
   }
+
   h4 {
     margin-bottom: 15px;
     line-height: 1.5;
     white-space: normal !important;
+
     @media (max-width: $md) {
       margin-top: 46px;
     }
   }
 }
+
 .container {
   display: flex;
   column-gap: 8px;
 }
+
 .item {
   display: inline-flex;
   align-items: center;
@@ -25,14 +29,17 @@
   height: 39px;
   color: #fff;
   border-radius: 50%;
+
   img {
     display: inline-block;
     width: 23px;
   }
 }
+
 .whatsapp {
   background-color: #00e676;
 }
+
 .telegram {
   background-color: #40b3e0;
 }

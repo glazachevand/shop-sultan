@@ -1,4 +1,4 @@
-@import "styles/vars.scss";
+@import "styles/vars";
 
 .burgerMenu {
   display: flex;
@@ -7,11 +7,13 @@
   margin-top: 100px;
   width: 100vw;
 }
+
 .content {
   padding-top: 24px;
   padding-bottom: 32px;
   width: 320px;
 }
+
 .contacts {
   display: flex;
   flex-direction: column;
@@ -19,16 +21,19 @@
   gap: 15px;
   margin-bottom: 25px;
 }
+
 .menu {
   margin-bottom: 22px;
-  border-top: 1px dashed rgba(63, 78, 101, 0.2);
+  border-top: 1px dashed rgb(63 78 101 / 20%);
 }
+
 .title {
   padding: 25px 0;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
 }
+
 .priceList {
   height: 70px;
 }

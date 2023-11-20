@@ -71,6 +71,8 @@
     "build": "node scripts/build.js",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test": "node scripts/test.js"
   },
   "browserslist": {

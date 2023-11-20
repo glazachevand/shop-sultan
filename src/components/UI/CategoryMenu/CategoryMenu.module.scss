@@ -1,9 +1,10 @@
-@import "styles/vars.scss";
-@import "styles/base.scss";
+@import "styles/vars";
+@import "styles/base";
 
 .categoryMenu {
   white-space: nowrap;
 }
+
 .footer {
-  @extend .footerMenuCol;
+  @extend %footer-menu-col;
 }

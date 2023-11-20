@@ -1,9 +1,10 @@
-@import "styles/vars.scss";
-@import "styles/base.scss";
+@import "styles/vars";
+@import "styles/base";
 
 .menu {
   white-space: nowrap;
 }
+
 .header {
   .list {
     display: flex;
@@ -11,25 +12,31 @@
     justify-content: center;
     column-gap: 60px;
     max-width: 770px;
+
     @media (max-width: $xl) {
       column-gap: 30px;
     }
+
     @media (max-width: $lg) {
       flex-direction: column;
       row-gap: 20px;
     }
   }
+
   .link {
     color: $darkBlue;
+
     @media (max-width: $lg) {
       line-height: 1.5;
     }
+
     &:hover {
       color: $yellow;
       transition: all 0.3s ease;
     }
   }
 }
+
 .footer {
-  @extend .footerMenuCol;
+  @extend %footer-menu-col;
 }

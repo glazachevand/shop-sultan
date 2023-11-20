@@ -1,4 +1,20 @@
-@import "styles/vars.scss";
+@import "styles/vars";
+
+.dark {
+  a {
+    color: $dark;
+    transition: all 0.3s;
+  }
+
+  p {
+    color: $darkBlue;
+  }
+}
+
+.white a {
+  color: $white;
+  transition: all 0.3s;
+}
 
 .contact {
   a {
@@ -7,39 +23,23 @@
     column-gap: 15px;
     line-height: 1.3;
     font-weight: 600;
+
+    &:hover {
+      color: $yellow;
+      transition: all 0.3s;
+    }
   }
+
   p {
     font-size: 12px;
     font-weight: 300;
   }
-}
-.hour {
-  margin-top: 5px;
-}
-.white {
-  color: $white;
-  a {
-    color: $white;
-    transition: all 0.3s;
-    &:hover {
-      color: $yellow;
-      transition: all 0.3s;
-    }
-  }
-}
-.dark {
-  a {
-    color: $dark;
-    transition: all 0.3s;
-    &:hover {
-      color: $yellow;
-      transition: all 0.3s;
-    }
-  }
-  p {
-    color: $darkBlue;
-  }
+
   p + p {
     margin-top: 5px;
   }
+}
+
+.hour {
+  margin-top: 5px;
 }

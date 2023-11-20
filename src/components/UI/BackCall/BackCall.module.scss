@@ -1,37 +1,46 @@
-@import "styles/vars.scss";
+@import "styles/vars";
+
+.white,
+.white a {
+  color: $white;
+}
+
+.dark,
+.dark a {
+  color: $darkBlue;
+}
 
 .backCall {
   white-space: nowrap;
   line-height: 1.5;
+
   @media (max-width: $lg) {
     line-height: normal;
   }
+
   a:hover {
     color: $yellow;
     transition: all 0.3s;
   }
+
   img {
     width: 30px;
     margin-right: 7px;
   }
 }
-.white,
-.white a {
-  color: $white;
-}
-.dark,
-.dark a {
-  color: $darkBlue;
-}
+
 .right {
   text-align: right;
 }
+
 .left {
   text-align: left;
 }
+
 .number {
   font-weight: 600;
   transition: all 0.3s;
+
   @media (max-width: $lg) {
     display: block;
     margin-bottom: 8px;
@@ -40,10 +49,12 @@
     font-size: 12px;
   }
 }
+
 .hour {
   font-size: 12px;
   font-weight: 300;
 }
+
 .call {
   font-size: 10px;
   font-weight: 400;

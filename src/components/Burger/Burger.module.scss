@@ -1,4 +1,4 @@
-@import "styles/vars.scss";
+@import "styles/vars";
 
 $time: 0.1s;
 $width: 10px;
@@ -9,6 +9,7 @@ $spacing: 2px;
 .burger {
   z-index: 100;
 }
+
 .button {
   display: flex;
   justify-content: center;
@@ -19,6 +20,7 @@ $spacing: 2px;
   border-radius: 50%;
   cursor: pointer;
 }
+
 .navIcon,
 .navIconActive {
   position: relative;
@@ -27,11 +29,13 @@ $spacing: 2px;
   align-items: center;
   width: $width;
   height: $height;
+
   span {
     position: relative;
     width: $width;
     height: $lineHeightIcon;
   }
+
   span::before,
   span::after {
     position: absolute;
@@ -46,20 +50,25 @@ $spacing: 2px;
       top $time linear $time;
   }
 }
+
 .navIcon {
   span {
     background-color: $white;
-    &:before {
+
+    &::before {
       top: calc(-1 * ($lineHeightIcon + $spacing));
     }
+
     &::after {
       top: calc($lineHeightIcon + $spacing);
     }
   }
 }
+
 .navIconActive {
   span {
     background-color: transparent;
+
     &::before,
     &::after {
       top: 0;
@@ -68,9 +77,11 @@ $spacing: 2px;
         top $time linear,
         transform $time ease-in $time;
     }
+
     &::before {
       transform: rotate(45deg);
     }
+
     &::after {
       transform: rotate(-45deg);
     }
