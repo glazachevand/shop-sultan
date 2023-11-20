@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { classNames } from "utils/classNames/classNames";
 import { CategoryMenu } from "components/UI/CategoryMenu/CategoryMenu";
 import cls from "./Footer.module.scss";
 import Logo from 'assets/img/footer/logo_footer.png';
