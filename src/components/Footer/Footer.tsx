@@ -19,7 +19,8 @@ export const Footer = () => {
           <div className={cls.logoCol}>
             <Link to="/catalog" className={cls.logo}><img src={Logo} alt="logo" /></Link>
             <p className={cls.description}>
-              Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокчетаве и Акмолинской области
+              Компания &laquo;Султан&raquo;&nbsp;&mdash; снабжаем розничные магазины товарами
+              &laquo;под ключ&raquo; в&nbsp;Кокчетаве и&nbsp;Акмолинской области
             </p>
             <Subscription />
           </div>
