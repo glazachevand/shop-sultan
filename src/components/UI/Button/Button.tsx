@@ -10,8 +10,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   text?: string;
   icon?: 'catalog' | 'download' | 'cart' | 'remove' | 'none';
-  form?: 'circ' | 'rectangle' | 'oval';
-  color?: 'yellow' | 'white' | 'ping' | 'mustard';
+  form?: 'circ' | 'rectangle' | 'rectangle-green' | 'oval';
+  color?: 'yellow' | 'white' | 'ping' | 'mustard' | 'green';
   children?: ReactNode | ReactNode[];
 }
 
@@ -20,6 +20,7 @@ export const Button = (props: ButtonProps) => {
   const mods = {
     [cls[form]]: true,
     [cls[color]]: true,
+    [cls[icon]]: true,
   }
 
   return (

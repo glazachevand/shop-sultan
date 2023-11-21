@@ -8,9 +8,16 @@
   max-width: 290px;
   max-height: 70px;
   font-family: $fontFamily;
+  font-size: $fontSize;
   line-height: normal;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.cart {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 .circ {
@@ -24,6 +31,11 @@
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 15px 70px -11px rgb(43 28 1 / 4%);
+}
+
+.rectangle-green {
+  padding: 5px 10.5px;
+  border-radius: 5px;
 }
 
 .oval {
@@ -54,4 +66,13 @@
 .mustard {
   opacity: 0.5;
   background: $mustard;
+}
+
+.green {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: $malachiteColor;
 }
