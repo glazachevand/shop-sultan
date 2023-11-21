@@ -20,7 +20,7 @@ export const BurgerMenu = () => {
             <h2 className={cls.title}>Меню сайта:</h2>
             <Menu type='header' />
           </div>
-          <Button text='Прайс-лист' icon='download' className={cls.priceList} />
+          <Button text='Прайс-лист' icon='download' width='290px' height='70px' />
         </div>
       </div>
 

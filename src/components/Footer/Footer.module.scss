@@ -97,8 +97,8 @@
 
 .priceList {
   margin-bottom: 20px;
-  width: 214px;
-  height: 59px;
+  width: 214px !important;
+  height: 59px !important;
 
   @media (max-width: $md) {
     position: absolute;
@@ -106,8 +106,8 @@
     right: 0;
 
     @media (max-width: $md) {
-      width: 149px;
-      height: 40px;
+      width: 149px !important;
+      height: 40px !important;
       column-gap: 5px;
       font-size: 12px;
     }

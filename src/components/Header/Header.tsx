@@ -27,13 +27,13 @@ export const Header = () => {
         <div className={`${cls.botttomContainer} _container`}>
           <Link to="/catalog" className={cls.logo}><img src={Logo} alt="logo" /></Link>
           <Link to="/catalog">
-            <Button text='Каталог' icon='catalog' className={cls.catalogBtn} />
+            <Button text='Каталог' icon='catalog' width='192px' height='59px' />
           </Link>
           <Search size='big' />
           <BackCall color='dark' isIcon={false} isText={true} className={cls.backCall} aligh='right' />
           <div className={cls.callImg}><img src={Call} alt="call" /></div>
           <Link to="#!">
-            <Button text='Прайс-лист' icon='download' className={cls.priceList} />
+            <Button text='Прайс-лист' icon='download' width='200px' height='59px' />
           </Link>
           <CartBtn isText={true} className={cls.cartBtn} />
         </div>
