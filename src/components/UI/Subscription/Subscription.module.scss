@@ -14,6 +14,7 @@
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 14px;
+  color: $white;
 }
 
 .input {
@@ -33,6 +34,7 @@
     font-size: 12px;
     line-height: 1.5;
     color: $blueGrey;
+    opacity: 0.6;
   }
 }
 
@@ -40,4 +42,5 @@
   position: absolute;
   right: 8px;
   bottom: 8px;
+  cursor: pointer;
 }

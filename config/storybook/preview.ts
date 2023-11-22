@@ -14,11 +14,13 @@ const preview: Preview = {
       default: "Snow",
       values: [
         { name: "light", value: "#F0FFF0" },
-        { name: "dark", value: "#2F4F4F" },
+        { name: "dark", value: "#3f4e65" },
         { name: "Aquamarine", value: "#7FFFD4" },
+        { name: "MediumTurquoise", value: "#48D1CC" },
         { name: "Snow", value: "#FFFAFA" },
       ],
     },
+    decorators: [],
   },
 };
 

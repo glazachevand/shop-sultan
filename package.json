@@ -111,6 +111,7 @@
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "storybook": "^7.5.3",
+    "storybook-addon-react-router-v6": "^2.0.10",
     "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^11.1.0",
     "tsconfig-paths-webpack-plugin": "^4.1.0",

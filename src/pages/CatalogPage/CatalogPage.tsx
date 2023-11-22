@@ -7,7 +7,7 @@ export const CatalogPage: React.FC = () => {
   return (
     <div>
       <h1>CatalogPage</h1>
-      <Breadcrumbs />
+      <Breadcrumbs item='Косметика и гигиена' />
       <CheckboxList />
     </div>
   );

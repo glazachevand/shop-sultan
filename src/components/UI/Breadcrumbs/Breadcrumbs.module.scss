@@ -17,6 +17,7 @@
     align-items: center;
     font-weight: 300;
     color: $darkBlue;
+    line-height: 1.2;
     white-space: nowrap;
 
     li:first-child > a {
@@ -35,6 +36,7 @@
   &__link {
     padding: 5px 10px;
     transition: all 0.3s;
+    color: $darkBlue;
 
     &:hover {
       color: $yellow;

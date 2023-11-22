@@ -54,6 +54,7 @@
   font-size: 12px;
   font-weight: 300;
   line-height: 1.5;
+  color: $darkBlue;
 }
 
 .cartPrice {
@@ -61,7 +62,10 @@
   font-weight: 600;
   color: $dark;
   transition: all 0.3s ease;
+}
 
+.cartText,
+.cartPrice {
   &:hover,
   &:active {
     color: $yellow;

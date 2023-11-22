@@ -1,6 +1,7 @@
 @import "styles/vars";
 
 .header {
+  position: relative;
   z-index: $headerZIndex;
 }
 
@@ -62,11 +63,19 @@
 }
 
 .catalog {
+  color: $darkBlue;
+  transition: all 0.3s ease;
+
   @media (max-width: $lg) {
     display: flex;
     gap: 6px;
     width: auto;
     height: auto;
+  }
+
+  &:hover {
+    color: $yellow;
+    transition: all 0.3s ease;
   }
 }
 
@@ -126,4 +135,5 @@
 .search {
   display: flex;
   gap: 6px;
+  cursor: pointer;
 }
