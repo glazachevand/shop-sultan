@@ -15,7 +15,7 @@ import { Burger } from 'components/Burger/Burger';
 export const Header = () => {
 
   return (
-    <header className={cls.header} id="header">
+    <header className={cls.header} id="header" data-testid="header">
       <div className={cls.row}>
         <div className={`${cls.topContainer} _container`}>
           <Contact type='location' color='dark' isIcon={true} />

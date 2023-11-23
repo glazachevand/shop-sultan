@@ -6,8 +6,6 @@
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.61",
@@ -104,10 +102,13 @@
     "@storybook/react": "^7.5.3",
     "@storybook/react-webpack5": "^7.5.3",
     "@storybook/testing-library": "^0.2.2",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.2",
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack-bundle-analyzer": "^4.6.3",
     "eslint": "^8.53.0",
     "eslint-plugin-storybook": "^0.6.15",
+    "regenerator-runtime": "^0.14.0",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "storybook": "^7.5.3",
@@ -119,7 +120,7 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>src"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
@@ -129,11 +130,11 @@
       "react-app-polyfill/jsdom"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.ts"
+      "<rootDir>src/setupTests.ts"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+      "<rootDir>src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
     "transform": {
@@ -146,7 +147,7 @@
       "^.+\\.module\\.(css|sass|scss)$"
     ],
     "modulePaths": [
-      "C:\\Work\\Portfolio\\react-sultan2\\shop-sultan\\src"
+      "<rootDir>src"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",

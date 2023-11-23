@@ -14,7 +14,7 @@ export const Search = (props: SearchProps) => {
   };
 
   return (
-    <div className={classNames(cls.search, mods, [className])}>
+    <div className={classNames(cls.search, mods, [className])} data-testid="search">
       <form action="#" className={cls.form}>
         <input type="search" className={cls.input} placeholder="Поиск..." />
         <img src={SearchBtn} className={cls.btn} alt="search" />

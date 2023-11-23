@@ -29,7 +29,6 @@ export const Button = (props: ButtonProps) => {
   const mods = {
     [cls[form]]: true,
     [cls[color]]: true,
-    [cls[icon]]: true,
   }
 
   return (

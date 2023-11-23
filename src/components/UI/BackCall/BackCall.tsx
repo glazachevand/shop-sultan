@@ -18,7 +18,7 @@ export const BackCall = (props: BackCallProps) => {
   }
 
   return (
-    <div className={classNames(cls.backCall, mods, [className])}>
+    <div className={classNames(cls.backCall, mods, [className])} data-testid="backcall">
       {isText &&
         (<>
           <a href="tel:+77774900091" className={cls.number}>+7 (777) 490-00-91</a>

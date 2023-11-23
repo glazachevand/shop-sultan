@@ -13,7 +13,7 @@ import { Subscription } from "components/UI/Subscription/Subscription";
 export const Footer = () => {
 
   return (
-    <footer className={cls.footer}>
+    <footer className={cls.footer} data-testid='footer'>
       <div className="_container">
         <div className={cls.container}>
           <div className={cls.logoCol}>

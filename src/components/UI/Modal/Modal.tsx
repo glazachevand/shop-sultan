@@ -20,14 +20,14 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.modal, mods, [className])}>
+      <div className={classNames(cls.modal, mods, [className])} data-testid="modal">
         <div className={cls.overlay} onClick={onClose}>
           <div
             className={cls.content}
             onClick={(e) => e.stopPropagation()}
           >
             {isCloseBtn && (
-              <button className={cls.closeBtn} type="button" onClick={onClose}>
+              <button className={cls.closeBtn} type="button" onClick={onClose} data-testid="closeBtn">
                 <img src={Close} alt="close" />
               </button>
             )}
