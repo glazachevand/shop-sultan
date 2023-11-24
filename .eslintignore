@@ -2,5 +2,6 @@ build/*
 public/*
 docs/*
 templates/*
+config/*
 src/react-app-env.d.ts
 src/serviceWorker.ts

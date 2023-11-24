@@ -1,0 +1,79 @@
+@import "styles/vars";
+
+.row {
+  border-bottom: 2px solid rgb(63 78 101 / 20%);
+}
+
+.topContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+
+  @media (max-width: $xl) {
+    column-gap: 20px;
+  }
+}
+
+.menu {
+  margin-left: auto;
+}
+
+.botttomContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 15px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+
+  @media (max-width: $xl) {
+    justify-content: space-between;
+    column-gap: 15px;
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 156px;
+
+  @media (max-width: $xl) {
+    margin-right: 0;
+  }
+}
+
+.catalog {
+  color: $darkBlue;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $yellow;
+    transition: all 0.3s ease;
+  }
+}
+
+.backCall {
+  @media (max-width: $xl) {
+    display: none;
+  }
+}
+
+.callImg {
+  flex-shrink: 0;
+  width: 70px;
+  height: 92px;
+  object-fit: contain;
+
+  @media (max-width: $xl) {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.cartBtn {
+  flex-shrink: 0;
+}

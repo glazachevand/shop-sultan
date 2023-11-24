@@ -1,0 +1,58 @@
+@import "styles/vars";
+
+.menu {
+  padding: 25px 0 22px;
+  border-top: 1px dashed rgb(63 78 101 / 20%);
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 97px;
+}
+
+.catalog {
+  display: flex;
+  gap: 6px;
+  width: auto;
+  height: auto;
+  color: $darkBlue;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $yellow;
+    transition: all 0.3s ease;
+  }
+}
+
+.cartBtn {
+  flex-shrink: 0;
+}
+
+.rowMobail {
+  position: relative;
+  background-color: #fff;
+  border-bottom: 2px solid rgb(63 78 101 / 20%);
+}
+
+.topContainerMobail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.botttomContainerMobail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.search {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+}
