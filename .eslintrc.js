@@ -1,7 +1,8 @@
 module.exports = {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    jest: true,
   },
   "extends": [
     "eslint:recommended",
@@ -11,6 +12,9 @@ module.exports = {
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    ecmaFeatures: {
+      jsx: true,
+    },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -50,5 +54,10 @@ module.exports = {
     // разрешим нижние подчеркивания в названиях переменных
     'no-underscore-dangle': 'off',
     // будет подсвечивать отсутствие переводов только в js
+  },
+  settings: {
+    react: {
+      version: "detect",
+    }
   }
 }
