@@ -73,8 +73,12 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "node scripts/test.js a",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
+    "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
     "sb": "storybook dev -p 6006 -c ./config/storybook",
-    "build-sb": "storybook build -p 6006 -c ./config/storybook"
+    "build-sb": "storybook build -p 6006 -c ./config/storybook",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -118,7 +122,8 @@
     "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^11.1.0",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "webpack-bundle-analyzer": "^4.10.1"
+    "webpack-bundle-analyzer": "^4.10.1",
+    "husky": "^8.0.0"
   },
   "jest": {
     "roots": [
