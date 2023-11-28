@@ -1,10 +1,23 @@
 @import "styles/vars";
-@import "styles/base";
 
 .categoryMenu {
-  white-space: nowrap;
+  display: flex;
+  column-gap: 0.7%;
+  width: 100%;
+  overflow-x: auto;
 }
 
-.footer {
-  @extend %footer-menu-col;
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 15px 70px -11px #2b1c010a;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &.active {
+    color: $yellow;
+  }
 }

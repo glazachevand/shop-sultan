@@ -1,0 +1,10 @@
+@import "styles/vars";
+@import "styles/base";
+
+.CategoryGlobalMenu {
+  white-space: nowrap;
+}
+
+.footer {
+  @extend %footer-menu-col;
+}

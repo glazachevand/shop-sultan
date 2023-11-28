@@ -12,12 +12,6 @@
   cursor: pointer;
 }
 
-.cart {
-  gap: 5px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-}
-
 .circ {
   border-radius: 50%;
 }
@@ -38,6 +32,15 @@
 
 .oval {
   padding: 10px 19px;
+  border-radius: 79px;
+}
+
+.cartSmall {
+  gap: 5px !important;
+  padding: 10px 19px;
+  font-size: 10px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   border-radius: 79px;
 }
 

@@ -1,0 +1,53 @@
+@import "styles/vars";
+
+.productShort {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 5px;
+  padding: 23px;
+  max-width: 326px;
+  min-width: 290px;
+  line-height: 1.5;
+  box-shadow: 0 14px 39px -11px #0000000f;
+
+  @media (max-width: $md) {
+    padding: 29px 15px;
+    width: 290px;
+    box-shadow: 0 9px 32px 0 #0000000a;
+  }
+}
+
+.body {
+  flex-grow: 1;
+}
+
+.popular {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.imageSmall {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $dark;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: $dark;
+}

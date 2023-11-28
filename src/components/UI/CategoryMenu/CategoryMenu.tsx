@@ -1,27 +1,24 @@
-import { Link } from "react-router-dom";
 import { classNames } from "utils/classNames/classNames";
 import cls from "./CategoryMenu.module.scss";
-import { CategoryMenuList } from "types/const/categoryGlobal";
+import data from '../../../data/data.json';
 
 interface CategoryMenuProps {
   className?: string;
-  type: 'footer';
 }
 
 export const CategoryMenu = (props: CategoryMenuProps) => {
-  const { className = '', type } = props;
-  const categoryMenuElem = CategoryMenuList.map(item => (
-    <li key={item.elem}><Link to={item.path} className={cls.link}>{item.elem}</Link></li>
-  ));
-  const mods = {
-    [cls[type]]: true,
-  }
+  const { className = '' } = props;
+  const activeIndex = data.categories.findIndex(item => item === 'Уход за ногами');
+
+  const onChangeCategory = (idx: number): void => {
+    //setCategory(categories[idx] ? categories[idx] : 'Все');
+  };
 
   return (
-    <nav className={classNames(cls.categoryMenu, mods, [className])}>
-      <ul className={cls.list}>
-        {categoryMenuElem}
-      </ul>
-    </nav>
+    <div className={classNames(cls.categoryMenu, {}, [className])}>
+      {data.categories.length && data.categories.map((item, index) => (
+        <li className={activeIndex === index ? `${cls.item} active` : `${cls.item}`} key={String(item)} onClick={() => onChangeCategory(index)} >{item}</li>
+      ))}
+    </div>
   );
 };

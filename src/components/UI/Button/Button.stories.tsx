@@ -57,10 +57,20 @@ export const PriceList: Story = {
   },
 };
 
-export const Cart: Story = {
+export const CartBig: Story = {
+  args: {
+    text: "В корзину",
+    icon: "cart",
+    width: "184px",
+    height: "59px",
+  },
+};
+
+export const CartSmall: Story = {
   args: {
     text: "В КОРЗИНУ",
     icon: "cart",
+    form: "cartSmall",
     width: "153px",
     height: "45px",
   },
@@ -101,8 +111,8 @@ export const Subscription: Story = {
     icon: "subscr",
     form: "rectangle",
     color: "white",
-    width: "59px",
-    height: "59px",
+    width: "77px",
+    height: "77px",
   },
 };
 

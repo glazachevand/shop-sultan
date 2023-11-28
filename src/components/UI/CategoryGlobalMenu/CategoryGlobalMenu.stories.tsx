@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from 'storybook-addon-react-router-v6';
-import { CategoryMenu } from "./CategoryMenu";
+import { CategoryGlobalMenu } from "./CategoryGlobalMenu";
 
-const meta: Meta<typeof CategoryMenu> = {
-  title: "UI/CategoryMenu",
-  component: CategoryMenu,
+const meta: Meta<typeof CategoryGlobalMenu> = {
+  title: "UI/CategoryGlobalMenu",
+  component: CategoryGlobalMenu,
   parameters: {
     layout: "centered",
   },

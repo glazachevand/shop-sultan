@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CategoryMenu } from "components/UI/CategoryMenu/CategoryMenu";
+import { CategoryGlobalMenu } from "components/UI/CategoryGlobalMenu/CategoryGlobalMenu";
 import cls from "./Footer.module.scss";
 import Logo from 'assets/img/footer/logo_footer.png';
 import { Menu } from "components/UI/Menu/Menu";
@@ -31,7 +31,7 @@ export const Footer = () => {
             </div>
             <div>
               <h3>Категории:</h3>
-              <CategoryMenu type='footer' />
+              <CategoryGlobalMenu type='footer' />
             </div>
             <div className={cls.priceListCol}>
               <h3 className={cls.priceListTitle}>Скачать прайс-лист:</h3>
