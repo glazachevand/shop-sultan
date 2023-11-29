@@ -1,17 +1,5 @@
 @import "styles/vars";
 
-.backButton {
-  margin-top: 20px;
-
-  @media (max-width: $xl) {
-    padding-bottom: 10px;
-  }
-
-  @media (max-width: $sm) {
-    padding-bottom: 0;
-  }
-}
-
 .catalog {
   position: relative;
   padding-bottom: 102px;

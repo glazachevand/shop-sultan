@@ -161,3 +161,15 @@ body {
     }
   }
 }
+
+.backButton {
+  margin-top: 20px;
+
+  @media (max-width: $xl) {
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: $sm) {
+    padding-bottom: 0;
+  }
+}
