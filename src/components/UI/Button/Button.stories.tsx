@@ -146,16 +146,6 @@ export const Price: Story = {
   },
 };
 
-export const Pagination: Story = {
-  args: {
-    text: "2",
-    form: "pagination",
-    color: "pink-gradient",
-    width: "auto",
-    height: "35px",
-  },
-};
-
 export const Back: Story = {
   args: {
     icon: "back",

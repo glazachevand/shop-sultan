@@ -3,6 +3,7 @@ import { ProductFull } from 'components/ProductFull/ProductFull';
 import { ProductsList } from 'components/ProductsList/ProductsList';
 import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
 import { CategoryMenu } from 'components/UI/CategoryMenu/CategoryMenu';
+import { Pagination } from 'components/UI/Pagination/Pagination';
 import React from 'react';
 import { Product } from "types/products";
 import data from '../../data/data.json';
@@ -16,8 +17,9 @@ export const CatalogPage: React.FC = () => {
       <Breadcrumbs item='Косметика и гигиена' />
       <CategoryMenu />
       <CheckboxList />
-      <ProductFull product={products[0]} />
-      {/* <ProductsList /> */}
+      {/* <ProductFull product={products[0]} /> */}
+      <ProductsList />
+      <Pagination />
     </div>
   );
 };
