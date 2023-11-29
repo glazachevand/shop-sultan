@@ -1,0 +1,85 @@
+@import "styles/vars";
+
+.backButton {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.catalog {
+  position: relative;
+  padding-bottom: 102px;
+
+  @media (max-width: $xl) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: $sm) {
+    margin: 0 auto;
+    max-width: 320px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.title {
+  margin-bottom: 25px;
+
+  @media (max-width: $sm) {
+    margin-bottom: 15px;
+  }
+}
+
+.categories {
+  margin-bottom: 50px;
+
+  @media (max-width: $xxl) {
+    width: 940px;
+  }
+}
+
+.container {
+  display: flex;
+  column-gap: 5%;
+
+  @media (max-width: $sm) {
+    flex-direction: column;
+    row-gap: 37px;
+  }
+}
+
+.aside {
+  flex: 0 0 auto;
+}
+
+.parameters {
+  margin-bottom: 40px;
+
+  @media (max-width: $lg) {
+    margin-bottom: 20px;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.products {
+  margin-bottom: 50px;
+}
+
+.pagination {
+  margin-bottom: 68px;
+
+  @media (max-width: $md) {
+    margin-bottom: 40px;
+  }
+}
+
+.footer {
+  margin-bottom: 80px;
+  line-height: 1.5;
+
+  @media (max-width: $lg) {
+    margin-bottom: 30px;
+  }
+}

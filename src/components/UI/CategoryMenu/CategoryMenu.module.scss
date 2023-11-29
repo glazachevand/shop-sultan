@@ -1,23 +1,46 @@
 @import "styles/vars";
 
-.categoryMenu {
-  display: flex;
-  column-gap: 0.7%;
-  width: 100%;
-  overflow-x: auto;
+.top {
+  &.categoryMenu {
+    display: flex;
+    column-gap: 0.7%;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 15px 70px -11px #2b1c010a;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &.active {
+      color: $yellow;
+    }
+  }
 }
 
-.item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 18px;
-  text-align: center;
-  box-shadow: 0 15px 70px -11px #2b1c010a;
-  border-radius: 10px;
-  cursor: pointer;
+.left {
+  &.categoryMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-  &.active {
-    color: $yellow;
+  .item {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $dark;
+    cursor: pointer;
+
+    &.active {
+      color: $yellow;
+    }
   }
 }

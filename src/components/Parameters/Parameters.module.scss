@@ -1,0 +1,92 @@
+@import "styles/vars";
+
+.parameters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $dark;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.price {
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 14px;
+  width: 100px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 1000px;
+  background: linear-gradient(90deg, rgb(255 198 80 / 30%) 0%, rgb(254 202 110 / 30%) 97.25%);
+  cursor: pointer;
+}
+
+.manufacturer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.manufacturerTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $dark;
+}
+
+.arrow {
+  display: block;
+  margin-top: 2px;
+}
+
+.showAll {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+
+  &.show {
+    & > .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  column-gap: 10px;
+}

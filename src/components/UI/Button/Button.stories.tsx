@@ -136,16 +136,6 @@ export const Plus: Story = {
   },
 };
 
-export const Price: Story = {
-  args: {
-    text: "10 000",
-    form: "price",
-    color: "pink-gradient",
-    width: "105px",
-    height: "auto",
-  },
-};
-
 export const Back: Story = {
   args: {
     icon: "back",

@@ -16,7 +16,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   text?: string;
   icon?: 'catalog' | 'download' | 'cart' | 'remove' | 'back' | 'subscr' | 'down' | 'up' | 'orderOK' | 'none';
-  form?: 'circ' | 'rectangle' | 'rectangle-green' | 'oval' | 'minus' | 'plus' | 'price' | 'cartSmall';
+  form?: 'circ' | 'rectangle' | 'rectangle-green' | 'oval' | 'minus' | 'plus' | 'cartSmall';
   color?: 'yellow' | 'white' | 'ping' | 'mustard' | 'green' | 'pink-gradient';
   width?: string;
   height?: string;

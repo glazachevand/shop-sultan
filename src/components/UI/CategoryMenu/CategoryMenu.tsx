@@ -4,21 +4,26 @@ import data from '../../../data/data.json';
 
 interface CategoryMenuProps {
   className?: string;
+  type: 'top' | 'left';
 }
 
 export const CategoryMenu = (props: CategoryMenuProps) => {
-  const { className = '' } = props;
-  const activeIndex = data.categories.findIndex(item => item === 'Уход за ногами');
+  const { className = '', type } = props;
+  //const activeIndex = data.categories.findIndex(item => item === 'Уход за ногами');
+  const activeIndex = 0;
+  const mods = {
+    [cls[type]]: true,
+  }
 
   const onChangeCategory = (idx: number): void => {
     //setCategory(categories[idx] ? categories[idx] : 'Все');
   };
 
   return (
-    <div className={classNames(cls.categoryMenu, {}, [className])}>
+    <ul className={classNames(cls.categoryMenu, mods, [className])}>
       {data.categories.length && data.categories.map((item, index) => (
-        <li className={activeIndex === index ? `${cls.item} active` : `${cls.item}`} key={String(item)} onClick={() => onChangeCategory(index)} >{item}</li>
+        <li className={activeIndex === index ? `${cls.item} ${cls.active}` : `${cls.item}`} key={String(item)} onClick={() => onChangeCategory(index)} >{item}</li>
       ))}
-    </div>
+    </ul>
   );
 };
