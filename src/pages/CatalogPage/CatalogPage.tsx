@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import cls from './CatalogPage.module.scss';
 import { Parameters } from 'components/Parameters/Parameters';
 import { BackButton } from 'components/UI/BackButton/BackButton';
+import { Sort } from 'components/UI/Sort/Sort';
 
 export const CatalogPage: React.FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });
@@ -17,11 +18,12 @@ export const CatalogPage: React.FC = () => {
       <section className={cls.catalog}>
         <h1 className={`${cls.title} title1`}>Косметика и гигиена</h1>
         {!isMobile && <CategoryMenu className={cls.categories} type="top" />}
-        {/* <Sort/> */}
+
         <div className={cls.container}>
           <div className={cls.aside}>
             <Parameters className={cls.parameters} />
             <CategoryMenu type="left" />
+            <Sort className={cls.sort} />
           </div>
           <div className={cls.main}>
             <ProductsList className={cls.products} />

@@ -56,7 +56,10 @@ export const Parameters = (props: ParametersProps) => {
               </div>
             </div>
             <div className={cls.actions}>
-              <Button text="Показать" width="216px" height="59px" />
+              {isMobile ?
+                <Button text="Показать" width="216px" height="59px" />
+                : <Button text="Показать" width="169px" height="59px" />
+              }
               <Button icon="remove" form="circ" width="59px" height="59px" />
             </div>
           </div>

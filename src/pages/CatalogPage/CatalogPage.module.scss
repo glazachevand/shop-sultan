@@ -2,7 +2,14 @@
 
 .backButton {
   margin-top: 20px;
-  margin-bottom: 25px;
+
+  @media (max-width: $xl) {
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: $sm) {
+    padding-bottom: 0;
+  }
 }
 
 .catalog {
@@ -16,8 +23,24 @@
   @media (max-width: $sm) {
     margin: 0 auto;
     max-width: 320px;
-    padding-top: 20px;
+    padding-top: 23px;
     padding-bottom: 20px;
+  }
+}
+
+.sort {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  background-color: #fff;
+  z-index: $sortIndex;
+
+  @media (max-width: $lg) {
+    top: 0;
+  }
+
+  @media (max-width: $sm) {
+    position: static;
   }
 }
 

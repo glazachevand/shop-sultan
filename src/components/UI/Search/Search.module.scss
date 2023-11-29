@@ -15,6 +15,10 @@
     column-gap: 6px;
     width: auto;
     height: 15px;
+
+    &.input {
+      display: none;
+    }
   }
 }
 
@@ -42,10 +46,6 @@
   height: 100%;
   border-radius: 36px;
   background-color: $whisperColor;
-
-  @media (max-width: $sm) {
-    display: none;
-  }
 
   &::placeholder {
     font-size: 12px;

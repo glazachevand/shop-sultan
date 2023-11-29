@@ -1,0 +1,22 @@
+@import "styles/vars";
+
+.sort {
+  display: flex;
+  gap: 5px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.label {
+  font-weight: 500;
+  color: $dark;
+}
+
+.choice {
+  color: $darkBlue;
+}
+
+.arrow {
+  display: block;
+  margin-top: 2px;
+}
