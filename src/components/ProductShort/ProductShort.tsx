@@ -12,18 +12,8 @@ interface ProductShorttProps {
 
 export const ProductShort = (props: ProductShorttProps) => {
   const { product } = props;
-  const [imgSrc, setImgSrc] = useState("");
+  const imgSrc = require(`assets/img/products/${product.url}`);
 
-  // (function () {
-  //   import(`assets/img/products/${product.url}`).then((image) => setImgSrc(image.default));
-  // })();
-
-  const loadImage = async () => {
-    const image = await import(`assets/img/products/${product.url}`);
-    setImgSrc(image.default)
-  }
-
-  loadImage();
 
   return (
     <div className={cls.productShort}>

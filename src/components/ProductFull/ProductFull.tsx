@@ -76,6 +76,10 @@ export const ProductFull = (props: ProductFulltProps) => {
           <div><span className="product__label">Вес:</span>{product.size}</div>
           <div><span className="product__label">Кол-во в коробке:</span>2</div>
         </div>
+        <div className="product__properties">
+          <h4 className="product__care-title">Тип ухода</h4>
+          {product.typecare.map(item => <span className="product__care" key={item}>{item}</span>)}
+        </div>
       </div>
     </div >
   );
