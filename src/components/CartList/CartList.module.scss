@@ -1,0 +1,14 @@
+@import "styles/vars";
+
+.cartList {
+  width: 100%;
+  padding-bottom: 100px;
+
+  @media (max-width: $xl) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: $sm) {
+    padding-bottom: 0;
+  }
+}

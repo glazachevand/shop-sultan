@@ -1,0 +1,47 @@
+@import "styles/vars";
+
+.cart {
+  width: 100%;
+  padding-bottom: 100px;
+
+  @media (max-width: $xl) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: $sm) {
+    padding-top: 23px;
+    padding-bottom: 20px;
+  }
+}
+
+.title {
+  margin-bottom: 50px;
+
+  @media (max-width: $xl) {
+    margin-bottom: 20px;
+  }
+}
+
+.cartBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+
+  @media (max-width: $md) {
+    flex-direction: column;
+    row-gap: 25px;
+    margin-top: 25px;
+  }
+}
+
+.priceTotal {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: $dark;
+
+  @media (max-width: $md) {
+    order: -1;
+  }
+}
