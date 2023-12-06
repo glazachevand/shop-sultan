@@ -2,7 +2,7 @@ import { Button } from "components/UI/Button/Button";
 import { classNames } from "utils/classNames/classNames";
 import cls from "./Parameters.module.scss";
 import { useMediaQuery } from 'react-responsive';
-import { ChangeEvent, MouseEvent, MouseEventHandler, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Search } from "components/UI/Search/Search";
 import { CheckboxList } from "components/UI/CheckboxList/CheckboxList";
 import Arrow from "assets/icons/triangle-black.svg";
@@ -55,11 +55,8 @@ export const Parameters = (props: ParametersProps) => {
   const onClickClear = () => {
     setCheckedManuf([]);
     dispatch(clearParameters());
+    setSearchManuf('');
   }
-
-  // const changeSearchHandler = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setSearchManuf(e.target.value);
-  // }
 
   useEffect(() => {
     if (searchManuf) {

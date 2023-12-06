@@ -2,7 +2,7 @@ import { classNames } from "utils/classNames/classNames";
 import cls from "./Search.module.scss";
 import SearchBtn from 'assets/img/header/search.png';
 import RemoveBtn from 'assets/icons/close.svg';
-import { ChangeEventHandler, Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface SearchProps {
   className?: string;
