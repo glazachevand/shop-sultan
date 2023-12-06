@@ -1,10 +1,9 @@
 @import "styles/vars";
 
 .sort {
-  display: flex;
-  gap: 5px;
   font-size: 1rem;
   line-height: 1.5;
+  background-color: #fff;
 }
 
 .label {
@@ -19,4 +18,36 @@
 .arrow {
   display: block;
   margin-top: 2px;
+}
+
+.titleRow {
+  display: flex;
+  gap: 5px;
+
+  &.open {
+    & > .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.popup {
+  display: none;
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid rgb(63 78 101 / 20%);
+    border-radius: 15px;
+    box-shadow: 0 10px 50px -10px rgb(63 78 101 / 20%);
+  }
+}
+
+.popupItem {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
 }

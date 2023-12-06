@@ -1,4 +1,5 @@
 import { createApi, FetchArgs, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { SortType } from "types/filters";
 import { IProduct } from "types/products";
 
 export type QueryParams = {
@@ -8,7 +9,7 @@ export type QueryParams = {
   manufacturers?: string[];
   limit?: number;
   page?: number;
-  sort?: string;
+  sort?: SortType;
 };
 
 export const productsApi = createApi({
@@ -16,7 +17,7 @@ export const productsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], QueryParams>({
-      query: ({ priceMin = 10, priceMax = 10000, categories, manufacturers }) => {
+      query: ({ priceMin = 10, priceMax = 10000, categories, manufacturers, sort }) => {
         const newSearchParams = new URLSearchParams();
 
         if (categories) {
@@ -29,6 +30,11 @@ export const productsApi = createApi({
           for (const item of manufacturers) {
             newSearchParams.append("manufacturer_like", item);
           }
+        }
+
+        if (sort) {
+          newSearchParams.append("_sort", sort[0]);
+          newSearchParams.append("_order", sort[1]);
         }
 
         return {

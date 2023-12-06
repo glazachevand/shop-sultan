@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { IFilterState, ParametersType } from "types/filters";
+import { IFilterState, ParametersType, SortType } from "types/filters";
 
 const initialState: IFilterState = {
   categories: [],
@@ -9,7 +9,7 @@ const initialState: IFilterState = {
   manufacturers: [],
   limit: 100,
   page: 1,
-  sort: "asc",
+  sort: ["price", "asc"],
 };
 
 export const filterSlice = createSlice({
@@ -29,6 +29,9 @@ export const filterSlice = createSlice({
       state.priceMax = action.payload.priceMax;
       state.manufacturers = action.payload.manufacturers;
     },
+    setSort: (state, action: PayloadAction<SortType>) => {
+      state.sort = action.payload;
+    },
     clearParameters: (state) => {
       state.priceMin = 10;
       state.priceMax = 10000;
@@ -37,5 +40,6 @@ export const filterSlice = createSlice({
   },
 });
 
-export const { setFilteredCategories, setParameters, clearParameters } = filterSlice.actions;
+export const { setFilteredCategories, setParameters, clearParameters, setSort } =
+  filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

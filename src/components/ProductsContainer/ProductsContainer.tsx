@@ -14,9 +14,9 @@ interface ProductsContainerProps {
 export const ProductsContainer = (props: ProductsContainerProps) => {
   const { className } = props;
   const dispatch = useAppDispatch();
-  const { categories, priceMin, priceMax, manufacturers } = useAppSelector((state) => state.filters);
+  const { categories, priceMin, priceMax, manufacturers, sort } = useAppSelector((state) => state.filters);
 
-  const { isLoading, data: filteredProducts, isError } = productsApi.useGetProductsQuery({ priceMin, priceMax, categories, manufacturers });
+  const { isLoading, data: filteredProducts, isError } = productsApi.useGetProductsQuery({ priceMin, priceMax, categories, manufacturers, sort });
 
   useEffect(() => {
     if (filteredProducts && filteredProducts.length) {
