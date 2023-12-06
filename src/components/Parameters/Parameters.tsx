@@ -2,11 +2,13 @@ import { Button } from "components/UI/Button/Button";
 import { classNames } from "utils/classNames/classNames";
 import cls from "./Parameters.module.scss";
 import { useMediaQuery } from 'react-responsive';
-import { useState } from "react";
+import { ChangeEvent, MouseEvent, MouseEventHandler, useEffect, useRef, useState } from "react";
 import { Search } from "components/UI/Search/Search";
 import { CheckboxList } from "components/UI/CheckboxList/CheckboxList";
 import Arrow from "assets/icons/triangle-black.svg";
-
+import { useAppDispatch, useAppSelector } from "hooks/redux";
+import { clearParameters, setParameters } from "store/reducers/filterSlice";
+import { manufactureCount } from "types/const/manufacture";
 interface ParametersProps {
   className?: string;
 }
@@ -14,16 +16,68 @@ interface ParametersProps {
 export const Parameters = (props: ParametersProps) => {
   const { className } = props;
   const isMobile = useMediaQuery({ maxWidth: 1024 });
-  const priceMin = 0;
-  const priceMax = 10000;
-  const [showParam, setParamShow] = useState(true);
-  const [showAll, setAllShow] = useState(false);
+
+  const dispatch = useAppDispatch();
+  const { priceMin, priceMax, manufacturers: filteredManuf } = useAppSelector((state) => state.filters);
+  const { manufactures: manuf } = useAppSelector((state) => state.products);
+  // выбранные производители
+  const [checkedManuf, setCheckedManuf] = useState<string[]>(filteredManuf);
+  const [showManuf, setShowManuf] = useState<[string, number][]>(manuf);
+  // поиск по производителям
+  const [searchManuf, setSearchManuf] = useState('');
+  // был ли сделан поиск
+  const isSearch = useRef(false);
   const [min, setMin] = useState(priceMin);
   const [max, setMax] = useState(priceMax);
+
+  // показать параметры на мобильных экранах
+  const [showParam, setParamShow] = useState(true);
+  // показать всех производителей при клике на кнопку Показать все
+  const [showAll, setShowAll] = useState(false);
 
   const onClickShowParam = () => {
     setParamShow(prev => !prev);
   }
+
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const find = checkedManuf.find(item => item === e.target.value);
+    if (find) {
+      setCheckedManuf(state => state.filter(item => item !== find))
+    } else {
+      setCheckedManuf(state => { return [...state, e.target.value] })
+    }
+  };
+
+  const onSubmitHandler = () => {
+    dispatch(setParameters({ priceMin: min, priceMax: max, manufacturers: checkedManuf }));
+  }
+
+  const onClickClear = () => {
+    setCheckedManuf([]);
+    dispatch(clearParameters());
+  }
+
+  // const changeSearchHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  //   setSearchManuf(e.target.value);
+  // }
+
+  useEffect(() => {
+    if (searchManuf) {
+      setShowManuf([...manuf].filter(item => item[0].toLowerCase().includes(searchManuf.toLowerCase())));
+      isSearch.current = true;
+    } else if (isSearch.current) {
+      setShowAll(true);
+      setShowManuf(manuf);
+    }
+  }, [searchManuf]);
+
+  useEffect(() => {
+    if (!showAll) {
+      setShowManuf(manuf.slice(0, manufactureCount));
+    } else {
+      setShowManuf(manuf);
+    }
+  }, [showAll, manuf]);
 
   return (
     <div className={classNames(cls.parameters, {}, [className])}>
@@ -48,19 +102,21 @@ export const Parameters = (props: ParametersProps) => {
             </div>
             <div className={cls.manufacturer}>
               <h3 className={cls.manufacturerTitle}>Производитель</h3>
-              <Search size="small" />
-              <CheckboxList show={showAll} />
-              <div className={`${cls.showAll} ${showAll ? cls.show : ''}`} onClick={() => setAllShow(prev => !prev)}>
-                <div>Показать все</div>
-                <img className={cls.arrow} src={Arrow} alt="" />
-              </div>
+              <Search type="param" value={searchManuf} setValue={setSearchManuf} />
+              <CheckboxList manufShow={showManuf} change={onChangeHandler} checkedManuf={checkedManuf} />
+              {!searchManuf && (
+                <div className={`${cls.showAll} ${showAll ? cls.show : ''}`} onClick={() => setShowAll(prev => !prev)}>
+                  <div>{showAll ? 'Скрыть' : 'Показать все'}</div>
+                  <img className={cls.arrow} src={Arrow} alt="" />
+                </div>
+              )}
             </div>
             <div className={cls.actions}>
               {isMobile ?
-                <Button text="Показать" width="216px" height="59px" />
-                : <Button text="Показать" width="169px" height="59px" />
+                <Button text="Показать" width="216px" height="59px" onClick={onSubmitHandler} />
+                : <Button text="Показать" width="169px" height="59px" onClick={onSubmitHandler} />
               }
-              <Button icon="remove" form="circ" width="59px" height="59px" />
+              <Button icon="remove" form="circ" width="59px" height="59px" onClick={onClickClear} />
             </div>
           </div>
         </form>}

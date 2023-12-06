@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import cls from "./ProductFull.module.scss";
 import { classNames } from "utils/classNames/classNames";
-import { Product } from "types/products";
+import { IProduct } from "types/products";
 import weightImage from "assets/icons/box.svg";
 import volumeImage from "assets/icons/bottle.svg";
 import { useMediaQuery } from 'react-responsive';
@@ -12,7 +12,7 @@ import { CountContainer } from "components/UI/CountContainer/CountContainer";
 
 interface ProductFulltProps {
   className?: string;
-  product: Product;
+  product: IProduct;
 }
 
 export const ProductFull = (props: ProductFulltProps) => {

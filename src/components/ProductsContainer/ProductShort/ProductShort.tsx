@@ -3,11 +3,11 @@ import cls from "./ProductShort.module.scss";
 import { Button } from "components/UI/Button/Button";
 import weightImage from "assets/icons/box.svg";
 import volumeImage from "assets/icons/bottle.svg";
-import { Product } from 'types/products';
+import { IProduct } from 'types/products';
 import { useState } from 'react';
 
 interface ProductShorttProps {
-  product: Product;
+  product: IProduct;
 }
 
 export const ProductShort = (props: ProductShorttProps) => {
@@ -20,12 +20,17 @@ export const ProductShort = (props: ProductShorttProps) => {
       {product.popular && <Button className={cls.popular} text='Популярное' form='rectangle-green' color='green' width="96px" height="25px" />}
 
       <div className={cls.body}>
-        {imgSrc && <Link to={`/product/11`} rel="noreferrer"><img src={imgSrc} alt="product" className={cls.imageSmall} /></Link>}
+        {imgSrc &&
+          <Link to={`/product/${product.id}`} rel="noreferrer">
+            <img src={imgSrc} alt="product" className={cls.imageSmall} />
+          </Link>}
         <div className="product__size">
           <img src={product.typesize === 'вес' ? weightImage : volumeImage} alt="product" />
           {product.size}
         </div>
-        <Link to={`/product/11`}><h3 className={cls.title}><span>{product.brand} </span>{product.title}</h3></Link>
+        <Link to={`/product/${product.id}`}>
+          <h3 className={cls.title}><span>{product.brand} </span>{product.title}</h3>
+        </Link>
         <div className="product__properties">
           <div><span className="product__label">Штрихкод:</span>{product.barcode}</div>
           <div><span className="product__label">Производитель:</span>{product.manufacturer}</div>

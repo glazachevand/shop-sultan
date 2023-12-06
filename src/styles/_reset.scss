@@ -13,7 +13,7 @@
 
 :focus,
 :active {
-  // outline: none;
+  outline: none;
 }
 
 // Links
@@ -77,6 +77,10 @@ select {
 }
 
 input::-ms-clear {
+  display: none;
+}
+
+input[type="search" i]::-webkit-search-cancel-button {
   display: none;
 }
 

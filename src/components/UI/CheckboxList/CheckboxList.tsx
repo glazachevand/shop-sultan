@@ -1,22 +1,28 @@
 import { Checkbox } from "components/UI/Checkbox/Checkbox";
 import { classNames } from "utils/classNames/classNames";
 import cls from "./CheckboxList.module.scss";
-import { manufactureCount } from "types/const/manufacture";
+import { ChangeEventHandler } from "react";
 
 interface CheckboxListProps {
   className?: string;
-  show: boolean;
+  manufShow: [string, number][];
+  checkedManuf: string[];
+  change: ChangeEventHandler<HTMLInputElement>;
 }
 
 export const CheckboxList = (props: CheckboxListProps) => {
-  const { className, show } = props;
-  const manuf: [string, number][] = [['Synergetic', 4], ['BioMio', 2], ['Sesderma ', 3], ['Tresemme ', 1]];
-  const manufShow: [string, number][] = show ? [...manuf] : manuf.slice(0, manufactureCount)
+  const { className, manufShow, checkedManuf, change } = props;
 
   return (
     <div className={classNames(cls.checkboxList, {}, [className])}>
-      {manufShow && manufShow.map((el, index) =>
-        <Checkbox key={el[0]} item={el[0]} count={el[1]} checked={true} />
+      {manufShow && manufShow.map((elem) =>
+        <Checkbox
+          key={elem[0]}
+          item={elem[0]}
+          count={elem[1]}
+          checked={checkedManuf.includes(elem[0])}
+          change={change}
+        />
       )}
     </div>
   );

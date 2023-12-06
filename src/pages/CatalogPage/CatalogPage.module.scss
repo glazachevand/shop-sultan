@@ -70,27 +70,6 @@
   }
 }
 
-.main {
+.productsContainer {
   flex: 1 1 auto;
-}
-
-.products {
-  margin-bottom: 50px;
-}
-
-.pagination {
-  margin-bottom: 68px;
-
-  @media (max-width: $md) {
-    margin-bottom: 40px;
-  }
-}
-
-.footer {
-  margin-bottom: 80px;
-  line-height: 1.5;
-
-  @media (max-width: $lg) {
-    margin-bottom: 30px;
-  }
 }

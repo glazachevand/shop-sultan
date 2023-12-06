@@ -16,12 +16,12 @@ type Story = StoryObj<typeof meta>;
 
 export const InHeader: Story = {
   args: {
-    size: 'big'
+    type: 'header'
   }
 }
 
 export const InSidebar: Story = {
   args: {
-    size: 'small'
+    type: 'param'
   }
 }
