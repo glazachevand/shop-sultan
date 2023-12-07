@@ -5,8 +5,12 @@ import SearchIcon from 'assets/icons/search-black.svg';
 import cls from "./HeaderMobail.module.scss";
 import { CartBtn } from 'components/UI/CartBtn/CartBtn';
 import { Burger } from 'components/Burger/Burger';
+import { useState } from 'react';
+import { Search } from 'components/UI/Search/Search';
+import RemoveBtn from 'assets/icons/close.svg';
 
 export const HeaderMobail = () => {
+  const [showSearch, setShowSearch] = useState(false);
 
   return (
     <div>
@@ -18,15 +22,28 @@ export const HeaderMobail = () => {
         </div>
       </div>
       <div className={cls.rowMobail}>
-        <div className={`${cls.botttomContainerMobail} _container`}>
-          <Link to="/catalog" className={cls.catalog}>
-            <img src={CatalogIcon} alt="catalog" />
-            <p>Каталог</p>
-          </Link>
-          <div className={cls.search}>
-            <img src={SearchIcon} alt="search" />
-            <p>Поиск</p>
-          </div>
+        <div className={`${cls.bottomContainerMobail} ${showSearch ? cls.big : ''} _container`}>
+          {showSearch ?
+            <div className={cls.searchRow}>
+              <Search />
+              <img
+                src={RemoveBtn}
+                className={cls.removeBtn}
+                alt="remove search"
+                onClick={() => setShowSearch(false)}
+              />
+            </div>
+            : <>
+              <Link to="/catalog" className={cls.catalog}>
+                <img src={CatalogIcon} alt="catalog" />
+                <p>Каталог</p>
+              </Link>
+              <div className={cls.search} onClick={() => setShowSearch(true)}>
+                <img src={SearchIcon} alt="search" />
+                <p>Поиск</p>
+              </div>
+            </>
+          }
         </div>
       </div>
     </div>

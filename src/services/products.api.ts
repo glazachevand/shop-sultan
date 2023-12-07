@@ -10,6 +10,7 @@ export type QueryParams = {
   limit?: number;
   page?: number;
   sort?: SortType;
+  search?: string;
 };
 
 export const productsApi = createApi({
@@ -17,7 +18,7 @@ export const productsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], QueryParams>({
-      query: ({ priceMin = 10, priceMax = 10000, categories, manufacturers, sort }) => {
+      query: ({ priceMin = 10, priceMax = 10000, categories, manufacturers, sort, search }) => {
         const newSearchParams = new URLSearchParams();
 
         if (categories) {
@@ -35,6 +36,10 @@ export const productsApi = createApi({
         if (sort) {
           newSearchParams.append("_sort", sort[0]);
           newSearchParams.append("_order", sort[1]);
+        }
+
+        if (search) {
+          newSearchParams.append("q", search);
         }
 
         return {

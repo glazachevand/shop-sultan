@@ -11,8 +11,6 @@ import { Button } from 'components/UI/Button/Button';
 import { useState } from 'react';
 
 export const HeaderDesktop = () => {
-  const [searchValue, setSearchValue] = useState('');
-
   return (
     <div>
       <div className={cls.row}>
@@ -28,7 +26,7 @@ export const HeaderDesktop = () => {
           <Link to="/catalog">
             <Button text='Каталог' icon='catalog' width='192px' height='59px' />
           </Link>
-          <Search type='header' value={searchValue} setValue={setSearchValue} />
+          <Search type='header' />
           <BackCall color='dark' isIcon={false} isText={true} className={cls.backCall} aligh='right' />
           <div className={cls.callImg}><img src={Call} alt="call" /></div>
           <Link to="#!">

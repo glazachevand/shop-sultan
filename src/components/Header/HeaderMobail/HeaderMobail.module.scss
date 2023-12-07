@@ -41,7 +41,7 @@
   height: 60px;
 }
 
-.botttomContainerMobail {
+.bottomContainerMobail {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -49,10 +49,27 @@
   font-size: 12px;
   font-weight: 600;
   line-height: normal;
+
+  &.big {
+    height: 64px;
+  }
 }
 
 .search {
   display: flex;
   gap: 6px;
   cursor: pointer;
+
+  &:hover {
+    color: $yellow;
+  }
+}
+
+.searchRow {
+  display: flex;
+  gap: 15px;
+}
+
+.removeBtn {
+  width: 15px;
 }
