@@ -1,4 +1,4 @@
-import { createApi, FetchArgs, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { SortType } from "types/filters";
 import { IProduct } from "types/products";
 
@@ -18,8 +18,9 @@ export const productsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], QueryParams>({
-      query: ({ priceMin = 10, priceMax = 10000, categories, manufacturers, sort, search }) => {
+      query: ({ priceMin, priceMax, categories, manufacturers, sort, search, page, limit = 9 }) => {
         const newSearchParams = new URLSearchParams();
+        let str = "";
 
         if (categories) {
           for (const item of categories) {
@@ -42,12 +43,17 @@ export const productsApi = createApi({
           newSearchParams.append("q", search);
         }
 
+        if (page && limit) {
+          newSearchParams.append("_limit", String(limit));
+          newSearchParams.append("_page", String(page));
+        }
+
+        if (priceMax && priceMin) {
+          str += `price_lte=${priceMax}&price_gte=${priceMin}&`;
+        }
+
         return {
-          url:
-            "/products" +
-            "?" +
-            `price_lte=${priceMax}&price_gte=${priceMin}&` +
-            newSearchParams.toString(),
+          url: "/products" + "?" + str + newSearchParams.toString(),
         };
       },
     }),

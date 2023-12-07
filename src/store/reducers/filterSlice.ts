@@ -7,7 +7,7 @@ const initialState: IFilterState = {
   priceMin: 10,
   priceMax: 10000,
   manufacturers: [],
-  limit: 100,
+  limit: 9,
   page: 1,
   sort: ["price", "asc"],
 };
@@ -32,6 +32,12 @@ export const filterSlice = createSlice({
     setSort: (state, action: PayloadAction<SortType>) => {
       state.sort = action.payload;
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload;
+    },
+    setLimit: (state, action: PayloadAction<number>) => {
+      state.limit = action.payload;
+    },
     clearParameters: (state) => {
       state.priceMin = 10;
       state.priceMax = 10000;
@@ -40,6 +46,6 @@ export const filterSlice = createSlice({
   },
 });
 
-export const { setFilteredCategories, setParameters, clearParameters, setSort } =
+export const { setFilteredCategories, setParameters, clearParameters, setSort, setPage, setLimit } =
   filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
