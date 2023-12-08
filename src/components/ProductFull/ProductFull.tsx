@@ -8,15 +8,23 @@ import { useMediaQuery } from 'react-responsive';
 import Arrow from "assets/icons/triangle-black.svg";
 import { Button } from "components/UI/Button/Button";
 import { CountContainer } from "components/UI/CountContainer/CountContainer";
+import { addProductToCart, minusProductInCart } from "store/reducers/cartSlice";
+import { useAppDispatch, useAppSelector } from "hooks/redux";
+import { ICartItem } from "types/cart";
 
 
-interface ProductFulltProps {
+interface ProductFullProps {
   className?: string;
   product: IProduct;
 }
 
-export const ProductFull = (props: ProductFulltProps) => {
+export const ProductFull = (props: ProductFullProps) => {
   const { className = '', product } = props;
+  const dispatch = useAppDispatch();
+  const items = useAppSelector(state => state.cart.items);
+
+  const cartItem = items.find(item => item.id === product.id);
+
   const isMobile = useMediaQuery({ maxWidth: 1024 });
   const [showDescr, setDescrShow] = useState(true);
   const [showProp, setPropShow] = useState(true);
@@ -41,8 +49,19 @@ export const ProductFull = (props: ProductFulltProps) => {
             }
             <div className={cls.actions}>
               <div className={cls.price}>{product.price} ₽</div>
-              <CountContainer className={cls.countContainer} id={0} />
-              <Button className={cls.cartBtn} text='В корзину' icon='cart' width='184px' height='59px' />
+              <CountContainer
+                value={cartItem?.count || 0}
+                plusHandler={() => { dispatch(addProductToCart(product as ICartItem)) }}
+                minusHandler={() => { dispatch(minusProductInCart(product as ICartItem)) }}
+              />
+              <Button
+                className={cls.cartBtn}
+                text='В корзину'
+                icon='cart'
+                width='184px'
+                height='59px'
+                onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
+              />
               <div className={cls.w100}></div>
               <Button className={cls.subscrBtn} icon='subscr' form="rectangle" color='white' width='77px' height='77px' />
               <div className={cls.delivery}>

@@ -5,6 +5,9 @@ import weightImage from "assets/icons/box.svg";
 import volumeImage from "assets/icons/bottle.svg";
 import { IProduct } from 'types/products';
 import { useState } from 'react';
+import { useAppDispatch } from 'hooks/redux';
+import { addProductToCart } from 'store/reducers/cartSlice';
+import { ICartItem } from 'types/cart';
 
 interface ProductShorttProps {
   product: IProduct;
@@ -12,8 +15,8 @@ interface ProductShorttProps {
 
 export const ProductShort = (props: ProductShorttProps) => {
   const { product } = props;
+  const dispatch = useAppDispatch();
   const imgSrc = require(`assets/img/products/${product.url}`);
-
 
   return (
     <div className={cls.productShort}>
@@ -43,7 +46,14 @@ export const ProductShort = (props: ProductShorttProps) => {
       </div>
       <div className="product__priceRow">
         <div className={cls.price}>{product.price} ₽</div>
-        <Button text='В КОРЗИНУ' icon='cart' form='cartSmall' width='153px' height='45px' />
+        <Button
+          text='В КОРЗИНУ'
+          icon='cart'
+          form='cartSmall'
+          width='153px'
+          height='45px'
+          onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
+        />
       </div>
 
     </div >

@@ -4,7 +4,7 @@ import Next from "assets/icons/arrow-yellow.svg"
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { useEffect } from "react";
 import { setLimit, setPage } from "store/reducers/filterSlice";
-import { limitPerPage } from "types/const/pages";
+import { limitPerPage } from "types/pages";
 interface PaginationProps {
   className?: string;
   productsCount: number

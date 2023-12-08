@@ -6,10 +6,11 @@ import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
 import { BackButton } from 'components/UI/BackButton/BackButton';
 import { Button } from 'components/UI/Button/Button';
 import { CartList } from 'components/CartList/CartList';
+import { useAppSelector } from 'hooks/redux';
 
 export const CartPage: FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });
-  const totalPrice = 12345;
+  const totalPrice = useAppSelector(state => state.cart.totalPrice)
 
   return (
     <div className='_container'>
