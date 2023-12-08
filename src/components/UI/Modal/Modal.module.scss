@@ -18,30 +18,55 @@
 
 .content {
   position: relative;
-  height: fit-content;
   background-color: #fff;
-  transform: translateY(-100vh);
+  height: fit-content;
+  transform: translateY(-100%);
   transition: transform 0.3s ease;
 
   .closeBtn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 30px;
+    right: 30px;
+    width: 24px;
+    height: 24px;
     background-color: transparent;
-  }
 
-  img {
-    vertical-align: top;
+    @media (max-width: $md) {
+      top: 10px;
+      right: 10px;
+      width: 12px;
+      height: 12px;
+    }
+
+    img {
+      width: 100%;
+      vertical-align: top;
+    }
   }
 }
 
 .opened {
   pointer-events: auto;
   opacity: 1;
-  z-index: $modalZIndex;
+
+  &.burger {
+    z-index: $modalBurgerZIndex;
+  }
+
+  &.order {
+    z-index: $modalOrderZIndex;
+  }
 
   .content {
-    transform: translateY(0);
     transition: transform 0.3s ease;
+
+    &.burger {
+      transform: translateY(0);
+    }
+
+    &.order {
+      transform: translateY(calc(50vh - 50%));
+      border-radius: 8px;
+    }
   }
 }

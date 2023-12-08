@@ -9,13 +9,15 @@ interface ModalProps {
   isCloseBtn?: boolean;
   isOpen?: boolean;
   onClose?: () => void;
+  type?: 'burger' | 'order';
   children?: ReactNode;
 }
 
 export const Modal = (props: ModalProps) => {
-  const { className, isCloseBtn = false, isOpen, onClose, children } = props;
+  const { className, isCloseBtn = false, isOpen, onClose, type = 'burger', children } = props;
   const mods = {
     [cls.opened]: isOpen,
+    [cls[type]]: true,
   };
 
   return (
@@ -23,7 +25,7 @@ export const Modal = (props: ModalProps) => {
       <div className={classNames(cls.modal, mods, [className])} data-testid="modal">
         <div className={cls.overlay} onClick={onClose}>
           <div
-            className={cls.content}
+            className={classNames(cls.content, { [cls[type]]: true }, [])}
             onClick={(e) => e.stopPropagation()}
           >
             {isCloseBtn && (

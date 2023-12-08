@@ -45,3 +45,35 @@
     order: -1;
   }
 }
+
+.orderModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  height: 424px;
+  width: 735px;
+  font-size: 1.25rem;
+  font-weight: 300;
+
+  @media (max-width: $lg) {
+    padding: 40px;
+    max-width: 70vw;
+    height: 288px;
+  }
+
+  @media (max-width: $md) {
+    max-width: 80vw;
+    font-size: 12px;
+  }
+
+  @media (max-width: $sm) {
+    max-width: calc(100vw - 30px);
+  }
+
+  .title {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+}
