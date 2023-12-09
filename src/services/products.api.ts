@@ -65,7 +65,34 @@ export const productsApi = createApi({
         url: `/categories`,
       }),
     }),
+    createProduct: builder.mutation<IProduct, IProduct>({
+      query: (product) => ({
+        url: `/products/${product.id}`,
+        method: "PUT",
+        body: product,
+      }),
+    }),
+    updateProduct: builder.mutation<IProduct, IProduct>({
+      query: (product) => ({
+        url: `/products/${product.id}`,
+        method: "PATCH",
+        body: product,
+      }),
+    }),
+    deleteProduct: builder.mutation<IProduct, number>({
+      query: (id) => ({
+        url: `/products/${id}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
-export const { useGetProductsQuery, useGetOneProductQuery, useGetCategoriesQuery } = productsApi;
+export const {
+  useGetProductsQuery,
+  useGetOneProductQuery,
+  useGetCategoriesQuery,
+  useCreateProductMutation,
+  useUpdateProductMutation,
+  useDeleteProductMutation,
+} = productsApi;

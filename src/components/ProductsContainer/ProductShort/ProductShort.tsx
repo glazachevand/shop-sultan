@@ -4,8 +4,7 @@ import { Button } from "components/UI/Button/Button";
 import weightImage from "assets/icons/box.svg";
 import volumeImage from "assets/icons/bottle.svg";
 import { IProduct } from 'types/products';
-import { useState } from 'react';
-import { useAppDispatch } from 'hooks/redux';
+import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { addProductToCart } from 'store/reducers/cartSlice';
 import { ICartItem } from 'types/cart';
 
@@ -17,6 +16,7 @@ export const ProductShort = (props: ProductShorttProps) => {
   const { product } = props;
   const dispatch = useAppDispatch();
   const imgSrc = require(`assets/img/products/${product.url}`);
+  const isAdmin = useAppSelector(state => state.user.isAdmin);
 
   return (
     <div className={cls.productShort}>

@@ -24,8 +24,28 @@ export const productsSlice = createSlice({
     setCategories: (state, action: PayloadAction<string[]>) => {
       state.categories = action.payload;
     },
+    addProduct: (state, action: PayloadAction<IProduct>) => {
+      state.products.push(action.payload);
+    },
+    updateProduct: (state, action: PayloadAction<IProduct>) => {
+      let findElem = state.products.find((item) => item.id === action.payload.id);
+
+      if (!findElem) {
+        findElem = action.payload;
+      }
+    },
+    deleteProduct: (state, action: PayloadAction<number>) => {
+      state.products.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
-export const { setProducts, setFilteredProducts, setCategories } = productsSlice.actions;
+export const {
+  setProducts,
+  setFilteredProducts,
+  setCategories,
+  addProduct,
+  updateProduct,
+  deleteProduct,
+} = productsSlice.actions;
 export const productsReducer = productsSlice.reducer;
