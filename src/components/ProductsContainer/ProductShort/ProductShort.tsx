@@ -7,6 +7,10 @@ import { IProduct } from 'types/products';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { addProductToCart } from 'store/reducers/cartSlice';
 import { ICartItem } from 'types/cart';
+import { Modal } from 'components/UI/Modal/Modal';
+import { FormProduct } from 'components/UI/FormProduct/FormProduct';
+import { useState } from 'react';
+import { useDeleteProductMutation } from 'services/products.api';
 
 interface ProductShorttProps {
   product: IProduct;
@@ -14,9 +18,16 @@ interface ProductShorttProps {
 
 export const ProductShort = (props: ProductShorttProps) => {
   const { product } = props;
+  const [openModal, setOpenModal] = useState(false);
   const dispatch = useAppDispatch();
   const imgSrc = require(`assets/img/products/${product.url}`);
   const isAdmin = useAppSelector(state => state.user.isAdmin);
+
+  const [deleteProduct, { error }] = useDeleteProductMutation();
+
+  const onDeleteHandler = () => {
+    deleteProduct(product.id);
+  };
 
   return (
     <div className={cls.productShort}>
@@ -49,13 +60,23 @@ export const ProductShort = (props: ProductShorttProps) => {
         {isAdmin ? (
           <>
             <Button
-              text='редактировать'
-              form='cartSmall'
+              text='Редактировать'
               width='140px'
               height='45px'
-              onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
+              onClick={() => setOpenModal(true)}
             />
-            <Button icon="remove" form="circ" width="45px" height="45px" />
+            <Button
+              icon="remove"
+              form="circ"
+              width="45px"
+              height="45px"
+              onClick={onDeleteHandler}
+            />
+            <Modal isOpen={openModal} onClose={() => setOpenModal((prev) => !prev)} type='order' isCloseBtn={true}>
+              <div className={cls.formModal}>
+                <FormProduct onClose={setOpenModal} product={product} />
+              </div>
+            </Modal>
           </>
         ) : (
           <Button

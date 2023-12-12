@@ -1,8 +1,7 @@
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from "react";
-import { useCreateProductMutation, useLazyGetProductsQuery, useUpdateProductMutation } from "services/products.api";
-import { setPage } from "store/reducers/filterSlice";
-import { setFilteredProducts, setProductsCount } from "store/reducers/productsSlice";
+import { useCreateProductMutation, useUpdateProductMutation } from "services/products.api";
+import { setProductsCount } from "store/reducers/productsSlice";
 import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
 import { Button } from "../Button/Button";
@@ -73,38 +72,6 @@ export const FormProduct = (props: FormProductProps) => {
     }
     onClose(false);
   };
-
-  //YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-  // const addHandler = async (item: IProduct) => {
-  //   await addProduct(item);
-  //   //dispatch(addProduct(item));
-  //   dispatch(setProductsCount(lastId + 1))
-  // }
-
-  // const updateHandler = async (item: IProduct) => {
-  //   await updateProduct(item);
-  //   //dispatch(updateProduct(item));
-  // }
-
-  // const { categories, priceMin, priceMax, manufacturers, sort } = useAppSelector((state) => state.filters);
-  // const [fetchFilteredProducts, { isLoading, data: filteredProducts, isError }] = useLazyGetProductsQuery();
-
-  // const fetchData = async () => {
-  //   await fetchFilteredProducts({ priceMin, priceMax, categories, manufacturers, sort });
-  //   console.log('filteredProducts after add', filteredProducts, 'isLoading', isLoading, 'isError', isError);
-  // }
-
-  // const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   if (product) {
-  //     updateHandler(item);
-  //   } else {
-  //     addHandler(item)
-  //   }
-  //   fetchData();
-  //   onClose(false);
-  // };
-  //YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
 
   return (
     <div className={classNames(cls.formProduct, {}, [className])}>
