@@ -154,16 +154,6 @@ body {
     font-weight: 300;
     font-style: italic;
   }
-
-  &__priceRow {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-
-    @media (max-width: $md) {
-      justify-content: space-between;
-    }
-  }
 }
 
 .backButton {

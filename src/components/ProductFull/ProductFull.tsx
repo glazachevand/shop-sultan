@@ -50,6 +50,7 @@ export const ProductFull = (props: ProductFullProps) => {
             <div className={cls.actions}>
               <div className={cls.price}>{product.price} ₽</div>
               <CountContainer
+                className={cls.countContainer}
                 value={cartItem?.count || 0}
                 plusHandler={() => { dispatch(addProductToCart(product as ICartItem)) }}
                 minusHandler={() => { dispatch(minusProductInCart(product as ICartItem)) }}

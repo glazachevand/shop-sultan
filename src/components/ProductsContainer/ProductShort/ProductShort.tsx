@@ -44,16 +44,29 @@ export const ProductShort = (props: ProductShorttProps) => {
           {product.typecare.map(item => <span className="product__care" key={item}>{item}</span>)}
         </div>
       </div>
-      <div className="product__priceRow">
-        <div className={cls.price}>{product.price} ₽</div>
-        <Button
-          text='В КОРЗИНУ'
-          icon='cart'
-          form='cartSmall'
-          width='153px'
-          height='45px'
-          onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
-        />
+      <div className={`${cls.priceRow} ${isAdmin ? cls.isAdmin : ''}`}>
+        <div className={cls.price}>{product.price}&nbsp;₽</div>
+        {isAdmin ? (
+          <>
+            <Button
+              text='редактировать'
+              form='cartSmall'
+              width='140px'
+              height='45px'
+              onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
+            />
+            <Button icon="remove" form="circ" width="45px" height="45px" />
+          </>
+        ) : (
+          <Button
+            text='В КОРЗИНУ'
+            icon='cart'
+            form='cartSmall'
+            width='153px'
+            height='45px'
+            onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
+          />
+        )}
       </div>
 
     </div >

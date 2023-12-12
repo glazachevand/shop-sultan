@@ -51,3 +51,22 @@
   font-weight: 800;
   color: $dark;
 }
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: $md) {
+    justify-content: space-between;
+  }
+
+  & > button {
+    flex-shrink: 0;
+  }
+
+  &.isAdmin {
+    gap: 5px !important;
+    justify-content: space-between !important;
+  }
+}

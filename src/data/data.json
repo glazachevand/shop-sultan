@@ -267,6 +267,25 @@
       ],
       "price": 37,
       "popular": true
+    },
+    {
+      "id": 18,
+      "title": "123123",
+      "url": "product1.webp",
+      "barcode": 6684049097549,
+      "manufacturer": "123",
+      "brand": "123",
+      "description": "123",
+      "typesize": "вес",
+      "size": "123",
+      "typecare": [
+        "Уход за волосами",
+        "Уход за лицом",
+        "Уход за ногами",
+        "Уход за руками",
+        "Уход за телом"
+      ],
+      "price": 11
     }
   ],
   "categories": [

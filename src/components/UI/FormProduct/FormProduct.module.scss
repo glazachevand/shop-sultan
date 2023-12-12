@@ -1,0 +1,62 @@
+@import "styles/vars";
+
+.formProduct {
+  width: 100%;
+  max-width: 600px;
+  max-height: 90%;
+  font-size: 1rem;
+  color: $dark;
+}
+
+form {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.label {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: $darkBlue;
+}
+
+.input {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: $whisperColor;
+}
+
+textarea {
+  height: 100px;
+}
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.radio {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.select {
+  max-width: 300px;
+  min-height: 240px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
+
+.option {
+  border: 1px solid $blueGrey;
+  padding: 3px 20px;
+}

@@ -38,7 +38,6 @@ export const Search = (props: SearchProps) => {
   const onClickDropdown = () => {
     setDropdown(false);
     setSearchValue('');
-
   };
 
   const onClickClear = () => {

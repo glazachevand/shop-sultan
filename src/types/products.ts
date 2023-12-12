@@ -13,7 +13,7 @@ export interface IProduct {
   popular?: boolean;
 }
 export interface IProductsState {
-  products: IProduct[];
+  productsCount: number;
   filteredProducts: IProduct[];
   categories: string[];
   manufactures: [string, number][];

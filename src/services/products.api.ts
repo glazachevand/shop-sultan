@@ -15,6 +15,7 @@ export type QueryParams = {
 
 export const productsApi = createApi({
   reducerPath: "products/api",
+  tagTypes: ["Product", "Categories"],
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], QueryParams>({
@@ -56,6 +57,7 @@ export const productsApi = createApi({
           url: "/products" + "?" + str + newSearchParams.toString(),
         };
       },
+      providesTags: () => ["Product"],
     }),
     getOneProduct: builder.query<IProduct, number>({
       query: (id: number) => ({ url: `/products/${id}` }),
@@ -64,32 +66,37 @@ export const productsApi = createApi({
       query: () => ({
         url: `/categories`,
       }),
+      providesTags: () => ["Categories"],
     }),
     createProduct: builder.mutation<IProduct, IProduct>({
+      query: (product) => ({
+        url: `/products`,
+        method: "POST",
+        body: product,
+      }),
+      invalidatesTags: ["Product"],
+    }),
+    updateProduct: builder.mutation<IProduct, IProduct>({
       query: (product) => ({
         url: `/products/${product.id}`,
         method: "PUT",
         body: product,
       }),
-    }),
-    updateProduct: builder.mutation<IProduct, IProduct>({
-      query: (product) => ({
-        url: `/products/${product.id}`,
-        method: "PATCH",
-        body: product,
-      }),
+      invalidatesTags: ["Product"],
     }),
     deleteProduct: builder.mutation<IProduct, number>({
       query: (id) => ({
         url: `/products/${id}`,
         method: "DELETE",
       }),
+      invalidatesTags: ["Product"],
     }),
   }),
 });
 
 export const {
   useGetProductsQuery,
+  useLazyGetProductsQuery,
   useGetOneProductQuery,
   useGetCategoriesQuery,
   useCreateProductMutation,
