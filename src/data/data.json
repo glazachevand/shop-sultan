@@ -267,6 +267,24 @@
       ],
       "price": 37,
       "popular": true
+    },
+    {
+      "id": 18,
+      "title": "qweqwe",
+      "url": "product1.webp",
+      "barcode": 6684049097549,
+      "manufacturer": "qwe",
+      "brand": "qwe",
+      "description": "qwe",
+      "typesize": "вес",
+      "size": "100u",
+      "typecare": [
+        "Уход за руками",
+        "Уход за ногами",
+        "Уход за лицом",
+        "Уход за волосами"
+      ],
+      "price": 12
     }
   ],
   "categories": [

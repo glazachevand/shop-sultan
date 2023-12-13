@@ -81,7 +81,7 @@ export const CatalogPage: FC = () => {
       </section>
       {isAdmin && productsCount && (
         <Modal isOpen={openModal} onClose={() => setOpenModal((prev) => !prev)} type='order' isCloseBtn={true}>
-          <div className={cls.formModal}>
+          <div className="formModal">
             <FormProduct onClose={setOpenModal} />
           </div>
         </Modal>

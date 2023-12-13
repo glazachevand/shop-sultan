@@ -5,6 +5,7 @@ import { setProductsCount } from "store/reducers/productsSlice";
 import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
 import { Button } from "../Button/Button";
+import { Checkbox } from "../Checkbox/Checkbox";
 import cls from "./FormProduct.module.scss";
 
 interface FormProductProps {
@@ -43,17 +44,14 @@ export const FormProduct = (props: FormProductProps) => {
     setItem((state) => ({ ...state, [e.target.name]: Number(e.target.value) }));
   }
 
-  const onChangeSelectHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    setItem((state) => {
-      let arr = state?.typecare;
-      if (state.typecare?.includes(e.target.value)) {
-        arr = arr.filter(item => item !== e.target.value);
-      } else if (e.target.value) {
-        arr.push(e.target.value);
-      }
-      return { ...state, typecare: arr };
-    });
-  }
+  const onCheckHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const find = item.typecare.find(item => item === e.target.value);
+    if (find) {
+      setItem(state => { return { ...state, typecare: state.typecare.filter(item => item !== find) } })
+    } else {
+      setItem(state => { return { ...state, typecare: [...state.typecare, e.target.value] } })
+    }
+  };
 
   const [addProduct, { error: addError, data: createProducts, }] = useCreateProductMutation();
   const [updateProduct, { error: updateError }] = useUpdateProductMutation();
@@ -108,18 +106,17 @@ export const FormProduct = (props: FormProductProps) => {
         <div className={cls.label}>Размер</div>
         <input className={cls.input} name="size" type="text" value={item?.size} onChange={onChangeHandler} required />
 
-        <select className={cls.select} name="typecare" multiple onChange={onChangeSelectHandler}
-          value={item?.typecare} >
-          <option className={cls.options} disabled>Тип ухода</option>
+        <div className={cls.label}>Тип ухода</div>
+        <ul>
           {allCategories.length && allCategories.map(category => category !== 'Все' && (
-            <option className={cls.options} value={category} key={category}>{category}</option>
+            <Checkbox item={category} key={category} checked={item.typecare.includes(category)} change={onCheckHandler} />
           ))}
-        </select>
+        </ul>
 
         <div className={cls.label}>Цена</div>
         <input className={cls.input} name="price" type="text" value={item?.price} onChange={onChangeNumberHandler} required />
 
-        <Button type="submit" text="Сохранить" width="200px" height="59px" />
+        <Button className={cls.submit} type="submit" text="Сохранить" width="200px" height="59px" />
       </form>
     </div>
   );

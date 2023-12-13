@@ -14,7 +14,7 @@ export const Checkbox = (props: CheckboxProps) => {
   return (
     <label className={classNames(cls.checkbox, {}, [className])} data-testid="checkbox">
       {item}
-      <span className={cls.count}> ({count})</span>
+      <span className={cls.count}>{count ? ` (${count})` : ''}</span>
       <input className={cls.input} type="checkbox" value={item} name={item} checked={checked} onChange={(e) => change(e)} />
       <span className={`${cls.checkmark} ${checked ? cls.active : ''}`}></span>
     </label>
