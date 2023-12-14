@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import cls from "./ProductFull.module.scss";
 import { classNames } from "utils/classNames/classNames";
 import { IProduct } from "types/products";

@@ -13,44 +13,20 @@ interface ProductsContainerProps {
 export const ProductsContainer = (props: ProductsContainerProps) => {
   const { className } = props;
 
-  const { categories, priceMin, priceMax, manufacturers, sort, page, limit } = useAppSelector((state) => state.filters);
+  const { typecare, priceMin, priceMax, manufacturers, sort, page, limit } = useAppSelector((state) => state.filters);
   const filteredProducts = useAppSelector(state => state.products.filteredProducts);
   const [filteredPageProducts, setFilteredPageProduct] = useState(filteredProducts);
 
-  const { isLoading, data: fetchFilteredPageProducts, isError } = useGetProductsQuery({ priceMin, priceMax, categories, manufacturers, sort, page, limit });
-  console.log('fetchFilteredPageProducts', fetchFilteredPageProducts);
+  const { isLoading, data: fetchFilteredPageProducts, isError } = useGetProductsQuery({ priceMin, priceMax, typecare, manufacturers, sort, page, limit });
 
   useEffect(() => {
     if (fetchFilteredPageProducts && fetchFilteredPageProducts.length) {
       setFilteredPageProduct(fetchFilteredPageProducts);
-      console.log('filteredPageProducts', filteredPageProducts);
     } else {
       setFilteredPageProduct([]);
     }
 
   }, [fetchFilteredPageProducts?.length, fetchFilteredPageProducts]);
-
-  // const [fetchPageProducts, { isLoading, data: fetchFilteredPageProducts, isError }] = productsApi.useLazyGetProductsQuery();
-
-  // const fetchData = async () => {
-  //   await fetchPageProducts({ priceMin, priceMax, categories, manufacturers, sort, page, limit });
-  //   console.log('filteredProducts page', fetchFilteredPageProducts, 'isLoading', isLoading, 'isError', isError);
-
-  //   if (fetchFilteredPageProducts && fetchFilteredPageProducts.length) {
-  //     setFilteredPageProduct(fetchFilteredPageProducts);
-  //     setFilteredPageProduct(fetchFilteredPageProducts);
-  //   } else {
-  //     setFilteredPageProduct([]);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   setFilteredPageProduct(filteredProducts);
-  // }, [filteredProducts]);
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, [fetchFilteredPageProducts, priceMin, priceMax, categories, manufacturers, sort, page, limit]);
 
   return (
     <div className={classNames(cls.productsContainer, {}, [className])}>

@@ -1,5 +1,5 @@
 export interface IFilterState {
-  categories: string[];
+  typecare: string[];
   priceMin: number;
   priceMax: number;
   manufacturers: string[];

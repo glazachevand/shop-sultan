@@ -1,3 +1,8 @@
+export interface ICategory {
+  id: number;
+  title: string;
+}
+
 export interface IProduct {
   id: number;
   title: string;
@@ -15,6 +20,6 @@ export interface IProduct {
 export interface IProductsState {
   productsCount: number;
   filteredProducts: IProduct[];
-  categories: string[];
+  categories: ICategory[];
   manufactures: [string, number][];
 }

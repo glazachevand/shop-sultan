@@ -44,3 +44,12 @@
     }
   }
 }
+
+.admin {
+  &.categoryMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+}

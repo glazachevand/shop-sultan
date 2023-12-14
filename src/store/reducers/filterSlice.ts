@@ -3,7 +3,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { IFilterState, ParametersType, SortType } from "types/filters";
 
 const initialState: IFilterState = {
-  categories: [],
+  typecare: [],
   priceMin: 10,
   priceMax: 10000,
   manufacturers: [],
@@ -17,11 +17,11 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     setFilteredCategories: (state, action: PayloadAction<string>) => {
-      const findElem = state.categories.find((item) => item === action.payload);
+      const findElem = state.typecare.find((item) => item === action.payload);
       if (!findElem) {
-        state.categories.push(action.payload);
+        state.typecare.push(action.payload);
       } else {
-        state.categories = state.categories.filter((item) => item !== action.payload);
+        state.typecare = state.typecare.filter((item) => item !== action.payload);
       }
     },
     setParameters: (state, action: PayloadAction<ParametersType>) => {

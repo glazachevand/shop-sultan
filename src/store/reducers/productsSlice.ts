@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { IProduct, IProductsState } from "types/products";
+import { ICategory, IProduct, IProductsState } from "types/products";
 import { getManufactures } from "utils/getManufactures ";
 
 const initialState: IProductsState = {
@@ -21,21 +21,21 @@ export const productsSlice = createSlice({
       state.filteredProducts = action.payload;
       state.manufactures = getManufactures(action.payload);
     },
-    setCategories: (state, action: PayloadAction<string[]>) => {
+    setCategories: (state, action: PayloadAction<ICategory[]>) => {
       state.categories = action.payload;
     },
-    // addProduct: (state, action: PayloadAction<IProduct>) => {
-    //   state.products.push(action.payload);
+    // addCategory: (state, action: PayloadAction<string>) => {
+    //   state.categories.push(action.payload);
     // },
-    // updateProduct: (state, action: PayloadAction<IProduct>) => {
-    //   let findElem = state.products.find((item) => item.id === action.payload.id);
+    // updateCategory: (state, action: PayloadAction<string>) => {
+    //   let findElem = state.categories.find((item) => item === action.payload);
 
     //   if (!findElem) {
     //     findElem = action.payload;
     //   }
     // },
-    // deleteProduct: (state, action: PayloadAction<number>) => {
-    //   state.products.filter((item) => item.id !== action.payload);
+    // deletePCategory: (state, action: PayloadAction<string>) => {
+    //   state.categories.filter((item) => item !== action.payload);
     // },
   },
 });
@@ -44,8 +44,8 @@ export const {
   setProductsCount,
   setFilteredProducts,
   setCategories,
-  // addProduct,
-  // updateProduct,
-  // deleteProduct,
+  // addCategory,
+  // updateCategory,
+  // deletePCategory,
 } = productsSlice.actions;
 export const productsReducer = productsSlice.reducer;

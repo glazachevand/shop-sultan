@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { SortType } from "types/filters";
-import { IProduct } from "types/products";
+import { ICategory, IProduct } from "types/products";
 
 export type QueryParams = {
-  categories?: string[];
+  typecare?: string[];
   priceMin?: number;
   priceMax?: number;
   manufacturers?: string[];
@@ -19,12 +19,12 @@ export const productsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], QueryParams>({
-      query: ({ priceMin, priceMax, categories, manufacturers, sort, search, page, limit = 9 }) => {
+      query: ({ priceMin, priceMax, typecare, manufacturers, sort, search, page, limit = 9 }) => {
         const newSearchParams = new URLSearchParams();
         let str = "";
 
-        if (categories) {
-          for (const item of categories) {
+        if (typecare) {
+          for (const item of typecare) {
             newSearchParams.append("typecare_like", item);
           }
         }
@@ -62,7 +62,7 @@ export const productsApi = createApi({
     getOneProduct: builder.query<IProduct, number>({
       query: (id: number) => ({ url: `/products/${id}` }),
     }),
-    getCategories: builder.query<string[], void>({
+    getCategories: builder.query<ICategory[], void>({
       query: () => ({
         url: `/categories`,
       }),
@@ -91,6 +91,29 @@ export const productsApi = createApi({
       }),
       invalidatesTags: ["Product"],
     }),
+    createCategory: builder.mutation<ICategory, ICategory>({
+      query: (category) => ({
+        url: `/categories`,
+        method: "POST",
+        body: category,
+      }),
+      invalidatesTags: ["Categories"],
+    }),
+    updateCategory: builder.mutation<ICategory, ICategory>({
+      query: (category) => ({
+        url: `/categories/${category.id}`,
+        method: "PUT",
+        body: category,
+      }),
+      invalidatesTags: ["Categories"],
+    }),
+    deleteCategory: builder.mutation<ICategory, number>({
+      query: (id) => ({
+        url: `/categories/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Categories"],
+    }),
   }),
 });
 
@@ -102,4 +125,7 @@ export const {
   useCreateProductMutation,
   useUpdateProductMutation,
   useDeleteProductMutation,
+  useCreateCategoryMutation,
+  useUpdateCategoryMutation,
+  useDeleteCategoryMutation,
 } = productsApi;

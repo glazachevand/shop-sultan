@@ -17,7 +17,7 @@ interface FormProductProps {
 export const FormProduct = (props: FormProductProps) => {
   const { className, product, onClose } = props;
   const dispatch = useAppDispatch();
-  const allCategories = useAppSelector((state) => state.products.categories);
+  const categories = useAppSelector((state) => state.products.categories);
   const lastId = useAppSelector((state) => state.products.productsCount);
 
   const productItem: IProduct = {
@@ -59,9 +59,7 @@ export const FormProduct = (props: FormProductProps) => {
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (product) {
-      updateProduct(item).then(() => {
-
-      });
+      updateProduct(item);
     } else {
       addProduct(item).then(() => {
         dispatch(setProductsCount(lastId + 1));
@@ -108,8 +106,8 @@ export const FormProduct = (props: FormProductProps) => {
 
         <div className={cls.label}>Тип ухода</div>
         <ul>
-          {allCategories.length && allCategories.map(category => category !== 'Все' && (
-            <Checkbox item={category} key={category} checked={item.typecare.includes(category)} change={onCheckHandler} />
+          {categories.length && categories.map(category => (
+            <Checkbox item={category.title} key={category.id} checked={item.typecare.includes(category.title)} change={onCheckHandler} />
           ))}
         </ul>
 
