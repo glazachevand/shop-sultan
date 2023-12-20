@@ -1,7 +1,6 @@
-import { useAppDispatch, useAppSelector } from "hooks/redux";
+import { useAppSelector } from "hooks/redux";
 import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from "react";
-import { useCreateProductMutation, useUpdateProductMutation } from "services/products.api";
-import { setProductsCount } from "store/reducers/productsSlice";
+import { useCreateProductMutation, useGetProductsQuery, useUpdateProductMutation } from "services/products.api";
 import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
 import { Button } from "../Button/Button";
@@ -16,12 +15,11 @@ interface FormProductProps {
 
 export const FormProduct = (props: FormProductProps) => {
   const { className, product, onClose } = props;
-  const dispatch = useAppDispatch();
   const categories = useAppSelector((state) => state.products.categories);
-  const lastId = useAppSelector((state) => state.products.productsCount);
+  const { data: products } = useGetProductsQuery({});
 
   const productItem: IProduct = {
-    id: product?.id || lastId + 1 || 1,
+    id: product?.id || 1,
     title: product?.title || '',
     url: product?.url || 'product1.webp',
     barcode: product?.barcode || 6684049097549,
@@ -61,8 +59,9 @@ export const FormProduct = (props: FormProductProps) => {
     if (product) {
       updateProduct(item);
     } else {
+      item.id = products?.length ? (products[products.length - 1].id + 1) : 1;
+      console.log('item', item);
       addProduct(item).then(() => {
-        dispatch(setProductsCount(lastId + 1));
         setItem(productItem);
       });
     }
@@ -90,7 +89,7 @@ export const FormProduct = (props: FormProductProps) => {
         <input className={cls.input} name="manufacturer" type="text" value={item?.manufacturer} onChange={onChangeHandler} required />
 
         <div className={cls.label}>Описание</div>
-        <textarea className={cls.input} name="description" value={item?.description} onChange={onChangeHandler} required></textarea>
+        <textarea className={cls.input} name="description" value={item?.description} onChange={onChangeHandler} ></textarea>
 
         <div className={cls.label}>Тип размера</div>
         <label htmlFor="weight">Вес</label>
@@ -112,7 +111,7 @@ export const FormProduct = (props: FormProductProps) => {
         </ul>
 
         <div className={cls.label}>Цена</div>
-        <input className={cls.input} name="price" type="text" value={item?.price} onChange={onChangeNumberHandler} required />
+        <input className={cls.input} name="price" type="number" value={item?.price} onChange={onChangeNumberHandler} required />
 
         <Button className={cls.submit} type="submit" text="Сохранить" width="200px" height="59px" />
       </form>

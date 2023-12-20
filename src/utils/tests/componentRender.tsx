@@ -9,7 +9,7 @@ export interface componentRenderOptions {
 
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
   const {
-    route = '/catalog',
+    route = '/',
     //initialState,
   } = options;
 

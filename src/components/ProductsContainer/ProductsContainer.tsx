@@ -5,6 +5,7 @@ import { ProductsList } from "./ProductsList/ProductsList";
 import { useGetProductsQuery } from "services/products.api";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "hooks/redux";
+import { Loader } from "components/UI/Loader/Loader";
 
 interface ProductsContainerProps {
   className?: string;
@@ -31,7 +32,7 @@ export const ProductsContainer = (props: ProductsContainerProps) => {
   return (
     <div className={classNames(cls.productsContainer, {}, [className])}>
       {isLoading ? (
-        <p className="text-center">Loading...</p>
+        <div className="text-center"><Loader /></div>
       ) : isError ? (
         <h2 className={classNames(cls.productsTitle, {}, ["title2"])}>Ошибка при загрузке с сервера <span>😕</span></h2>
       ) : !filteredPageProducts.length ? (

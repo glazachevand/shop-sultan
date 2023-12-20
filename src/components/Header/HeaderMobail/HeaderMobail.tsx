@@ -17,7 +17,7 @@ export const HeaderMobail = () => {
       <div className={cls.rowMobail}>
         <div className={`${cls.topContainerMobail} _container`}>
           <Burger />
-          <Link to="/catalog" className={cls.logo}><img src={Logo} alt="logo" /></Link>
+          <Link to="/" className={cls.logo}><img src={Logo} alt="logo" /></Link>
           <CartBtn isText={false} className={cls.cartBtn} />
         </div>
       </div>
@@ -34,7 +34,7 @@ export const HeaderMobail = () => {
               />
             </div>
             : <>
-              <Link to="/catalog" className={cls.catalog}>
+              <Link to="/" className={cls.catalog}>
                 <img src={CatalogIcon} alt="catalog" />
                 <p>Каталог</p>
               </Link>

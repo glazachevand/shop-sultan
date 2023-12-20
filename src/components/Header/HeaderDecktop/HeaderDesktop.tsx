@@ -22,8 +22,8 @@ export const HeaderDesktop = () => {
       </div>
       <div className={cls.row}>
         <div className={`${cls.botttomContainer} _container`}>
-          <Link to="/catalog" className={cls.logo}><img src={Logo} alt="logo" /></Link>
-          <Link to="/catalog">
+          <Link to="/" className={cls.logo}><img src={Logo} alt="logo" /></Link>
+          <Link to="/">
             <Button text='Каталог' icon='catalog' width='192px' height='59px' />
           </Link>
           <Search type='header' />

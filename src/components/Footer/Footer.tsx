@@ -17,7 +17,7 @@ export const Footer = () => {
       <div className="_container">
         <div className={cls.container}>
           <div className={cls.logoCol}>
-            <Link to="/catalog" className={cls.logo}><img src={Logo} alt="logo" /></Link>
+            <Link to="/" className={cls.logo}><img src={Logo} alt="logo" /></Link>
             <p className={cls.description}>
               Компания &laquo;Султан&raquo;&nbsp;&mdash; снабжаем розничные магазины товарами
               &laquo;под ключ&raquo; в&nbsp;Кокчетаве и&nbsp;Акмолинской области

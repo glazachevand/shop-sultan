@@ -39,6 +39,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     "@typescript-eslint/no-unused-vars": 'warn',
     "@typescript-eslint/no-var-requires": 'warn',
+    "@typescript-eslint/no-explicit-any": 'warn',
     // отключаем ошибку на обязательное дефолтное значение для не обязательных ключей массива
     'react/require-default-props': 'off',
     // отключаем ошибку на обязательный импорт react

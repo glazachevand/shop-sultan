@@ -18,7 +18,6 @@ export interface IProduct {
   popular?: boolean;
 }
 export interface IProductsState {
-  productsCount: number;
   filteredProducts: IProduct[];
   categories: ICategory[];
   manufactures: [string, number][];

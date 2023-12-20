@@ -13,7 +13,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
   return (
     <nav className={cls.breadcrumb}>
       <ul className={cls.breadcrumb__list} data-testid="breadcrumbs-list">
-        <li><Link to={ROUTES.HOME} className={cls.breadcrumb__link}>Главная</Link></li>
+        <li><Link to={ROUTES.CATALOG} className={cls.breadcrumb__link}>Главная</Link></li>
         <li><div className={cls.breadcrumb__item} >{item}</div></li>
       </ul>
     </nav>

@@ -269,19 +269,16 @@
       "popular": true
     },
     {
-      "id": 19,
-      "title": "3333333333333",
+      "id": 18,
+      "title": "123312",
       "url": "product1.webp",
       "barcode": 6684049097549,
-      "manufacturer": "asd",
-      "brand": "asd",
-      "description": "asd",
+      "manufacturer": "123",
+      "brand": "123",
+      "description": "123",
       "typesize": "вес",
-      "size": "asd",
+      "size": "123",
       "typecare": [
-        "Уход за телом",
-        "Уход за руками",
-        "Уход за ногами",
         "Уход за лицом"
       ],
       "price": 11
