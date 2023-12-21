@@ -8,7 +8,7 @@ import { ProductFull } from 'components/ProductFull/ProductFull';
 import { productsApi } from 'services/products.api';
 import { Loader } from 'components/UI/Loader/Loader';
 
-export const FullProductPage: FC = () => {
+const FullProductPage: FC = () => {
   const { id } = useParams();
   const { isLoading, data: product, isError } = productsApi.useGetOneProductQuery(Number(id));
   const isMobile = useMediaQuery({ maxWidth: 1024 });
@@ -27,3 +27,5 @@ export const FullProductPage: FC = () => {
     </div>
   );
 };
+
+export default FullProductPage;

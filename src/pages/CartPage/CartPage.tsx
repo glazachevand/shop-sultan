@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { clearCart } from 'store/reducers/cartSlice';
 import { Modal } from 'components/UI/Modal/Modal';
 
-export const CartPage: FC = () => {
+const CartPage: FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 1024 });
   const { totalPrice, totalCounts } = useAppSelector(state => state.cart);
@@ -51,3 +51,5 @@ export const CartPage: FC = () => {
     </div >
   );
 };
+
+export default CartPage;

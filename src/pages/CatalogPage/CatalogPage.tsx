@@ -19,7 +19,7 @@ import { ICategory } from 'types/products';
 import { Loader } from 'components/UI/Loader/Loader';
 
 
-export const CatalogPage: FC = () => {
+const CatalogPage: FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 1024 });
   const [addCategory, setAddCategory] = useState(false);
@@ -92,3 +92,5 @@ export const CatalogPage: FC = () => {
     </div>
   );
 };
+
+export default CatalogPage;

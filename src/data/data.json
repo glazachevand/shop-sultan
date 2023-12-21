@@ -270,7 +270,7 @@
     },
     {
       "id": 18,
-      "title": "123312",
+      "title": "123",
       "url": "product1.webp",
       "barcode": 6684049097549,
       "manufacturer": "123",
@@ -279,9 +279,10 @@
       "typesize": "вес",
       "size": "123",
       "typecare": [
-        "Уход за лицом"
+        "Уход за телом",
+        "Уход за руками"
       ],
-      "price": 11
+      "price": 12
     }
   ],
   "categories": [

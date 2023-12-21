@@ -3,7 +3,7 @@ import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
 import { FC } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-export const NotFoundPage: FC = () => {
+const NotFoundPage: FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });
 
   return (
@@ -16,4 +16,6 @@ export const NotFoundPage: FC = () => {
       </section >
     </div >
   );
-};
+}
+
+export default NotFoundPage;
