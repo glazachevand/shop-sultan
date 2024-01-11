@@ -13,7 +13,7 @@ const meta: Meta<typeof CategoryGlobalMenu> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof CategoryGlobalMenu>;
 
 export const Primary: Story = {
   args: {

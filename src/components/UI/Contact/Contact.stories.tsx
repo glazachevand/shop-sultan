@@ -13,7 +13,7 @@ const meta: Meta<typeof Contact> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Contact>;
 
 export const LocationHeader: Story = {
   args: {

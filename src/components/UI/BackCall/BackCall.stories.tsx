@@ -12,7 +12,7 @@ const meta: Meta<typeof BackCall> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof BackCall>;
 
 export const InHeader: Story = {
   args: {

@@ -1,18 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from 'storybook-addon-react-router-v6';
-import { Header } from "./Header";
 
-const meta: Meta<typeof Header> = {
-  title: "Components/Header",
-  component: Header,
+import { BackButton } from "./BackButton";
+
+const meta: Meta<typeof BackButton> = {
+  title: "UI/BackButton",
+  component: BackButton,
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
   },
   tags: ["autodocs"],
   decorators: [withRouter],
 };
 
 export default meta;
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof BackButton>;
 
 export const Primary: Story = {}

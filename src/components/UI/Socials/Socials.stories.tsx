@@ -12,7 +12,7 @@ const meta: Meta<typeof Socials> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Socials>;
 
 export const InFooter: Story = {
   parameters: {

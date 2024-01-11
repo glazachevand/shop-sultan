@@ -14,7 +14,7 @@ const meta: Meta<typeof Modal> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Modal>;
 
 export const Burger: Story = {
   args: {

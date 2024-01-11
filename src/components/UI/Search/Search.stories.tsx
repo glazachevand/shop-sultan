@@ -12,7 +12,7 @@ const meta: Meta<typeof Search> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Search>;
 
 export const InHeader: Story = {
   args: {

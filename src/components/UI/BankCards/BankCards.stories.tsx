@@ -12,7 +12,7 @@ const meta: Meta<typeof BankCards> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof BankCards>;
 
 export const Primary: Story = {
   parameters: {

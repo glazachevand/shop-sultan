@@ -9,14 +9,32 @@ const meta: Meta<typeof Breadcrumbs> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  decorators: [withRouter],
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Breadcrumbs>;
 
-export const Primary: Story = {
+export const Catalog: Story = {
   args: {
     item: "Косметика и гигиена",
   },
-  decorators: [withRouter],
+};
+
+export const Fullproduct: Story = {
+  args: {
+    item: "Страница товара",
+  },
+};
+
+export const Cart: Story = {
+  args: {
+    item: "Корзина",
+  },
+};
+
+export const NotFound: Story = {
+  args: {
+    item: "Страница 404",
+  },
 };
