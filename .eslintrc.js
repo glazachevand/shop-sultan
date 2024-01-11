@@ -55,7 +55,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     // разрешим нижние подчеркивания в названиях переменных
     'no-underscore-dangle': 'off',
-    // будет подсвечивать отсутствие переводов только в js
+    'react/display-name': 'warn',
   },
   settings: {
     react: {

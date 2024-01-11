@@ -8,7 +8,6 @@ import { BackCall } from 'components/UI/BackCall/BackCall';
 import { Search } from 'components/UI/Search/Search';
 import { CartBtn } from 'components/UI/CartBtn/CartBtn';
 import { Button } from 'components/UI/Button/Button';
-import { useState } from 'react';
 
 export const HeaderDesktop = () => {
   return (

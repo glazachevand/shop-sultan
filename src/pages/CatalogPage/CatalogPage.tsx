@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { setCategories, setFilteredProducts } from 'store/reducers/productsSlice';
 import { Button } from 'components/UI/Button/Button';
 import { Modal } from 'components/UI/Modal/Modal';
-import { FormProduct } from 'components/UI/FormProduct/FormProduct';
+import { FormProduct } from 'components/FormProduct/FormProduct';
 import { setPage } from 'store/reducers/filterSlice';
 import { CategoryItem } from 'components/UI/CategoryMenu/CategoryItem/CategoryItem';
 import { ICategory } from 'types/products';

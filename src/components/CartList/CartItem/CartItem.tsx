@@ -14,7 +14,7 @@ interface CartItemProps {
 
 export const CartItem = (props: CartItemProps) => {
   const { cartItem } = props;
-  const imgSrc = require(`assets/img/products/${cartItem.url}`);
+  const imgSrc = require(`../../../assets/img/products/${cartItem.url}`);
   const dispatch = useAppDispatch();
 
   return (

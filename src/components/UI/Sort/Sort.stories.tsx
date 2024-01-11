@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { RootState } from "store/store";
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
 
-import { Pagination } from "./Pagination";
+import { Sort } from "./Sort";
 
 const preloadedState: Partial<RootState> = {
   filters: {
@@ -11,14 +11,14 @@ const preloadedState: Partial<RootState> = {
     priceMax: 10000,
     manufacturers: [],
     limit: 9,
-    page: 2,
+    page: 1,
     sort: ["price", "asc"],
   },
 }
 
-const meta: Meta<typeof Pagination> = {
-  title: "UI/Pagination",
-  component: Pagination,
+const meta: Meta<typeof Sort> = {
+  title: "UI/Sort",
+  component: Sort,
   parameters: {
     layout: "centered",
   },
@@ -26,12 +26,9 @@ const meta: Meta<typeof Pagination> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Pagination>;
+type Story = StoryObj<typeof Sort>;
 
 export const Primary: Story = {
-  args: {
-    productsCount: 28
-  },
   decorators: [
     StoreDecorator(preloadedState)
   ]

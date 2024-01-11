@@ -29,7 +29,7 @@ export const ProductFull = (props: ProductFullProps) => {
   const [showDescr, setDescrShow] = useState(true);
   const [showProp, setPropShow] = useState(true);
 
-  const imgSrc = require(`assets/img/products/${product?.url}`) || '';
+  const imgSrc = require(`../../assets/img/products/${product?.url}`) || '';
 
   return (
     <>

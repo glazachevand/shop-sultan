@@ -1,16 +1,16 @@
+import { Button } from "components/UI/Button/Button";
+import { Checkbox } from "components/UI/Checkbox/Checkbox";
 import { useAppSelector } from "hooks/redux";
 import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from "react";
 import { useCreateProductMutation, useGetProductsQuery, useUpdateProductMutation } from "services/products.api";
 import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
-import { Button } from "../Button/Button";
-import { Checkbox } from "../Checkbox/Checkbox";
 import cls from "./FormProduct.module.scss";
 
 interface FormProductProps {
   className?: string;
   product?: IProduct;
-  onClose: Dispatch<SetStateAction<boolean>>;
+  onClose?: Dispatch<SetStateAction<boolean>>;
 }
 
 export const FormProduct = (props: FormProductProps) => {
@@ -56,6 +56,7 @@ export const FormProduct = (props: FormProductProps) => {
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (product) {
       updateProduct(item);
     } else {
@@ -65,7 +66,10 @@ export const FormProduct = (props: FormProductProps) => {
         setItem(productItem);
       });
     }
-    onClose(false);
+
+    if (onClose) {
+      onClose(false)
+    }
   };
 
   return (

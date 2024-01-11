@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { addProductToCart } from 'store/reducers/cartSlice';
 import { ICartItem } from 'types/cart';
 import { Modal } from 'components/UI/Modal/Modal';
-import { FormProduct } from 'components/UI/FormProduct/FormProduct';
+import { FormProduct } from 'components/FormProduct/FormProduct';
 import { useState } from 'react';
 import { useDeleteProductMutation } from 'services/products.api';
 
@@ -20,7 +20,7 @@ export const ProductShort = (props: ProductShorttProps) => {
   const { product } = props;
   const [openModal, setOpenModal] = useState(false);
   const dispatch = useAppDispatch();
-  const imgSrc = require(`assets/img/products/${product.url}`);
+  const imgSrc = require(`../../../assets/img/products/${product.url}`);
   const isAdmin = useAppSelector(state => state.user.isAdmin);
 
   const [deleteProduct, { error }] = useDeleteProductMutation();
