@@ -1,5 +1,4 @@
 import { useAppSelector } from "hooks/redux";
-import { ICartItem } from "types/cart";
 import { classNames } from "utils/classNames/classNames";
 import { CartItem } from "./CartItem/CartItem";
 import cls from "./CartList.module.scss";

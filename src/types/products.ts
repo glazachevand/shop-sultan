@@ -21,4 +21,5 @@ export interface IProductsState {
   filteredProducts: IProduct[];
   categories: ICategory[];
   manufactures: [string, number][];
+  countProducts: number;
 }

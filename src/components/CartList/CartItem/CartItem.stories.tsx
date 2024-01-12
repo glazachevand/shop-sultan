@@ -4,7 +4,7 @@ import { StoreDecorator } from "utils/storybook/StoreDecorator";
 import { CartItem } from "./CartItem";
 
 const meta: Meta<typeof CartItem> = {
-  title: "Components/CartItem",
+  title: "Components/CartList/CartItem",
   component: CartItem,
   parameters: {
     layout: "centered",
@@ -38,6 +38,5 @@ export const Primary: Story = {
       count: 3
     }
     return <CartItem cartItem={cartItem} />
-
   }
 }

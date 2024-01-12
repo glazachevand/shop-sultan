@@ -6,6 +6,7 @@ import { useGetProductsQuery } from "services/products.api";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "hooks/redux";
 import { Loader } from "components/UI/Loader/Loader";
+import { IProduct } from "types/products";
 
 interface ProductsContainerProps {
   className?: string;
@@ -13,11 +14,8 @@ interface ProductsContainerProps {
 
 export const ProductsContainer = (props: ProductsContainerProps) => {
   const { className } = props;
-
   const { typecare, priceMin, priceMax, manufacturers, sort, page, limit } = useAppSelector((state) => state.filters);
-  const filteredProducts = useAppSelector(state => state.products.filteredProducts);
-  const [filteredPageProducts, setFilteredPageProduct] = useState(filteredProducts);
-
+  const [filteredPageProducts, setFilteredPageProduct] = useState<IProduct[]>([]);
   const { isLoading, data: fetchFilteredPageProducts, isError } = useGetProductsQuery({ priceMin, priceMax, typecare, manufacturers, sort, page, limit });
 
   useEffect(() => {
@@ -40,7 +38,7 @@ export const ProductsContainer = (props: ProductsContainerProps) => {
       ) : (
         <>
           <ProductsList products={filteredPageProducts} className={cls.products} />
-          <Pagination className={cls.pagination} productsCount={filteredProducts.length} />
+          <Pagination className={cls.pagination} />
         </>
       )}
       <p className={cls.footer}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis

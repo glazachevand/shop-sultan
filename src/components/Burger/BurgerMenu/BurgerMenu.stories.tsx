@@ -3,7 +3,7 @@ import { withRouter } from 'storybook-addon-react-router-v6';
 import { BurgerMenu } from "./BurgerMenu";
 
 const meta: Meta<typeof BurgerMenu> = {
-  title: "Components/BurgerMenu",
+  title: "Components/Burger/BurgerMenu",
   component: BurgerMenu,
   parameters: {
     layout: "fullscreen",

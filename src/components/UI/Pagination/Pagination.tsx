@@ -2,52 +2,21 @@ import { classNames } from "utils/classNames/classNames";
 import cls from "./Pagination.module.scss";
 import Next from "assets/icons/arrow-yellow.svg"
 import { useAppDispatch, useAppSelector } from "hooks/redux";
-import { useEffect } from "react";
-import { setLimit, setPage } from "store/reducers/filterSlice";
-import { limitPerPage } from "types/pages";
+import { setPage } from "store/reducers/filterSlice";
 interface PaginationProps {
   className?: string;
-  productsCount: number
 }
 
 export const Pagination = (props: PaginationProps) => {
-  const { className, productsCount } = props;
+  const { className } = props;
 
   const dispatch = useAppDispatch();
   const { page, limit } = useAppSelector((state) => state.filters);
+  const countProducts = useAppSelector((state) => state.products.countProducts);
   let pagesCount = 0;
 
-  useEffect(() => {
-    const mediaNDesktop = window.matchMedia('(min-width: 1400.98px)');
-    const mediaNotebook = window.matchMedia('(max-width: 1400px)');
-    const mediaMobile = window.matchMedia('(max-width: 1024px)');
-
-    function adaptPagination() {
-      if (mediaMobile.matches) {
-        dispatch(setLimit(limitPerPage.MOBILE));
-      } else if (mediaNotebook.matches) {
-        dispatch(setLimit(limitPerPage.NOTEBOOK));
-      } else if (mediaNDesktop.matches) {
-        dispatch(setLimit(limitPerPage.DESKTOP));
-      }
-    }
-
-    adaptPagination();
-
-    mediaNDesktop.addEventListener('change', adaptPagination);
-    mediaNotebook.addEventListener('change', adaptPagination);
-    mediaMobile.addEventListener('change', adaptPagination);
-
-    return () => {
-      mediaNDesktop.removeEventListener('change', adaptPagination);
-      mediaNotebook.removeEventListener('change', adaptPagination);
-      mediaMobile.removeEventListener('change', adaptPagination);
-    };
-
-  }, []);
-
-  if (limit && productsCount) {
-    pagesCount = Math.ceil(productsCount / limit);
+  if (limit && countProducts) {
+    pagesCount = Math.ceil(countProducts / limit);
   }
 
   return (

@@ -7,6 +7,7 @@ const initialState: IProductsState = {
   filteredProducts: [],
   categories: [],
   manufactures: [],
+  countProducts: 0,
 };
 
 export const productsSlice = createSlice({
@@ -16,6 +17,7 @@ export const productsSlice = createSlice({
     setFilteredProducts: (state, action: PayloadAction<IProduct[]>) => {
       state.filteredProducts = action.payload;
       state.manufactures = getManufactures(action.payload);
+      state.countProducts = action.payload.length;
     },
     setCategories: (state, action: PayloadAction<ICategory[]>) => {
       state.categories = action.payload;

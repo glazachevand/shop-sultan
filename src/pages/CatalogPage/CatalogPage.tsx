@@ -17,7 +17,8 @@ import { setPage } from 'store/reducers/filterSlice';
 import { CategoryItem } from 'components/UI/CategoryMenu/CategoryItem/CategoryItem';
 import { ICategory } from 'types/products';
 import { Loader } from 'components/UI/Loader/Loader';
-
+import { limitPerPage } from "types/pages";
+import { setLimit } from "store/reducers/filterSlice";
 
 const CatalogPage: FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -30,6 +31,35 @@ const CatalogPage: FC = () => {
 
   const { data: fetchCategories } = useGetCategoriesQuery();
   const { data: fetchFilteredProducts, isLoading, isError } = useGetProductsQuery({ priceMin, priceMax, typecare, manufacturers, sort })
+
+  useEffect(() => {
+    const mediaNDesktop = window.matchMedia('(min-width: 1400.98px)');
+    const mediaNotebook = window.matchMedia('(max-width: 1400px)');
+    const mediaMobile = window.matchMedia('(max-width: 1024px)');
+
+    function adaptPagination() {
+      if (mediaMobile.matches) {
+        dispatch(setLimit(limitPerPage.MOBILE));
+      } else if (mediaNotebook.matches) {
+        dispatch(setLimit(limitPerPage.NOTEBOOK));
+      } else if (mediaNDesktop.matches) {
+        dispatch(setLimit(limitPerPage.DESKTOP));
+      }
+    }
+
+    adaptPagination();
+
+    mediaNDesktop.addEventListener('change', adaptPagination);
+    mediaNotebook.addEventListener('change', adaptPagination);
+    mediaMobile.addEventListener('change', adaptPagination);
+
+    return () => {
+      mediaNDesktop.removeEventListener('change', adaptPagination);
+      mediaNotebook.removeEventListener('change', adaptPagination);
+      mediaMobile.removeEventListener('change', adaptPagination);
+    };
+
+  }, []);
 
   useEffect(() => {
     if (fetchCategories && fetchCategories.length) {

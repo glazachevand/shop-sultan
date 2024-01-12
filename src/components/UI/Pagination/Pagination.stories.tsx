@@ -14,6 +14,12 @@ const preloadedState: Partial<RootState> = {
     page: 2,
     sort: ["price", "asc"],
   },
+  products: {
+    filteredProducts: [],
+    categories: [],
+    manufactures: [],
+    countProducts: 100
+  },
 }
 
 const meta: Meta<typeof Pagination> = {
@@ -29,9 +35,6 @@ export default meta;
 type Story = StoryObj<typeof Pagination>;
 
 export const Primary: Story = {
-  args: {
-    productsCount: 28
-  },
   decorators: [
     StoreDecorator(preloadedState)
   ]
