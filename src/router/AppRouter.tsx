@@ -1,7 +1,3 @@
-// import CartPage from 'pages/CartPage/CartPage';
-// import CatalogPage from 'pages/CatalogPage/CatalogPage';
-// import FullProductPage from 'pages/FullProductPage/FullProductPage';
-// import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ROUTES } from 'types/const/routes';
