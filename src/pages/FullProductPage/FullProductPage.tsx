@@ -14,7 +14,7 @@ const FullProductPage: FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });
 
   return (
-    <div className='_container'>
+    <div className='_container' data-testid='fullproduct-page'>
       {!isMobile ?
         <Breadcrumbs item={product ? product.title : 'Страница товара'} />
         : <BackButton className="backButton" />}

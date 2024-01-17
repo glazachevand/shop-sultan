@@ -26,7 +26,7 @@ const CartPage: FC = () => {
   }, []);
 
   return (
-    <div className='_container'>
+    <div className='_container' data-testid='cart-page'>
       {!isMobile ?
         <Breadcrumbs item='Корзина' />
         : <BackButton className="backButton" />}

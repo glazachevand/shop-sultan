@@ -75,7 +75,7 @@ const CatalogPage: FC = () => {
   }, [dispatch, fetchFilteredProducts?.length, fetchFilteredProducts]);
 
   return (
-    <div className='_container'>
+    <div className='_container' data-testid='catalog-page'>
       {!isMobile ?
         <Breadcrumbs item='Косметика и гигиена' />
         : <BackButton className="backButton" />}

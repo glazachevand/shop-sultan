@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { RootState } from "store/store";
-import { IProduct } from "types/products";
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
 import { ProductFull } from "./ProductFull";
 

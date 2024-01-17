@@ -7,7 +7,7 @@ const NotFoundPage: FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });
 
   return (
-    <div className='_container'>
+    <div className='_container' data-testid='notfound-page'>
       {!isMobile ?
         <Breadcrumbs item='Страница 404' />
         : <BackButton className="backButton" />}

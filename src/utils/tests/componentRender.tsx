@@ -1,25 +1,27 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { RootState, setupStore } from 'store/store';
+import { Provider } from "react-redux";
 
 export interface componentRenderOptions {
   route?: string;
-  //initialState?: DeepPartial<StateSchema>;
+  preloadedState?: Partial<RootState>;
 }
 
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
   const {
     route = '/',
-    //initialState,
+    preloadedState,
   } = options;
 
   return render(
     <MemoryRouter initialEntries={[route]}>
-      {/* <StoreProvider initialState={initialState}>
-        <I18nextProvider i18n={i18nForTests}> */}
-      {component}
-      {/* </I18nextProvider>
-      </StoreProvider> */}
+      <Provider store={setupStore(preloadedState)}>
+        {/*  <I18nextProvider i18n={i18nForTests}> */}
+        {component}
+        {/* </I18nextProvider>*/}
+      </Provider>
     </MemoryRouter>
   );
 }
