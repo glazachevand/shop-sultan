@@ -1,9 +1,7 @@
 import { screen } from "@testing-library/react";
-import React, { ReactNode } from "react";
+import React from "react";
 import { AppRouter } from "router/AppRouter";
 import { componentRender } from "utils/tests/componentRender";
-import { Route, Routes } from 'react-router-dom';
-import { ROUTES } from 'types/const/routes';
 
 describe('App.test', () => {
   test('Catalog page test', async () => {

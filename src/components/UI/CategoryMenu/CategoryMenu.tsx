@@ -25,7 +25,7 @@ export const CategoryMenu = (props: CategoryMenuProps) => {
   };
 
   return (
-    <ul className={classNames(cls.categoryMenu, mods, [className])}>
+    <ul className={classNames(cls.categoryMenu, mods, [className])} data-testid="categoryMenu">
       {categories?.map((item) => type === 'admin' ?
         <CategoryItem key={item.id} category={item} />
         :

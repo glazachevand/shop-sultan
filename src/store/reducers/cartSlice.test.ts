@@ -49,6 +49,14 @@ describe("cartSlice.test", () => {
     };
   });
 
+  test("should return the initial state", () => {
+    expect(cartReducer(undefined, { type: undefined })).toEqual({
+      items: [],
+      totalPrice: 0,
+      totalCounts: 0,
+    });
+  });
+
   test("clearCart test", () => {
     const finishState = {
       items: [],

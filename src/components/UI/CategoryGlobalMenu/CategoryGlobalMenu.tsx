@@ -18,7 +18,7 @@ export const CategoryGlobalMenu = (props: CategoryGlobalMenuProps) => {
   }
 
   return (
-    <nav className={classNames(cls.CategoryGlobalMenu, mods, [className])}>
+    <nav className={classNames(cls.CategoryGlobalMenu, mods, [className])} data-testid="categoryGlobalMenu">
       <ul className={cls.list}>
         {CategoryGlobalMenuElem}
       </ul>
