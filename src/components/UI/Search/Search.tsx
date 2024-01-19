@@ -61,7 +61,7 @@ export const Search = (props: SearchProps) => {
         }
       </div>
       {type === 'header' && dropdown && (
-        <ul className={cls.dropdown}>
+        <ul className={cls.dropdown} data-testid="dropdown">
           {isLoading && <p>Загружается...</p>}
           {isError && <p>Нет ответа от сервера...</p>}
           {products?.map((product) => (

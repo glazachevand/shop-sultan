@@ -14,7 +14,7 @@ export const CheckboxList = (props: CheckboxListProps) => {
   const { className, manufShow, checkedManuf, change } = props;
 
   return (
-    <div className={classNames(cls.checkboxList, {}, [className])}>
+    <div className={classNames(cls.checkboxList, {}, [className])} data-testid="checkboxList">
       {manufShow && manufShow.map((elem) =>
         <Checkbox
           key={elem[0]}

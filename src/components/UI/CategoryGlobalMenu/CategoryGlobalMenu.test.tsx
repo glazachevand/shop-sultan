@@ -1,10 +1,10 @@
 import { screen } from "@testing-library/react";
-import { componentRender } from "utils/tests/componentRender";
+import { renderWithRouter } from "utils/tests/renderWithRouter";
 import { CategoryGlobalMenu } from "./CategoryGlobalMenu";
 
 describe('CategoryGlobalMenu.test', () => {
-  test('Test footer global menu', () => {
-    componentRender(<CategoryGlobalMenu type="footer" />);
+  test('Test render footer global menu', () => {
+    renderWithRouter(<CategoryGlobalMenu type="footer" />);
     const elem = screen.getByTestId('categoryGlobalMenu');
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveClass("CategoryGlobalMenu");

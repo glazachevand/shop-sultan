@@ -9,7 +9,7 @@ interface SubscriptionProps {
 export const Subscription = (props: SubscriptionProps) => {
   const { className } = props;
   return (
-    <form action="#" className={classNames(cls.subscription, {}, [className])}>
+    <form action="#" className={classNames(cls.subscription, {}, [className])} data-testid="subscription">
       <label htmlFor="subscription" className={cls.label}>
         Подпишись на скидки и акции
       </label>

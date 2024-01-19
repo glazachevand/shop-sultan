@@ -12,7 +12,7 @@ interface CountContainerProps {
 export const CountContainer = (props: CountContainerProps) => {
   const { className = '', value = 0, plusHandler, minusHandler } = props;
   return (
-    <div className={classNames(cls.countContainer, {}, [className])}>
+    <div className={classNames(cls.countContainer, {}, [className])} data-testid="countContainer">
       <Button
         text="-"
         form="minus"

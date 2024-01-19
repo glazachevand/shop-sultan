@@ -25,7 +25,7 @@ export const LocationHeader: Story = {
 
 export const LocationFooter: Story = {
   args: {
-    type: 'email',
+    type: 'location',
     color: 'white',
     isIcon: false
   },
@@ -46,7 +46,7 @@ export const EmailHeader: Story = {
 
 export const EmailFooter: Story = {
   args: {
-    type: 'location',
+    type: 'email',
     color: 'white',
     isIcon: false
   },

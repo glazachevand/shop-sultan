@@ -10,5 +10,4 @@ describe('Checkbox.test', () => {
     expect(screen.getByRole('checkbox')).toBeChecked();
     expect(screen.getByText(/Булгари Грин/)).toBeInTheDocument();
   });
-
 });

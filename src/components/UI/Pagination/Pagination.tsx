@@ -22,14 +22,14 @@ export const Pagination = (props: PaginationProps) => {
   return (
     <>
       {page && limit && pagesCount && (
-        <div className={classNames(cls.pagination, {}, [className])}>
+        <div className={classNames(cls.pagination, {}, [className])} data-testid="pagination">
           {page > 1 && (
             <div
               className={cls.prev}
               onClick={() => {
                 dispatch(setPage(page - 1))
               }}>
-              <img src={Next} alt="" />
+              <img src={Next} alt="prev page" />
             </div>
           )}
           <ul className={cls.list}>
@@ -48,7 +48,7 @@ export const Pagination = (props: PaginationProps) => {
               className={cls.next}
               onClick={() => dispatch(setPage(page + 1))}
             >
-              <img src={Next} alt="" />
+              <img src={Next} alt="next page" />
             </div>
           )}
         </div>

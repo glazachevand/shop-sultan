@@ -18,7 +18,7 @@ export const Menu = (props: MenuProps) => {
   }
 
   return (
-    <nav className={classNames(cls.menu, mods, [className])}>
+    <nav className={classNames(cls.menu, mods, [className])} data-testid="menu">
       <ul className={cls.list}>
         {menuElem}
       </ul>

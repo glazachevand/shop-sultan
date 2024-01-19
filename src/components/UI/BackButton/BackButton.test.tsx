@@ -1,10 +1,10 @@
 import { screen } from "@testing-library/react";
-import { componentRender } from "utils/tests/componentRender";
+import { renderWithRouter } from "utils/tests/renderWithRouter";
 import { BackButton } from "./BackButton";
 
 describe('BackButton.test', () => {
   test('Test render BackButton', () => {
-    componentRender(<BackButton />)
+    renderWithRouter(<BackButton />)
     expect(screen.getByText(/Назад/i)).toBeInTheDocument();
   });
 });

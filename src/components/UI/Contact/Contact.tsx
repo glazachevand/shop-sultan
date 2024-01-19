@@ -18,7 +18,7 @@ export const Contact = (props: ContactProps) => {
   }
 
   return (
-    <div className={classNames(cls.contact, mods, [className])}>
+    <div className={classNames(cls.contact, mods, [className])} data-testid="contact">
       {type === 'location' &&
         (<a href="#!">
           {isIcon && (<img src={IconLocation} alt="location" />)}

@@ -1,11 +1,11 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { componentRender } from 'utils/tests/componentRender';
+import { renderWithRouter } from 'utils/tests/renderWithRouter';
 import { Burger } from './Burger';
 
 describe('Burger.test', () => {
 
   test('Test render Burger', () => {
-    componentRender(<Burger />);
+    renderWithRouter(<Burger />);
     const elem = screen.getByTestId('burger');
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveClass('burger');
@@ -13,7 +13,7 @@ describe('Burger.test', () => {
   });
 
   test('Test click on burger', () => {
-    componentRender(<Burger />);
+    renderWithRouter(<Burger />);
     const elem = screen.getByTestId('button');
     fireEvent.click(elem);
     expect(screen.getByTestId('btn')).toHaveClass('navIconActive');

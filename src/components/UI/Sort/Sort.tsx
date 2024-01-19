@@ -31,7 +31,7 @@ export const Sort = (props: SortProps) => {
   }
 
   return (
-    <div className={classNames(cls.sort, {}, [className])}>
+    <div className={classNames(cls.sort, {}, [className])} data-testid="sort">
       <div
         className={`${cls.titleRow} ${open ? cls.open : ''}`}
         onClick={() => setOpen(prev => !prev)}
@@ -40,7 +40,7 @@ export const Sort = (props: SortProps) => {
         <div className={cls.choice}>{choice}</div>
         <img className={cls.arrow} src={Arrow} alt="" />
       </div>
-      <div className={`${cls.popup} ${open ? cls.open : ''}`}>
+      <div className={`${cls.popup} ${open ? cls.open : ''}`} data-testid="popup">
         {choice && SortList.map(item => (
           <div className={cls.popupItem} key={item.value}>
             <input
