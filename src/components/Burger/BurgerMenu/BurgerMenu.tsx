@@ -7,7 +7,7 @@ import { Button } from "components/UI/Button/Button";
 export const BurgerMenu = () => {
 
   return (
-    <div className={cls.burgerMenu}>
+    <div className={cls.burgerMenu} data-testid="burgerMenu">
       <div className='_container'>
         <div className={cls.content}>
           <div className={cls.contacts}>

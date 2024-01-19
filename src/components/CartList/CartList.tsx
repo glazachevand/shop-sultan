@@ -12,7 +12,7 @@ export const CartList = (props: CartListProps) => {
   const items = useAppSelector(state => state.cart.items);
 
   return (
-    <div className={classNames(cls.cartList, {}, [className])}>
+    <div className={classNames(cls.cartList, {}, [className])} data-testid="cartList">
       {items.length ?
         items.map((item) => (
           <CartItem key={item.id} cartItem={item} />

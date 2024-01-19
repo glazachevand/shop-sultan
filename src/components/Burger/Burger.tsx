@@ -12,8 +12,8 @@ export const Burger = () => {
 
   return (
     <div className={cls.burger} data-testid="burger">
-      <div className={cls.button} onClick={onBurgerClick} data-testid="button">
-        <div className={!open ? cls.navIcon : cls.navIconActive} data-testid="btn">
+      <div className={cls.button} onClick={onBurgerClick} data-testid="burgerButton">
+        <div className={!open ? cls.navIcon : cls.navIconActive} data-testid="burgerBtn">
           <span></span>
         </div>
       </div>

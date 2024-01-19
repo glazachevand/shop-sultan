@@ -10,7 +10,12 @@ describe('Header.test', () => {
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveClass('footer');
     expect(elem).toContainHTML('Меню сайта');
+    expect(elem).toContainHTML('Категории:');
+    expect(elem).toContainHTML('Скачать прайс-лист:');
+    expect(elem).toContainHTML('Контакты:');
     expect(elem).toContainElement(screen.getAllByAltText('whatsapp')[0]);
+    expect(elem).toContainElement(screen.getAllByAltText('visa')[0]);
+    expect(elem).toContainElement(screen.getAllByAltText('logo')[0]);
   });
 
 });

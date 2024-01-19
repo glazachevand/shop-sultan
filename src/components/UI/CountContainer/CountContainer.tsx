@@ -21,6 +21,7 @@ export const CountContainer = (props: CountContainerProps) => {
         height="auto"
         onClick={minusHandler}
         disabled={value <= 1}
+        data-testId="minus"
       />
       <div className={cls.count}>{value}</div>
       <Button
@@ -30,7 +31,7 @@ export const CountContainer = (props: CountContainerProps) => {
         width="34px"
         height="auto"
         onClick={plusHandler}
-      />
+        data-testId="plus" />
     </div>
   );
 };
