@@ -34,7 +34,7 @@ export const ProductFull = (props: ProductFullProps) => {
   return (
     <>
       {product &&
-        <div className={classNames(cls.productFull, {}, [className])}>
+        <div className={classNames(cls.productFull, {}, [className])} data-testid="productFull">
           <div className={cls.imageFull}>
             <img src={imgSrc} alt="product" />
           </div>
@@ -83,7 +83,9 @@ export const ProductFull = (props: ProductFullProps) => {
               <h4 >Описание</h4>
               <img className={cls.arrow} src={Arrow} alt="" />
             </div>
-            <p className={`${cls.description} ${showDescr ? cls.show : ''}`}> {product.description}</p>
+            <p className={`${cls.description} ${showDescr ? cls.show : ''}`} data-testid="description">
+              {product.description}
+            </p>
             <div
               className={`${cls.descriptionTitle} ${showProp ? cls.show : ''}`}
               onClick={() => setPropShow(prev => !prev)}
@@ -91,7 +93,7 @@ export const ProductFull = (props: ProductFullProps) => {
               <h4 >Характеристики</h4>
               <img className={cls.arrow} src={Arrow} alt="" />
             </div>
-            <div className={`product__properties ${cls.propertiesBottom}  ${showProp ? cls.show : ''}`}>
+            <div className={`product__properties ${cls.propertiesBottom}  ${showProp ? cls.show : ''}`} data-testid="properties">
               <div><span className="product__label">Назначение:</span>BioMio</div>
               <div><span className="product__label">Тип:</span>BioMio</div>
               <div><span className="product__label">Производитель:</span>{product.manufacturer}</div>

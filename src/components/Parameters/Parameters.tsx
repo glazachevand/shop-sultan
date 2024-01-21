@@ -56,6 +56,8 @@ export const Parameters = (props: ParametersProps) => {
     setCheckedManuf([]);
     dispatch(clearParameters());
     setSearchManuf('');
+    setMin(10);
+    setMax(10000);
   }
 
   useEffect(() => {

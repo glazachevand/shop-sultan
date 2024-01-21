@@ -16,7 +16,7 @@ export const CartBtn = (props: CartBtnProps) => {
 
   return (
     <Link to={ROUTES.CART} className={classNames(cls.cartBtn, {}, [className])}>
-      <div className={cls.cart}>
+      <div className={cls.cart} data-testid='cartBtn'>
         <img src={Cart} className={cls.cartIcon} alt='cart' />
         <div className={cls.cartCount}>{totalCounts}</div>
       </div>
