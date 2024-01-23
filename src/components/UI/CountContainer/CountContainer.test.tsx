@@ -2,12 +2,14 @@ import { render, screen } from '@testing-library/react';
 import { CountContainer } from './CountContainer';
 
 describe('CountContainer.test', () => {
+  const plusHandler = jest.fn();
+  const minusHandler = jest.fn();
 
   test('Test render countContainer', () => {
     render(<CountContainer
       value={1}
-      plusHandler={() => { }}
-      minusHandler={() => { }} />
+      plusHandler={plusHandler}
+      minusHandler={minusHandler} />
     );
     const elem = screen.getByTestId('countContainer');
     expect(elem).toBeInTheDocument();

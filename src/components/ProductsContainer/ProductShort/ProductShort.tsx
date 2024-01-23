@@ -30,7 +30,7 @@ export const ProductShort = (props: ProductShorttProps) => {
   };
 
   return (
-    <div className={cls.productShort}>
+    <div className={cls.productShort} data-testid="productShort">
       {product.popular && <Button className={cls.popular} text='Популярное' form='rectangle-green' color='green' width="96px" height="25px" />}
 
       <div className={cls.body}>
@@ -39,7 +39,7 @@ export const ProductShort = (props: ProductShorttProps) => {
             <img src={imgSrc} alt="product" className={cls.imageSmall} />
           </Link>}
         <div className="product__size">
-          <img src={product.typesize === 'вес' ? weightImage : volumeImage} alt="product" />
+          <img src={product.typesize === 'вес' ? weightImage : volumeImage} alt="typesize" />
           {product.size}
         </div>
         <Link to={`/product/${product.id}`}>
@@ -64,6 +64,7 @@ export const ProductShort = (props: ProductShorttProps) => {
               width='140px'
               height='45px'
               onClick={() => setOpenModal(true)}
+              data-testId="editBtn"
             />
             <Button
               icon="remove"
@@ -71,6 +72,7 @@ export const ProductShort = (props: ProductShorttProps) => {
               width="45px"
               height="45px"
               onClick={onDeleteHandler}
+              data-testId="removeBtn"
             />
             <Modal isOpen={openModal} onClose={() => setOpenModal((prev) => !prev)} type='order' isCloseBtn={true}>
               <div className="formModal">
@@ -86,6 +88,7 @@ export const ProductShort = (props: ProductShorttProps) => {
             width='153px'
             height='45px'
             onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
+            data-testId="cartBtn"
           />
         )}
       </div>

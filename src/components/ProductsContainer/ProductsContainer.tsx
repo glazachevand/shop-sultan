@@ -28,7 +28,7 @@ export const ProductsContainer = (props: ProductsContainerProps) => {
   }, [fetchFilteredPageProducts?.length, fetchFilteredPageProducts]);
 
   return (
-    <div className={classNames(cls.productsContainer, {}, [className])}>
+    <div className={classNames(cls.productsContainer, {}, [className])} data-testid="productsContainer">
       {isLoading ? (
         <div className="text-center"><Loader /></div>
       ) : isError ? (

@@ -12,7 +12,7 @@ export const ProductsList = (props: ProductsListProps) => {
   const { className, products } = props;
 
   return (
-    <div className={classNames(cls.productsList, {}, [className])}>
+    <div className={classNames(cls.productsList, {}, [className])} data-testid="productList">
       {products?.map((product) => (
         <ProductShort key={product.id} product={product} />
       ))}
