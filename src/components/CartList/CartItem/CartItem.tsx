@@ -18,7 +18,7 @@ export const CartItem = (props: CartItemProps) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className={cls.cartItem} data-testId="cartItem">
+    <div className={cls.cartItem} data-testid="cartItem">
       <div className={cls.product}>
         <Link to={`/product/${cartItem.id}`} className={cls.productImg} >
           <img src={imgSrc} alt="product" />

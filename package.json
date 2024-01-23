@@ -120,6 +120,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "json-server": "^0.17.4",
     "loki": "^0.33.1",
+    "msw": "^2.1.4",
     "regenerator-runtime": "^0.14.0",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",

@@ -64,7 +64,7 @@ export const ProductShort = (props: ProductShorttProps) => {
               width='140px'
               height='45px'
               onClick={() => setOpenModal(true)}
-              data-testId="editBtn"
+              data-testid="editBtn"
             />
             <Button
               icon="remove"
@@ -72,7 +72,7 @@ export const ProductShort = (props: ProductShorttProps) => {
               width="45px"
               height="45px"
               onClick={onDeleteHandler}
-              data-testId="removeBtn"
+              data-testid="removeBtn"
             />
             <Modal isOpen={openModal} onClose={() => setOpenModal((prev) => !prev)} type='order' isCloseBtn={true}>
               <div className="formModal">
@@ -88,7 +88,7 @@ export const ProductShort = (props: ProductShorttProps) => {
             width='153px'
             height='45px'
             onClick={() => { dispatch(addProductToCart(product as ICartItem)) }}
-            data-testId="cartBtn"
+            data-testid="cartBtn"
           />
         )}
       </div>
