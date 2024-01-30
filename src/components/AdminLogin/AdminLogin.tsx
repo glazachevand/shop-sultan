@@ -1,18 +1,27 @@
 import { Button } from "components/UI/Button/Button";
 import { Modal } from "components/UI/Modal/Modal";
-import { useAppSelector } from "hooks/redux";
+import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { IUserState } from "types/user";
-import { classNames } from "utils/classNames/classNames";
+import { setAdminAuth } from "store/reducers/userSlice";
+import { adminAuth } from "types/const/admin";
 import cls from "./AdminLogin.module.scss";
 
 export const AdminLogin = () => {
   const [openModal, setOpenModal] = useState(false);
-  const { isAdmin, login, password } = useAppSelector(state => state.user);
-  const [user, setUser] = useState<IUserState>({ isAdmin, login, password });
+  const [errorAuth, setErrorAuth] = useState(false);
+  const { isAdmin } = useAppSelector(state => state.user);
+  const dispatch = useAppDispatch();
+  const [user, setUser] = useState({ isAdmin, login: '', password: '' });
 
   const onBtnClick = () => {
-    setOpenModal((prev) => !prev);
+    if (isAdmin) {
+      dispatch(setAdminAuth(false));
+      if (localStorage.getItem('auth-token')) {
+        localStorage.removeItem('auth-token');
+      }
+    } else {
+      setOpenModal(true);
+    }
   };
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +30,17 @@ export const AdminLogin = () => {
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setOpenModal(false);
+
+    if (user.login === adminAuth.login && user.password === adminAuth.password) {
+      dispatch(setAdminAuth(true));
+      const token = '123456qwerty';
+      localStorage.setItem('auth-token', token);
+      setUser({ isAdmin, login: '', password: '' });
+      setOpenModal(false);
+      setErrorAuth(false);
+    } else {
+      setErrorAuth(true);
+    }
   }
 
   return (
@@ -39,6 +58,7 @@ export const AdminLogin = () => {
             <div className={cls.label}>Введите пароль</div>
             <input className={cls.input} name="password" type="text" value={user?.password} onChange={onChangeHandler} required title="password" />
             <Button className={cls.submit} type="submit" text="Войти" width="200px" height="59px" />
+            {errorAuth && <div className={cls.error}>Пароль или логин неверные</div>}
           </form>
         </div>
       </Modal>

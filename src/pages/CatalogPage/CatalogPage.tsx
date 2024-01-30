@@ -77,10 +77,10 @@ const CatalogPage: FC = () => {
   return (
     <div className='_container' data-testid='catalog-page'>
       {!isMobile ?
-        <Breadcrumbs item='Косметика и гигиена' />
+        <Breadcrumbs item={isAdmin ? 'Управление каталогом' : 'Косметика и гигиена'} />
         : <BackButton className="backButton" />}
       <section className={cls.catalog}>
-        <h1 className={`${cls.title} title1`}>Косметика и гигиена</h1>
+        <h1 className={`${cls.title} title1`}>{isAdmin ? 'Управление каталогом' : 'Косметика и гигиена'}</h1>
         {!isMobile && categories?.length > 0 && <CategoryMenu className={cls.categories} variant="top" />}
         <div className={cls.container}>
           <div className={cls.aside}>

@@ -3,20 +3,18 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { IUserState } from "types/user";
 
 const initialState: IUserState = {
-  isAdmin: true,
-  login: "",
-  password: "",
+  isAdmin: false,
 };
 
 export const useSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setIsAdmin: (state, action: PayloadAction<boolean>) => {
+    setAdminAuth: (state, action: PayloadAction<boolean>) => {
       state.isAdmin = action.payload;
     },
   },
 });
 
-export const { setIsAdmin } = useSlice.actions;
+export const { setAdminAuth } = useSlice.actions;
 export const userReducer = useSlice.reducer;
