@@ -4,7 +4,7 @@ import { CategoryGlobalMenu } from "./CategoryGlobalMenu";
 
 describe('CategoryGlobalMenu.test', () => {
   test('Test render footer global menu', () => {
-    renderWithRouter(<CategoryGlobalMenu type="footer" />);
+    renderWithRouter(<CategoryGlobalMenu variant="footer" />);
     const elem = screen.getByTestId('categoryGlobalMenu');
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveClass("CategoryGlobalMenu");

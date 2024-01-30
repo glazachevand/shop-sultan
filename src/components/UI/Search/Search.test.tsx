@@ -14,7 +14,7 @@ describe('Search.test', () => {
   });
 
   test('Test Search small', () => {
-    componentRender(<Search type='param' />);
+    componentRender(<Search variant='param' />);
     const elem = screen.getByTestId('search');
     expect(elem).toHaveClass('param');
   });

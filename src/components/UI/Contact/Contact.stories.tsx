@@ -17,7 +17,7 @@ type Story = StoryObj<typeof Contact>;
 
 export const LocationHeader: Story = {
   args: {
-    type: 'location',
+    variant: 'location',
     color: 'dark',
     isIcon: true
   }
@@ -25,7 +25,7 @@ export const LocationHeader: Story = {
 
 export const LocationFooter: Story = {
   args: {
-    type: 'location',
+    variant: 'location',
     color: 'white',
     isIcon: false
   },
@@ -38,7 +38,7 @@ export const LocationFooter: Story = {
 
 export const EmailHeader: Story = {
   args: {
-    type: 'email',
+    variant: 'email',
     color: 'dark',
     isIcon: true
   }
@@ -46,7 +46,7 @@ export const EmailHeader: Story = {
 
 export const EmailFooter: Story = {
   args: {
-    type: 'email',
+    variant: 'email',
     color: 'white',
     isIcon: false
   },
@@ -59,7 +59,7 @@ export const EmailFooter: Story = {
 
 export const SalesBurger: Story = {
   args: {
-    type: 'sales',
+    variant: 'sales',
     color: 'dark',
     isIcon: true
   }

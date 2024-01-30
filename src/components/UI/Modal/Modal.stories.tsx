@@ -31,7 +31,7 @@ export const Order: Story = {
   args: {
     isOpen: true,
     isCloseBtn: true,
-    type: 'order',
+    variant: 'order',
     children: <div className={cls.orderModal}>
       <Button icon="orderOK" form="circ" width="59px" height="59px" />
       <h2 className={`${cls.title} title1`}>Спасибо за заказ</h2>
@@ -44,7 +44,7 @@ export const Catalog: Story = {
   args: {
     isOpen: true,
     isCloseBtn: true,
-    type: 'order',
+    variant: 'order',
     children: <div className="formModal">
       <FormProduct />
     </div>

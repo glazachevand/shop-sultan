@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 interface SearchProps {
   className?: string;
-  type?: 'header' | 'param';
+  variant?: 'header' | 'param';
   value?: string;
   setValue?: Dispatch<SetStateAction<string>>;
 }
@@ -18,9 +18,9 @@ export const Search = (props: SearchProps) => {
   const [searchValue, setSearchValue] = useState('');
   const [dropdown, setDropdown] = useState(false);
 
-  const { className = '', type = 'header', value = searchValue, setValue = setSearchValue } = props;
+  const { className = '', variant = 'header', value = searchValue, setValue = setSearchValue } = props;
   const mods = {
-    [cls[type]]: true,
+    [cls[variant]]: true,
   };
 
   const debounced = useDebounce(searchValue);
@@ -60,7 +60,7 @@ export const Search = (props: SearchProps) => {
           : <img src={SearchBtn} alt="search" className={cls.btn} />
         }
       </div>
-      {type === 'header' && dropdown && (
+      {variant === 'header' && dropdown && (
         <ul className={cls.dropdown} data-testid="dropdown">
           {isLoading && <p>Загружается...</p>}
           {isError && <p>Нет ответа от сервера...</p>}

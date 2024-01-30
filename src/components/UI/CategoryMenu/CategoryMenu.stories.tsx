@@ -58,16 +58,16 @@ type Story = StoryObj<typeof CategoryMenu>;
 
 export const Top: Story = {
   args: {
-    type: 'top'
+    variant: 'top'
   },
 };
 export const Left: Story = {
   args: {
-    type: 'left'
+    variant: 'left'
   },
 };
 export const Admin: Story = {
   args: {
-    type: 'admin'
+    variant: 'admin'
   },
 };

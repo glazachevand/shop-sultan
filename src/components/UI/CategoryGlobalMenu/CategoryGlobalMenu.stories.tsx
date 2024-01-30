@@ -17,7 +17,7 @@ type Story = StoryObj<typeof CategoryGlobalMenu>;
 
 export const Primary: Story = {
   args: {
-    type: 'footer'
+    variant: 'footer'
   },
   parameters: {
     backgrounds: {

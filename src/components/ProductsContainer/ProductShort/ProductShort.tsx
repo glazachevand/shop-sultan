@@ -74,7 +74,7 @@ export const ProductShort = (props: ProductShorttProps) => {
               onClick={onDeleteHandler}
               data-testid="removeBtn"
             />
-            <Modal isOpen={openModal} onClose={() => setOpenModal((prev) => !prev)} type='order' isCloseBtn={true}>
+            <Modal isOpen={openModal} onClose={() => setOpenModal((prev) => !prev)} variant='order' isCloseBtn={true}>
               <div className="formModal">
                 <FormProduct onClose={setOpenModal} product={product} />
               </div>

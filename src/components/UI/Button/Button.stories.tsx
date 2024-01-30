@@ -155,11 +155,31 @@ export const Down: Story = {
     height: "32px",
   },
 };
+
 export const Up: Story = {
   args: {
     icon: "up",
     form: "circ",
     color: "mustard",
+    width: "32px",
+    height: "32px",
+  },
+};
+
+export const AdminLogin: Story = {
+  args: {
+    icon: "adminLogin",
+    form: "circ",
+    color: "white",
+    width: "32px",
+    height: "32px",
+  },
+};
+export const AdminLogout: Story = {
+  args: {
+    icon: "adminLogout",
+    form: "circ",
+    color: "white",
     width: "32px",
     height: "32px",
   },

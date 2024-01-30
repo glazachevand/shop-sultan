@@ -45,7 +45,7 @@ describe('Modal.test', () => {
 
   test('Test modal with form for new product', () => {
     componentRender(
-      <Modal isOpen={true} isCloseBtn={true} type={'order'}>
+      <Modal isOpen={true} isCloseBtn={true} variant={'order'}>
         <div className="formModal">
           <FormProduct />
         </div>
@@ -60,7 +60,7 @@ describe('Modal.test', () => {
 
   test('Test modal with order', () => {
     render(
-      <Modal isOpen={true} isCloseBtn={true} type={'order'}>
+      <Modal isOpen={true} isCloseBtn={true} variant={'order'}>
         <div>
           <Button icon="orderOK" form="circ" width="59px" height="59px" />
           <h2 >Спасибо за заказ</h2>

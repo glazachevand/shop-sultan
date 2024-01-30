@@ -6,14 +6,14 @@ import { CategoryItem } from "./CategoryItem/CategoryItem";
 
 interface CategoryMenuProps {
   className?: string;
-  type: 'top' | 'left' | 'admin';
+  variant: 'top' | 'left' | 'admin';
 }
 
 export const CategoryMenu = (props: CategoryMenuProps) => {
-  const { className = '', type } = props;
+  const { className = '', variant } = props;
 
   const mods = {
-    [cls[type]]: true,
+    [cls[variant]]: true,
   }
 
   const dispatch = useAppDispatch();
@@ -26,7 +26,7 @@ export const CategoryMenu = (props: CategoryMenuProps) => {
 
   return (
     <ul className={classNames(cls.categoryMenu, mods, [className])} data-testid="categoryMenu">
-      {categories?.map((item) => type === 'admin' ?
+      {categories?.map((item) => variant === 'admin' ?
         <CategoryItem key={item.id} category={item} />
         :
         <li

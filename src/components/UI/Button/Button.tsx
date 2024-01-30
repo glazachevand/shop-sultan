@@ -11,11 +11,13 @@ import SubscrIcon from 'assets/icons/subscr.svg';
 import DownIcon from 'assets/icons/arrow-black-down.svg';
 import UpIcon from 'assets/icons/arrow-black-up.svg';
 import OrderIcon from 'assets/icons/order-btn.svg';
+import AdminLogin from 'assets/icons/login.svg';
+import AdminLogout from 'assets/icons/logout.svg';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   text?: string;
-  icon?: 'catalog' | 'download' | 'cart' | 'remove' | 'back' | 'subscr' | 'down' | 'up' | 'orderOK' | 'none';
+  icon?: 'catalog' | 'download' | 'cart' | 'remove' | 'back' | 'subscr' | 'down' | 'up' | 'orderOK' | 'adminLogin' | 'adminLogout' | 'none';
   form?: 'circ' | 'rectangle' | 'rectangle-green' | 'oval' | 'minus' | 'plus' | 'cartSmall';
   color?: 'yellow' | 'white' | 'ping' | 'mustard' | 'green' | 'pink-gradient';
   width?: string;
@@ -46,6 +48,8 @@ export const Button = (props: ButtonProps) => {
       {icon === 'down' && (<img src={DownIcon} alt="" />)}
       {icon === 'up' && (<img src={UpIcon} alt="" />)}
       {icon === 'orderOK' && (<img src={OrderIcon} alt="OK" />)}
+      {icon === 'adminLogin' && (<img src={AdminLogin} alt="admin login" />)}
+      {icon === 'adminLogout' && (<img src={AdminLogout} alt="admin logout" />)}
       {children}
     </button >
   );

@@ -1,0 +1,53 @@
+@import "styles/vars";
+
+.adminLogin {
+  position: relative;
+  z-index: $loginZIndex;
+}
+
+.adminModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  width: 800px;
+  max-height: 90%;
+  font-size: 1rem;
+  color: $dark;
+
+  @media (max-width: $lg) {
+    padding: 40px;
+    max-width: 90vw;
+  }
+
+  @media (max-width: $md) {
+    font-size: 12px;
+  }
+
+  @media (max-width: $sm) {
+    max-width: calc(100vw - 30px);
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.label {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: $darkBlue;
+}
+
+.input {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: $whisperColor;
+}

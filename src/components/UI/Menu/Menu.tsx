@@ -5,16 +5,16 @@ import { MenuList } from "types/const/menu";
 
 interface MenuProps {
   className?: string;
-  type: 'footer' | 'header';
+  variant: 'footer' | 'header';
 }
 
 export const Menu = (props: MenuProps) => {
-  const { className = '', type } = props;
+  const { className = '', variant } = props;
   const menuElem = MenuList.map(item => (
     <li key={item.elem}><Link to={item.path} className={cls.link}>{item.elem}</Link></li>
   ));
   const mods = {
-    [cls[type]]: true,
+    [cls[variant]]: true,
   }
 
   return (

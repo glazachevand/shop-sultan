@@ -6,20 +6,20 @@ import IconSales from "assets/icons/phone.svg";
 
 interface ContactProps {
   className?: string;
-  type: 'location' | 'email' | 'sales';
+  variant: 'location' | 'email' | 'sales';
   color: 'dark' | 'white';
   isIcon?: boolean;
 }
 
 export const Contact = (props: ContactProps) => {
-  const { className = '', type, color, isIcon = false } = props;
+  const { className = '', variant, color, isIcon = false } = props;
   const mods = {
     [cls[color]]: true,
   }
 
   return (
     <div className={classNames(cls.contact, mods, [className])} data-testid="contact">
-      {type === 'location' &&
+      {variant === 'location' &&
         (<a href="#!">
           {isIcon && (<img src={IconLocation} alt="location" />)}
           <div>
@@ -27,7 +27,7 @@ export const Contact = (props: ContactProps) => {
             <p>(Рынок Восточный)</p>
           </div>
         </a>)}
-      {type === 'email' &&
+      {variant === 'email' &&
         (<a href="mailto:opt.sultan@mail.ru">
           {isIcon && (<img src={IconEmail} alt="email" />)}
           <div>
@@ -35,7 +35,7 @@ export const Contact = (props: ContactProps) => {
             <p>На связи в любое время</p>
           </div>
         </a>)}
-      {type === 'sales' &&
+      {variant === 'sales' &&
         (<a href="tel:+77774900091">
           {isIcon && (<img src={IconSales} alt="sales department" />)}
           <div>

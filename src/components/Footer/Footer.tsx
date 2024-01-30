@@ -27,11 +27,11 @@ export const Footer = () => {
           <div className={cls.contentCol}>
             <div>
               <h3>Меню сайта:</h3>
-              <Menu type='footer' />
+              <Menu variant='footer' />
             </div>
             <div>
               <h3>Категории:</h3>
-              <CategoryGlobalMenu type='footer' />
+              <CategoryGlobalMenu variant='footer' />
             </div>
             <div className={cls.priceListCol}>
               <h3 className={cls.priceListTitle}>Скачать прайс-лист:</h3>
@@ -42,7 +42,7 @@ export const Footer = () => {
               <h3 className={cls.contactsTitle}>Контакты:</h3>
               <div className={cls.contactsCol}>
                 <BackCall isIcon={false} isText={true} color='white' />
-                <Contact type='email' color='white' />
+                <Contact variant='email' color='white' />
                 <BankCards />
               </div>
             </div>

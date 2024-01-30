@@ -4,6 +4,8 @@ import { IUserState } from "types/user";
 
 const initialState: IUserState = {
   isAdmin: true,
+  login: "",
+  password: "",
 };
 
 export const useSlice = createSlice({

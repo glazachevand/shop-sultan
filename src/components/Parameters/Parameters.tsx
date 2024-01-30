@@ -101,7 +101,7 @@ export const Parameters = (props: ParametersProps) => {
             </div>
             <div className={cls.manufacturer}>
               <h3 className={cls.manufacturerTitle}>Производитель</h3>
-              <Search type="param" value={searchManuf} setValue={setSearchManuf} />
+              <Search variant="param" value={searchManuf} setValue={setSearchManuf} />
               <CheckboxList manufShow={showManuf} change={onChangeHandler} checkedManuf={checkedManuf} />
               {!searchManuf && (
                 <div className={`${cls.showAll} ${showAll ? cls.show : ''}`} onClick={() => setShowAll(prev => !prev)}>

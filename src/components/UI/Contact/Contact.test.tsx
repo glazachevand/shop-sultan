@@ -5,7 +5,7 @@ describe('Contact.test', () => {
 
   test('Test location contact in header', () => {
     render(<Contact
-      type='location'
+      variant='location'
       color='dark'
       isIcon={true} />
     );
@@ -19,7 +19,7 @@ describe('Contact.test', () => {
 
   test('Test email contact in footer', () => {
     render(<Contact
-      type='email'
+      variant='email'
       color='white'
       isIcon={false} />
     );
@@ -32,7 +32,7 @@ describe('Contact.test', () => {
 
   test('Test email contact in header', () => {
     render(<Contact
-      type='email'
+      variant='email'
       color='dark'
       isIcon={true} />
     );
@@ -46,7 +46,7 @@ describe('Contact.test', () => {
 
   test('Test sales in burger', () => {
     render(<Contact
-      type='sales'
+      variant='sales'
       color='dark'
       isIcon={true} />
     );

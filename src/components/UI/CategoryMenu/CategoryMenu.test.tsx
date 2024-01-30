@@ -39,7 +39,7 @@ describe('CategoryMenu.test', () => {
   });
 
   test('Test top categories', async () => {
-    componentRender(<CategoryMenu type='top' />, {
+    componentRender(<CategoryMenu variant='top' />, {
       preloadedState
     })
     const elem = await screen.findByTestId('categoryMenu');
@@ -54,7 +54,7 @@ describe('CategoryMenu.test', () => {
   });
 
   test('Test left categories', async () => {
-    componentRender(<CategoryMenu type='left' />, {
+    componentRender(<CategoryMenu variant='left' />, {
       preloadedState
     })
     const elem = await screen.findByTestId('categoryMenu');
@@ -69,7 +69,7 @@ describe('CategoryMenu.test', () => {
   });
 
   test('Test admin categories', async () => {
-    componentRender(<CategoryMenu type='admin' />, {
+    componentRender(<CategoryMenu variant='admin' />, {
       preloadedState
     })
     const elem = await screen.findByTestId('categoryMenu');

@@ -5,16 +5,16 @@ import { CategoryGlobalMenuList } from "types/const/categoryGlobal";
 
 interface CategoryGlobalMenuProps {
   className?: string;
-  type: 'footer';
+  variant: 'footer';
 }
 
 export const CategoryGlobalMenu = (props: CategoryGlobalMenuProps) => {
-  const { className = '', type } = props;
+  const { className = '', variant } = props;
   const CategoryGlobalMenuElem = CategoryGlobalMenuList.map(item => (
     <li key={item.elem}><Link to={item.path} className={cls.link}>{item.elem}</Link></li>
   ));
   const mods = {
-    [cls[type]]: true,
+    [cls[variant]]: true,
   }
 
   return (

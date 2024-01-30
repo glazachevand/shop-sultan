@@ -11,14 +11,14 @@ export const BurgerMenu = () => {
       <div className='_container'>
         <div className={cls.content}>
           <div className={cls.contacts}>
-            <Contact type='location' color='dark' isIcon={true} />
-            <Contact type='email' color='dark' isIcon={true} />
-            <Contact type='sales' color='dark' isIcon={true} />
+            <Contact variant='location' color='dark' isIcon={true} />
+            <Contact variant='email' color='dark' isIcon={true} />
+            <Contact variant='sales' color='dark' isIcon={true} />
             <BackCall isIcon={true} isText={false} color='dark' />
           </div>
           <div className={cls.menu}>
             <h2 className={cls.title}>Меню сайта:</h2>
-            <Menu type='header' />
+            <Menu variant='header' />
           </div>
           <Button text='Прайс-лист' icon='download' width='290px' height='70px' />
         </div>

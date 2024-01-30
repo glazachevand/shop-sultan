@@ -22,12 +22,12 @@ type Story = StoryObj<typeof Search>;
 
 export const InHeader: Story = {
   args: {
-    type: 'header',
+    variant: 'header',
   }
 }
 
 export const InSidebar: Story = {
   args: {
-    type: 'param'
+    variant: 'param'
   }
 }

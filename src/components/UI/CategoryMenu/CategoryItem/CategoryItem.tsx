@@ -10,12 +10,12 @@ import { useCreateCategoryMutation, useDeleteCategoryMutation, useUpdateCategory
 interface CategoryItemProps {
   className?: string;
   category: ICategory;
-  type?: 'new';
+  variant?: 'new';
   add?: () => void;
 }
 
 export const CategoryItem = (props: CategoryItemProps) => {
-  const { className, category, type, add } = props;
+  const { className, category, variant, add } = props;
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(category.title);
 
@@ -42,7 +42,7 @@ export const CategoryItem = (props: CategoryItemProps) => {
 
   return (
     <>
-      {type === 'new' ? (
+      {variant === 'new' ? (
         <li className={classNames(cls.categoryItem, {}, [className, cls.addItem])}>
           <input
             className={`${cls.input}  ${cls.edit}`}

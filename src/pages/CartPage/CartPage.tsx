@@ -39,7 +39,7 @@ const CartPage: FC = () => {
             : <Button text="Оформить заказ" width="192px" height="59px" onClick={orderSubmit} disabled={totalCounts === 0} />
           }
           <div className={cls.priceTotal}>{totalPrice} ₽</div>
-          <Modal isOpen={openModal} onClose={onCloseModalClick} type='order' isCloseBtn={true}>
+          <Modal isOpen={openModal} onClose={onCloseModalClick} variant='order' isCloseBtn={true}>
             <div className={cls.orderModal}>
               <Button icon="orderOK" form="circ" width="59px" height="59px" />
               <h2 className={`${cls.title} title1`}>Спасибо за заказ</h2>

@@ -4,7 +4,7 @@ import { Menu } from "./Menu";
 
 describe('Menu.test', () => {
   test('Test render header  menu', () => {
-    renderWithRouter(<Menu type="header" />);
+    renderWithRouter(<Menu variant="header" />);
     const elem = screen.getByTestId('menu');
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveClass("menu");
@@ -12,7 +12,7 @@ describe('Menu.test', () => {
   });
 
   test('Test render footer  menu', () => {
-    renderWithRouter(<Menu type="footer" />);
+    renderWithRouter(<Menu variant="footer" />);
     const elem = screen.getByTestId('menu');
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveClass("footer");

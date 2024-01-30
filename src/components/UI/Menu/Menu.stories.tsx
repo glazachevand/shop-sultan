@@ -17,13 +17,13 @@ type Story = StoryObj<typeof Menu>;
 
 export const Header: Story = {
   args: {
-    type: 'header'
+    variant: 'header'
   }
 };
 
 export const Footer: Story = {
   args: {
-    type: 'footer'
+    variant: 'footer'
   },
   parameters: {
     backgrounds: {

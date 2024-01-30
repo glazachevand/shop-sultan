@@ -81,7 +81,7 @@ const CatalogPage: FC = () => {
         : <BackButton className="backButton" />}
       <section className={cls.catalog}>
         <h1 className={`${cls.title} title1`}>Косметика и гигиена</h1>
-        {!isMobile && categories?.length > 0 && <CategoryMenu className={cls.categories} type="top" />}
+        {!isMobile && categories?.length > 0 && <CategoryMenu className={cls.categories} variant="top" />}
         <div className={cls.container}>
           <div className={cls.aside}>
             {isLoading && <div className="text-center"><Loader /></div>}
@@ -96,12 +96,12 @@ const CatalogPage: FC = () => {
               />
             )}
             {filteredProducts?.length > 0 && <Parameters className={cls.parameters} />}
-            {categories?.length > 0 && <CategoryMenu type={isAdmin ? 'admin' : 'left'} />}
+            {categories?.length > 0 && <CategoryMenu variant={isAdmin ? 'admin' : 'left'} />}
             {filteredProducts?.length > 0 && <Sort className={cls.sort} />}
             {isAdmin && addCategory &&
               <CategoryItem
                 category={{ id: categories.length + 1, title: '' } as ICategory}
-                type="new"
+                variant="new"
                 add={() => setAddCategory(false)}
               />
             }
@@ -113,7 +113,7 @@ const CatalogPage: FC = () => {
         </div>
       </section>
       {isAdmin && (
-        <Modal isOpen={openModal} onClose={() => setOpenModal(false)} type='order' isCloseBtn={true}>
+        <Modal isOpen={openModal} onClose={() => setOpenModal(false)} variant='order' isCloseBtn={true}>
           <div className="formModal">
             <FormProduct onClose={setOpenModal} />
           </div>
