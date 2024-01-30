@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from 'storybook-addon-react-router-v6';
 import { Burger } from "./Burger";
-import { fireEvent, userEvent, within } from '@storybook/testing-library';
+import { userEvent, within } from '@storybook/testing-library';
 
 const meta: Meta<typeof Burger> = {
   title: "Components/Burger",
@@ -23,7 +23,7 @@ function sleep(ms: number) {
 export const Primary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const burgerButton = canvas.getByTestId('button');
+    const burgerButton = canvas.getByTestId('burgerButton');
     await sleep(1000);
     await userEvent.click(burgerButton);
     await sleep(2000);

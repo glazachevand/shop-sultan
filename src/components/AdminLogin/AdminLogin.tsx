@@ -44,7 +44,7 @@ export const AdminLogin = () => {
   }
 
   return (
-    <div className={cls.adminLogin}>
+    <div className={cls.adminLogin} data-testid="adminLogin">
       {isAdmin ?
         <Button icon="adminLogout" form="circ" color="white" width="32px" height="32px" title="Выйти" onClick={onBtnClick} />
         : <Button icon="adminLogin" form="circ" color="white" width="32px" height="32px" title="Войти как администратор" onClick={onBtnClick} />
