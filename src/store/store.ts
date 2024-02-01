@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { productsApi } from "services/products.api";
+import { saveState } from "utils/localStorage";
 import { cartReducer } from "./reducers/cartSlice";
 import { filterReducer } from "./reducers/filterSlice";
 import { productsReducer } from "./reducers/productsSlice";
@@ -22,6 +23,11 @@ export function setupStore(preloadedState?: Partial<RootState>) {
   });
 
   setupListeners(store.dispatch);
+
+  store.subscribe(() => {
+    saveState(store.getState());
+  });
+
   return store;
 }
 
