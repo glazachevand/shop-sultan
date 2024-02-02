@@ -270,19 +270,18 @@
     },
     {
       "id": 18,
-      "title": "123",
+      "title": "Шампунь для волос",
       "url": "product1.webp",
       "barcode": 6684049097549,
-      "manufacturer": "123",
-      "brand": "123",
-      "description": "123",
-      "typesize": "вес",
-      "size": "123",
+      "manufacturer": "L\"Oreal",
+      "brand": "L\"Oreal",
+      "description": "wert",
+      "typesize": "объем",
+      "size": "100",
       "typecare": [
-        "Уход за телом",
-        "Уход за руками"
+        "Уход за волосами"
       ],
-      "price": 12
+      "price": 11
     }
   ],
   "categories": [

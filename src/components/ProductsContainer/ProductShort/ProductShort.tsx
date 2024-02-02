@@ -23,10 +23,14 @@ export const ProductShort = (props: ProductShorttProps) => {
   const imgSrc = require(`../../../assets/img/products/${product.url}`);
   const isAdmin = useAppSelector(state => state.user.isAdmin);
 
-  const [deleteProduct, { error }] = useDeleteProductMutation();
+  const [deleteProduct, { isError }] = useDeleteProductMutation();
 
-  const onDeleteHandler = () => {
-    deleteProduct(product.id);
+  const onDeleteHandler = async () => {
+    try {
+      await deleteProduct(product.id).unwrap();
+    } catch (error) {
+      console.log('Ошибка при удалении записи: ', error);
+    }
   };
 
   return (
@@ -55,6 +59,7 @@ export const ProductShort = (props: ProductShorttProps) => {
           {product.typecare.map(item => <span className="product__care" key={item}>{item}</span>)}
         </div>
       </div>
+      {isError && <div className={cls.error}>Ошибка при удалении записи</div>}
       <div className={`${cls.priceRow} ${isAdmin ? cls.isAdmin : ''}`}>
         <div className={cls.price}>{product.price}&nbsp;₽</div>
         {isAdmin ? (

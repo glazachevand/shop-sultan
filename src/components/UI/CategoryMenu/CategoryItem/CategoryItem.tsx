@@ -19,60 +19,79 @@ export const CategoryItem = (props: CategoryItemProps) => {
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(category.title);
 
-  const [fetchUpdateCategory, { isError: updateError }] = useUpdateCategoryMutation();
-  const [fetchDaleteCategory, { isError: deleteError }] = useDeleteCategoryMutation();
-  const [fetchAddCategory, { isError: addError }] = useCreateCategoryMutation();
+  const [fetchUpdateCategory, { isError: isErrorUpdate }] = useUpdateCategoryMutation();
+  const [fetchDaleteCategory, { isError: isErrorDelete }] = useDeleteCategoryMutation();
+  const [fetchAddCategory, { isError: isErrorAdd }] = useCreateCategoryMutation();
 
-  const editHandler = () => {
+  const editHandler = async () => {
     if (edit) {
-      fetchUpdateCategory({ id: category.id, title: value });
+      try {
+        await fetchUpdateCategory({ id: category.id, title: value }).unwrap();
+      } catch (error) {
+        console.log('Ошибка при сохранении категории: ', error);
+      }
     }
     setEdit(prev => !prev);
   }
 
-  const deleteHandler = () => {
-    fetchDaleteCategory(category.id);
+  const deleteHandler = async () => {
+    try {
+      await fetchDaleteCategory(category.id).unwrap();
+    } catch (error) {
+      console.log('Ошибка при удалении категории: ', error);
+    }
   }
 
-  const addHandler = () => {
-    fetchAddCategory({ id: category.id, title: value }).then(() => {
+  const addHandler = async () => {
+    try {
+      await fetchAddCategory({ id: category.id, title: value }).unwrap();
       if (add) { add() }
-    });
+    } catch (error) {
+      console.log('Ошибка при создании категории: ', error);
+    }
   }
 
   return (
     <>
       {variant === 'new' ? (
-        <li className={classNames(cls.categoryItem, {}, [className, cls.addItem])}>
-          <input
-            className={`${cls.input}  ${cls.edit}`}
-            type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <button className={cls.editBtn} type="button" onClick={addHandler}>
-            <img src={Save} alt="save" title="Сохранить" />
-          </button>
-          <button className={cls.deleteBtn} type="button" onClick={() => { if (add) { add() } }}>
-            <img src={Close} alt="close" title="Удалить" />
-          </button>
-        </li>
+        <>
+          <li className={classNames(cls.categoryItem, {}, [className, cls.addItem])}>
+            <input
+              className={`${cls.input}  ${cls.edit}`}
+              type="text"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+            <button className={cls.editBtn} type="button" onClick={addHandler}>
+              <img src={Save} alt="save" title="Сохранить" />
+            </button>
+            <button className={cls.deleteBtn} type="button" onClick={() => { if (add) { add() } }}>
+              <img src={Close} alt="close" title="Удалить" />
+            </button>
+          </li>
+          {isErrorAdd && <div className={cls.error}>Ошибка при создании категории</div>}
+        </>
+
       ) : (
-        <li className={classNames(cls.categoryItem, {}, [className])}>
-          <input
-            className={`${cls.input}  ${edit ? cls.edit : ''}`}
-            type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            disabled={!edit}
-          />
-          <button className={cls.editBtn} type="button" onClick={editHandler}>
-            {edit ? <img src={Save} alt="save" title="Сохранить" /> : <img src={Edit} alt="edit" title="Редактировать" />}
-          </button>
-          <button className={cls.deleteBtn} type="button" onClick={deleteHandler}>
-            <img src={Close} alt="close" title="Удалить" />
-          </button>
-        </li>
+        <>
+          <li className={classNames(cls.categoryItem, {}, [className])}>
+            <input
+              className={`${cls.input}  ${edit ? cls.edit : ''}`}
+              type="text"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              disabled={!edit}
+            />
+            <button className={cls.editBtn} type="button" onClick={editHandler}>
+              {edit ? <img src={Save} alt="save" title="Сохранить" /> : <img src={Edit} alt="edit" title="Редактировать" />}
+            </button>
+            <button className={cls.deleteBtn} type="button" onClick={deleteHandler}>
+              <img src={Close} alt="close" title="Удалить" />
+            </button>
+          </li>
+          {isErrorUpdate && <div className={cls.error}>Ошибка при сохранении категории</div>}
+          {isErrorDelete && <div className={cls.error}>Ошибка при удалении категории</div>}
+        </>
       )
       }
     </>

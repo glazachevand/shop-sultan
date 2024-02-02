@@ -64,3 +64,27 @@ label {
 .submit {
   margin-bottom: 20px;
 }
+
+.spinner {
+  display: inline-block;
+  margin-right: 10px;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: -0.125em;
+  border: 0.2em solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: 0.75s linear infinite spinner-border;
+}
+
+@keyframes spinner-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: red;
+}

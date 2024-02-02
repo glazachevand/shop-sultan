@@ -18,7 +18,7 @@ export const Burger = () => {
         </div>
       </div>
       <Modal isOpen={open} onClose={onBurgerClick}>
-        <BurgerMenu />
+        <BurgerMenu onClose={onBurgerClick} />
       </Modal>
     </div>
   )

@@ -3,8 +3,14 @@ import { BackCall } from "components/UI/BackCall/BackCall";
 import cls from "./BurgerMenu.module.scss";
 import { Menu } from "components/UI/Menu/Menu";
 import { Button } from "components/UI/Button/Button";
+import { Dispatch, SetStateAction } from "react";
 
-export const BurgerMenu = () => {
+interface BurgerMenuProps {
+  onClose?: Dispatch<SetStateAction<boolean>>;
+}
+
+export const BurgerMenu = (props: BurgerMenuProps) => {
+  const { onClose } = props;
 
   return (
     <div className={cls.burgerMenu} data-testid="burgerMenu">
@@ -18,7 +24,7 @@ export const BurgerMenu = () => {
           </div>
           <div className={cls.menu}>
             <h2 className={cls.title}>Меню сайта:</h2>
-            <Menu variant='header' />
+            <Menu variant='header' onClose={onClose} />
           </div>
           <Button text='Прайс-лист' icon='download' width='290px' height='70px' />
         </div>

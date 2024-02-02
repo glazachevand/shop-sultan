@@ -1,7 +1,7 @@
 import { Button } from "components/UI/Button/Button";
 import { Checkbox } from "components/UI/Checkbox/Checkbox";
 import { useAppSelector } from "hooks/redux";
-import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from "react";
+import { ChangeEvent, Dispatch, MouseEvent, SetStateAction, useState } from "react";
 import { useCreateProductMutation, useGetProductsQuery, useUpdateProductMutation } from "services/products.api";
 import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
@@ -29,7 +29,7 @@ export const FormProduct = (props: FormProductProps) => {
     typesize: product?.typesize || 'вес',
     size: product?.size || '',
     typecare: product?.typecare || [],
-    price: product?.price || 0
+    price: product?.price || 10
   }
 
   const [item, setItem] = useState<IProduct>(productItem);
@@ -51,30 +51,39 @@ export const FormProduct = (props: FormProductProps) => {
     }
   };
 
-  const [addProduct, { error: addError, data: createProducts, }] = useCreateProductMutation();
-  const [updateProduct, { error: updateError }] = useUpdateProductMutation();
+  const [addProduct, { isLoading: isLoadingAdd, isError: isErrorAdd }] = useCreateProductMutation();
+  const [updateProduct, { isLoading: isLoadingUpdate, isError: isErrorUpdate }] = useUpdateProductMutation();
 
-  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
 
     if (product) {
-      updateProduct(item);
+      try {
+        await updateProduct(item).unwrap();
+        if (onClose) {
+          onClose(false)
+        }
+      } catch (error) {
+        console.log('Ошибка при сохранении записи: ', error);
+      }
     } else {
       item.id = products?.length ? (products[products.length - 1].id + 1) : 1;
-      console.log('item', item);
-      addProduct(item).then(() => {
-        setItem(productItem);
-      });
-    }
 
-    if (onClose) {
-      onClose(false)
+      try {
+        await addProduct(item).unwrap();
+        if (onClose) {
+          onClose(false)
+        }
+        //setItem(productItem);
+      } catch (error) {
+        console.log('Ошибка при создании записи: ', error);
+      }
     }
   };
 
   return (
     <div className={classNames(cls.formProduct, {}, [className])} data-testid="formProduct">
-      <form action="#" name='productform' onSubmit={onSubmitHandler}>
+      <form action="#" name='productform'>
         <h2 className={cls.title}>Редактирование / добавление товара</h2>
 
         <div className={cls.label}>Название</div>
@@ -96,12 +105,12 @@ export const FormProduct = (props: FormProductProps) => {
         <textarea className={cls.input} name="description" value={item?.description} onChange={onChangeHandler} title="description"></textarea>
 
         <div className={cls.label}>Тип размера</div>
-        <label htmlFor="weight">Вес</label>
-        <input className={cls.radio} type="radio" name="typesize" value="вес" id='weight'
+        <label htmlFor={`weight${item.id}`}>Вес</label>
+        <input className={cls.radio} type="radio" name="typesize" value="вес" id={`weight${item.id}`}
           checked={item?.typesize === 'вес' ? true : false} onChange={onChangeHandler} />
-        <label htmlFor="volume">Объем</label>
+        <label htmlFor={`volume${item.id}`}>Объем</label>
 
-        <input className={cls.radio} type="radio" name="typesize" value="объем" id='volume'
+        <input className={cls.radio} type="radio" name="typesize" value="объем" id={`volume${item.id}`}
           checked={item?.typesize === 'вес' ? false : true} onChange={onChangeHandler} />
 
         <div className={cls.label}>Размер</div>
@@ -117,7 +126,12 @@ export const FormProduct = (props: FormProductProps) => {
         <div className={cls.label}>Цена</div>
         <input className={cls.input} name="price" type="number" value={item?.price} onChange={onChangeNumberHandler} required title="price" />
 
-        <Button className={cls.submit} type="submit" text="Сохранить" width="200px" height="59px" />
+        {isErrorAdd && <div className={cls.error}>Ошибка при создании записи</div>}
+        {isErrorUpdate && <div className={cls.error}>Ошибка при сохранении записи</div>}
+        <Button className={cls.submit} type="submit" width="200px" height="59px" onClick={onSubmitHandler}>
+          {(isLoadingAdd || isLoadingUpdate) && <span className={cls.spinner}></span>}
+          <div>Сохранить</div>
+        </Button>
       </form>
     </div>
   );
