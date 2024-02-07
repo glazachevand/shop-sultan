@@ -3,6 +3,7 @@ import cls from "./Contact.module.scss";
 import IconLocation from "assets/icons/location.svg";
 import IconEmail from "assets/icons/mail.svg";
 import IconSales from "assets/icons/phone.svg";
+import { useTranslation } from 'react-i18next';
 
 interface ContactProps {
   className?: string;
@@ -12,6 +13,8 @@ interface ContactProps {
 }
 
 export const Contact = (props: ContactProps) => {
+  const { t } = useTranslation();
+
   const { className = '', variant, color, isIcon = false } = props;
   const mods = {
     [cls[color]]: true,
@@ -24,7 +27,7 @@ export const Contact = (props: ContactProps) => {
           {isIcon && (<img src={IconLocation} alt="location" />)}
           <div>
             г. Кокчетав, ул. Ж. Ташенова 129Б
-            <p>(Рынок Восточный)</p>
+            <p>({t('market')})</p>
           </div>
         </a>)}
       {variant === 'email' &&

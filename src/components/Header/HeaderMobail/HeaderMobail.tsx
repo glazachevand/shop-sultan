@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { Search } from 'components/UI/Search/Search';
 import RemoveBtn from 'assets/icons/close.svg';
 import { AdminLogin } from 'components/AdminLogin/AdminLogin';
+import { LangSwitcher } from 'components/UI/LangSwitcher/LangSwitcher';
 
 export const HeaderMobail = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -20,6 +21,7 @@ export const HeaderMobail = () => {
           <Burger />
           <Link to="/" className={cls.logo}><img src={Logo} alt="logo" /></Link>
           <div className={cls.cartLogin}>
+            <LangSwitcher />
             <AdminLogin />
             <CartBtn isText={false} className={cls.cartBtn} />
           </div>

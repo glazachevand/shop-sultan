@@ -1,0 +1,19 @@
+@import "styles/vars";
+
+.langSwitcher {
+  min-width: 49px;
+  font-size: 16px;
+
+  @media (max-width: $sm) {
+    min-width: 45px;
+    font-size: 14px;
+  }
+
+  button {
+    background-color: transparent;
+  }
+
+  .active {
+    color: $yellow;
+  }
+}

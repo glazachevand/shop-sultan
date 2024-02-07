@@ -1,0 +1,9 @@
+{
+  "catalog": {
+    "catalog_management": "Catalog management",
+    "cosmetics_and_hygiene": "Cosmetics and hygiene",
+    "server_error": "Error loading from server"
+  },
+  "language": "en",
+  "market": "Eastern Market"
+}

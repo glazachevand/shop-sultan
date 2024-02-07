@@ -1,0 +1,9 @@
+{
+  "catalog": {
+    "catalog_management": "Управление каталогом",
+    "cosmetics_and_hygiene": "Косметика и гигиена",
+    "server_error": "Ошибка загрузки с сервера"
+  },
+  "language": "ru",
+  "market": "Рынок Восточный"
+}

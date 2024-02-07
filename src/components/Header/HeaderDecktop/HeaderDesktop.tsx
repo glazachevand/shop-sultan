@@ -9,6 +9,7 @@ import { Search } from 'components/UI/Search/Search';
 import { CartBtn } from 'components/UI/CartBtn/CartBtn';
 import { Button } from 'components/UI/Button/Button';
 import { AdminLogin } from 'components/AdminLogin/AdminLogin';
+import { LangSwitcher } from 'components/UI/LangSwitcher/LangSwitcher';
 
 export const HeaderDesktop = () => {
 
@@ -19,7 +20,10 @@ export const HeaderDesktop = () => {
           <Contact variant='location' color='dark' isIcon={true} />
           <Contact variant='email' color='dark' isIcon={true} />
           <Menu className={cls.menu} variant='header' />
-          <AdminLogin />
+          <div className={cls.langLogin}>
+            <LangSwitcher />
+            <AdminLogin />
+          </div>
         </div>
       </div>
       <div className={cls.row}>

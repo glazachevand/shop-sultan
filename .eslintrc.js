@@ -8,7 +8,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:i18next/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -20,7 +21,8 @@ module.exports = {
   },
   "plugins": [
     "@typescript-eslint",
-    "react"
+    "react",
+    "i18next"
   ],
   "rules": {
     // отступы в jsx - 2-правило работает (или "warning"), к-во пробелов - 2
@@ -56,6 +58,8 @@ module.exports = {
     // разрешим нижние подчеркивания в названиях переменных
     'no-underscore-dangle': 'off',
     'react/display-name': 'warn',
+    // будет подсвечивать отсутствие переводов только в jsx
+    'i18next/no-literal-string': ['warn', { markupOnly: true }],
   },
   settings: {
     react: {

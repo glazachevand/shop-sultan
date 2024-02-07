@@ -19,8 +19,10 @@ import { ICategory } from 'types/products';
 import { Loader } from 'components/UI/Loader/Loader';
 import { limitPerPage } from "types/pages";
 import { setLimit } from "store/reducers/filterSlice";
+import { useTranslation } from 'react-i18next';
 
 const CatalogPage: FC = () => {
+  const { t } = useTranslation();
   const [openModal, setOpenModal] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 1024 });
   const [addCategory, setAddCategory] = useState(false);
@@ -77,15 +79,15 @@ const CatalogPage: FC = () => {
   return (
     <div className='_container' data-testid='catalog-page'>
       {!isMobile ?
-        <Breadcrumbs item={isAdmin ? 'Управление каталогом' : 'Косметика и гигиена'} />
+        <Breadcrumbs item={isAdmin ? t('catalog.catalog_management') : t('catalog.cosmetics_and_hygiene')} />
         : <BackButton className="backButton" />}
       <section className={cls.catalog}>
-        <h1 className={`${cls.title} title1`}>{isAdmin ? 'Управление каталогом' : 'Косметика и гигиена'}</h1>
+        <h1 className={`${cls.title} title1`}>{isAdmin ? t('catalog.catalog_management') : t('catalog.cosmetics_and_hygiene')}</h1>
         {!isMobile && categories?.length > 0 && <CategoryMenu className={cls.categories} variant="top" />}
         <div className={cls.container}>
           <div className={cls.aside}>
             {isLoading && <div className="text-center"><Loader /></div>}
-            {isError && <h2 className="title2">Ошибка при загрузке с сервера <span>😕</span></h2>}
+            {isError && <h2 className="title2">{t('catalog.server_error')} <span>😕</span></h2>}
             {isAdmin && (
               <Button
                 className={cls.addProduct}

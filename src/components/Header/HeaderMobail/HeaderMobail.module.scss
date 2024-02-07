@@ -29,12 +29,13 @@
 }
 
 .cartLogin {
-  flex: 0 0 95px;
+  flex: 0 0 160px;
   display: flex;
+  align-items: center;
   gap: 10px;
 
   @media (max-width: $sm) {
-    flex: 0 0 75px;
+    flex: 0 0 125px;
   }
 }
 
