@@ -6,6 +6,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useDebounce } from "hooks/debounce";
 import { useGetProductsQuery } from "services/products.api";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 interface SearchProps {
   className?: string;
@@ -15,6 +16,7 @@ interface SearchProps {
 }
 
 export const Search = (props: SearchProps) => {
+  const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState('');
   const [dropdown, setDropdown] = useState(false);
 
@@ -51,7 +53,7 @@ export const Search = (props: SearchProps) => {
         <input
           type="search"
           className={cls.input}
-          placeholder="Поиск..."
+          placeholder={`${t('search.search')}...`}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -62,8 +64,8 @@ export const Search = (props: SearchProps) => {
       </div>
       {variant === 'header' && dropdown && (
         <ul className={cls.dropdown} data-testid="dropdown">
-          {isLoading && <p>Загружается...</p>}
-          {isError && <p>Нет ответа от сервера...</p>}
+          {isLoading && <p>{t('messages.loading')}...</p>}
+          {isError && <p>{t('messages.no_response_server')}...</p>}
           {products?.map((product) => (
             <li className={cls.dropdownItem} key={product.id} onClick={onClickDropdown}>
               <Link to={`/product/${product.id}`}>

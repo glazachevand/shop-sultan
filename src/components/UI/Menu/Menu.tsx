@@ -3,6 +3,7 @@ import { classNames } from "utils/classNames/classNames";
 import cls from "./Menu.module.scss";
 import { MenuList } from "types/const/menu";
 import { Dispatch, SetStateAction } from "react";
+import { useTranslation } from 'react-i18next';
 
 interface MenuProps {
   className?: string;
@@ -12,8 +13,13 @@ interface MenuProps {
 
 export const Menu = (props: MenuProps) => {
   const { className = '', variant, onClose } = props;
+  const { i18n } = useTranslation();
   const menuElem = MenuList.map(item => (
-    <li key={item.elem}><Link to={item.path} className={cls.link}>{item.elem}</Link></li>
+    <li key={item.elem}>
+      <Link to={item.path} className={cls.link}>
+        {i18n.language == 'ru' ? item.elem : item.enElem}
+      </Link>
+    </li>
   ));
   const mods = {
     [cls[variant]]: true,

@@ -10,9 +10,11 @@ import { Search } from 'components/UI/Search/Search';
 import RemoveBtn from 'assets/icons/close.svg';
 import { AdminLogin } from 'components/AdminLogin/AdminLogin';
 import { LangSwitcher } from 'components/UI/LangSwitcher/LangSwitcher';
+import { useTranslation } from 'react-i18next';
 
 export const HeaderMobail = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -42,11 +44,11 @@ export const HeaderMobail = () => {
             : <>
               <Link to="/" className={cls.catalog}>
                 <img src={CatalogIcon} alt="catalog" />
-                <p>Каталог</p>
+                <p>{t('header.catalog')}</p>
               </Link>
               <div className={cls.search} onClick={() => setShowSearch(true)}>
                 <img src={SearchIcon} alt="search" />
-                <p>Поиск</p>
+                <p>{t('header.search')}</p>
               </div>
             </>
           }

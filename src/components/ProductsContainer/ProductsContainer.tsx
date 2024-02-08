@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useAppSelector } from "hooks/redux";
 import { Loader } from "components/UI/Loader/Loader";
 import { IProduct } from "types/products";
+import { useTranslation } from 'react-i18next';
 
 interface ProductsContainerProps {
   className?: string;
@@ -14,6 +15,7 @@ interface ProductsContainerProps {
 
 export const ProductsContainer = (props: ProductsContainerProps) => {
   const { className } = props;
+  const { t } = useTranslation();
   const { typecare, priceMin, priceMax, manufacturers, sort, page, limit } = useAppSelector((state) => state.filters);
   const [filteredPageProducts, setFilteredPageProduct] = useState<IProduct[]>([]);
   const { isLoading, data: fetchFilteredPageProducts, isError } = useGetProductsQuery({ priceMin, priceMax, typecare, manufacturers, sort, page, limit });
@@ -32,9 +34,9 @@ export const ProductsContainer = (props: ProductsContainerProps) => {
       {isLoading ? (
         <div className="text-center"><Loader /></div>
       ) : isError ? (
-        <h2 className={classNames(cls.productsTitle, {}, ["title2"])}>Ошибка при загрузке с сервера <span>😕</span></h2>
+        <h2 className={classNames(cls.productsTitle, {}, ["title2"])}>{t('messages.load_error')} <span>😕</span></h2>
       ) : !filteredPageProducts.length ? (
-        <h2 className={classNames(cls.productsTitle, {}, ["title2"])}>Ничего не найдено <span>😕</span></h2>
+        <h2 className={classNames(cls.productsTitle, {}, ["title2"])}>{t('messages.not_found')} <span>😕</span></h2>
       ) : (
         <>
           <ProductsList products={filteredPageProducts} className={cls.products} />

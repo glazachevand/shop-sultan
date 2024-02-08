@@ -87,11 +87,11 @@ const CatalogPage: FC = () => {
         <div className={cls.container}>
           <div className={cls.aside}>
             {isLoading && <div className="text-center"><Loader /></div>}
-            {isError && <h2 className="title2">{t('catalog.server_error')} <span>😕</span></h2>}
+            {isError && <h2 className="title2">{t('messages.load_error')} <span>😕</span></h2>}
             {isAdmin && (
               <Button
                 className={cls.addProduct}
-                text="Добавить товар"
+                text={t('buttons.add_product')}
                 width="200px"
                 height="59px"
                 onClick={() => setOpenModal(true)}
@@ -108,7 +108,7 @@ const CatalogPage: FC = () => {
               />
             }
             {isAdmin && (
-              <Button text="Добавить категорию" width="200px" height="59px" onClick={() => setAddCategory(true)} />
+              <Button text={t('buttons.add_category')} width="200px" height="59px" onClick={() => setAddCategory(true)} />
             )}
           </div>
           {filteredProducts?.length > 0 && <ProductsContainer className={cls.productsContainer} />}

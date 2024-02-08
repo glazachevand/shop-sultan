@@ -20,4 +20,5 @@ export type SortListType = {
   title: string;
   value: string;
   sortProperties: SortType;
+  enTitle: string;
 };

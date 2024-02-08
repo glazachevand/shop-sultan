@@ -1,9 +1,112 @@
 {
+  "header": {
+    "market": "Eastern Market",
+    "address": "Kokchetav, st. Zh. Tashenova 129B",
+    "any_time": "Contact us at any time",
+    "working_hours": "working hours",
+    "back_call": "Request a call",
+    "cart": "Cart",
+    "catalog": "Catalog",
+    "search": "Search",
+    "menu_title": "Site menu",
+    "sales": "Sales department",
+    "ru": "Russian",
+    "en": "English"
+  },
   "catalog": {
     "catalog_management": "Catalog management",
     "cosmetics_and_hygiene": "Cosmetics and hygiene",
-    "server_error": "Error loading from server"
+    "home": "Home",
+    "sort_title": "Sort"
   },
-  "language": "en",
-  "market": "Eastern Market"
+  "parameters": {
+    "title": "SELECTION BY PARAMETERS",
+    "price": "Price",
+    "manufacturer": "Manufacturer",
+    "hide": "Hide",
+    "show_all": "Show all"
+  },
+  "product": {
+    "in_stock": "In stock",
+    "add_to_cart": "Add to cart",
+    "delivery1": "When purchasing over",
+    "delivery2": "free delivery throughout Kokchetav and the region",
+    "manufacturer": "Manufacturer",
+    "brand": "Brand",
+    "article": "Article",
+    "barcode": "Barcode",
+    "descr_title": "Description",
+    "charact_title": "Characteristics",
+    "purpose": "Purpose",
+    "type": "Type",
+    "weight": "Weight",
+    "count": "Quantity per box",
+    "typecare": "Type of care",
+    "edit_add_title": "Editing / adding a product",
+    "title": "Title",
+    "foto": "Foto",
+    "volume": "Volume",
+    "size": "Size",
+    "typesize": "Size type",
+    "price": "Price",
+    "page_product": "Product page"
+  },
+  "buttons": {
+    "show": "Show",
+    "price_list": "Price-list",
+    "catalog": "Catalog",
+    "edit": "Edit",
+    "add_to_cart": "Add to cart",
+    "back": "Back",
+    "out": "Go out",
+    "login_in": "Login as administrator",
+    "come_in": "To come in",
+    "save": "Save",
+    "remove": "Remove",
+    "order": "Place an order",
+    "add_product": "Add product",
+    "add_category": "Add category"
+  },
+  "messages": {
+    "remove_error": "Error when deleting record",
+    "load_error": "Error loading from server",
+    "not_found": "Nothing found",
+    "err0r_login": "The password or login is incorrect",
+    "cart_no_items": "There is nothing in the cart",
+    "error_save_record": "Error saving record",
+    "error_create_record": "Error creating record",
+    "error_remove_category": "Error when deleting a category",
+    "error_create_category": "Error creating category",
+    "error_save_category": "Error saving category",
+    "loading": "Loading",
+    "no_response_server": "No response from server",
+    "page_notfound": "Page not found",
+    "page404": "Page 404",
+    "error_load_product": "Error loading product"
+  },
+  "footer": {
+    "comp_descr": "Company \"Султан\" - we supply retail stores with goods \"turnkey\" in Kokchetav and Akmola region",
+    "menu_title": "Site menu",
+    "categories_title": "Categories",
+    "download_price_list": "Download price list",
+    "contacts_title": "Contacts",
+    "messangers_title": "Communication in messengers"
+  },
+  "admin": {
+    "authorization": "Authorization",
+    "login_label": "Enter your administrator login",
+    "password_label": "Enter password"
+  },
+  "search": {
+    "search": "Search"
+  },
+  "subscr": {
+    "subscr_title": "Subscribe to discounts and promotions",
+    "placeholder": "Enter your E-mail"
+  },
+  "cart": {
+    "cart_title": "Cart",
+    "thanks": "Thanks for your order",
+    "descr": "Our manager will contact you soon"
+  }
 }

@@ -4,6 +4,7 @@ import { classNames } from "utils/classNames/classNames";
 import cls from "./CartBtn.module.scss";
 import Cart from 'assets/icons/cart-black.svg';
 import { useAppSelector } from 'hooks/redux';
+import { useTranslation } from 'react-i18next';
 
 interface CartBtnProps {
   className?: string;
@@ -12,6 +13,7 @@ interface CartBtnProps {
 
 export const CartBtn = (props: CartBtnProps) => {
   const { className = '', isText = false } = props;
+  const { t } = useTranslation();
   const { totalPrice, totalCounts } = useAppSelector(state => state.cart);
 
   return (
@@ -22,7 +24,7 @@ export const CartBtn = (props: CartBtnProps) => {
       </div>
       {isText && (
         <div className={cls.cartText}>
-          <div>Корзина</div>
+          <div>{t('header.cart')}</div>
           <div className={cls.cartPrice}>{totalPrice} ₸</div>
         </div>
       )}

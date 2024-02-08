@@ -1,15 +1,7 @@
-export const CategoryGlobalList = [
-  "Бытовая химия",
-  "Косметика и гигиена",
-  "Товары для дома",
-  "Товары для детей и мам",
-  "Посуда",
-];
-
 export const CategoryGlobalMenuList = [
-  { elem: "Бытовая химия", path: "#!" },
-  { elem: "Косметика и гигиена", path: "#!" },
-  { elem: "Товары для дома", path: "#!" },
-  { elem: "Товары для детей и мам", path: "#!" },
-  { elem: "Посуда", path: "#!" },
+  { elem: "Бытовая химия", path: "#!", enElem: "Household chemicals" },
+  { elem: "Косметика и гигиена", path: "#!", enElem: "Cosmetics and hygiene" },
+  { elem: "Товары для дома", path: "#!", enElem: "Household products" },
+  { elem: "Товары для детей и мам", path: "#!", enElem: "Products for children and mothers" },
+  { elem: "Посуда", path: "#!", enElem: "Dishes" },
 ];

@@ -9,8 +9,10 @@ import { CartList } from 'components/CartList/CartList';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { clearCart } from 'store/reducers/cartSlice';
 import { Modal } from 'components/UI/Modal/Modal';
+import { useTranslation } from 'react-i18next';
 
 const CartPage: FC = () => {
+  const { t } = useTranslation();
   const [openModal, setOpenModal] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 1024 });
   const { totalPrice, totalCounts } = useAppSelector(state => state.cart);
@@ -28,22 +30,22 @@ const CartPage: FC = () => {
   return (
     <div className='_container' data-testid='cart-page'>
       {!isMobile ?
-        <Breadcrumbs item='Корзина' />
+        <Breadcrumbs item={t('cart.cart_title')} />
         : <BackButton className="backButton" />}
       <section className={cls.cart}>
-        <h1 className={`${cls.title} title1`}>Корзина</h1>
+        <h1 className={`${cls.title} title1`}>{t('cart.cart_title')}</h1>
         <CartList />
         <div className={cls.cartBottom}>
           {isMobile ?
-            <Button text="Оформить заказ" width="290px" height="80px" onClick={orderSubmit} disabled={totalCounts === 0} />
-            : <Button text="Оформить заказ" width="192px" height="59px" onClick={orderSubmit} disabled={totalCounts === 0} />
+            <Button text={t('buttons.order')} width="290px" height="80px" onClick={orderSubmit} disabled={totalCounts === 0} />
+            : <Button text={t('buttons.order')} width="192px" height="59px" onClick={orderSubmit} disabled={totalCounts === 0} />
           }
           <div className={cls.priceTotal}>{totalPrice} ₽</div>
           <Modal isOpen={openModal} onClose={onCloseModalClick} variant='order' isCloseBtn={true}>
             <div className={cls.orderModal}>
               <Button icon="orderOK" form="circ" width="59px" height="59px" />
-              <h2 className={`${cls.title} title1`}>Спасибо за заказ</h2>
-              <p >Наш менеджер свяжется с вами в ближайшее время</p>
+              <h2 className={`${cls.title} title1`}>{t('cart.thanks')}</h2>
+              <p >{t('cart.descr')}</p>
             </div>
           </Modal>
         </div>

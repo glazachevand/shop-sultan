@@ -6,6 +6,7 @@ import { useCreateProductMutation, useGetProductsQuery, useUpdateProductMutation
 import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
 import cls from "./FormProduct.module.scss";
+import { useTranslation } from 'react-i18next';
 
 interface FormProductProps {
   className?: string;
@@ -15,6 +16,7 @@ interface FormProductProps {
 
 export const FormProduct = (props: FormProductProps) => {
   const { className, product, onClose } = props;
+  const { t } = useTranslation();
   const categories = useAppSelector((state) => state.products.categories);
   const { data: products } = useGetProductsQuery({});
 
@@ -64,7 +66,7 @@ export const FormProduct = (props: FormProductProps) => {
           onClose(false)
         }
       } catch (error) {
-        console.log('Ошибка при сохранении записи: ', error);
+        console.log(t('messages.error_save_record'), ': ', error);
       }
     } else {
       item.id = products?.length ? (products[products.length - 1].id + 1) : 1;
@@ -76,7 +78,7 @@ export const FormProduct = (props: FormProductProps) => {
         }
         //setItem(productItem);
       } catch (error) {
-        console.log('Ошибка при создании записи: ', error);
+        console.log(t('messages.error_create_record'), ': ', error);
       }
     }
   };
@@ -84,53 +86,52 @@ export const FormProduct = (props: FormProductProps) => {
   return (
     <div className={classNames(cls.formProduct, {}, [className])} data-testid="formProduct">
       <form action="#" name='productform'>
-        <h2 className={cls.title}>Редактирование / добавление товара</h2>
+        <h2 className={cls.title}>{t('product.edit_add_title')}</h2>
 
-        <div className={cls.label}>Название</div>
-        <input className={cls.input} name="title" type="text" value={item?.title} onChange={onChangeHandler} required title="title" />
+        <div className={cls.label}>{t('product.title')}</div>
+        <input className={cls.input} name="title" type="text" value={item?.title} onChange={onChangeHandler} required title={t('product.title')} />
 
-        <div className={cls.label}>Фото</div>
-        <input className={cls.input} name="url" type="text" value={item ? item.url : 'product14.webp'} onChange={onChangeHandler} required title="image" />
+        <div className={cls.label}>{t('product.foto')}</div>
+        <input className={cls.input} name="url" type="text" value={item ? item.url : 'product14.webp'} onChange={onChangeHandler} required title={t('product.foto')} />
 
-        <div className={cls.label}>Бренд</div>
-        <input className={cls.input} name="brand" type="text" value={item?.brand} onChange={onChangeHandler} required title="brend" />
+        <div className={cls.label}>{t('product.brand')}</div>
+        <input className={cls.input} name="brand" type="text" value={item?.brand} onChange={onChangeHandler} required title={t('product.brand')} />
 
-        <div className={cls.label}>Штрихкод</div>
-        <input className={cls.input} name="barcode" type="text" value={item?.barcode} onChange={onChangeHandler} required title="barcode" />
+        <div className={cls.label}>{t('product.barcode')}</div>
+        <input className={cls.input} name="barcode" type="text" value={item?.barcode} onChange={onChangeHandler} required title={t('product.barcode')} />
 
-        <div className={cls.label}>Производитель</div>
-        <input className={cls.input} name="manufacturer" type="text" value={item?.manufacturer} onChange={onChangeHandler} required title="manufacturer" />
+        <div className={cls.label}>{t('product.manufacturer')}</div>
+        <input className={cls.input} name="manufacturer" type="text" value={item?.manufacturer} onChange={onChangeHandler} required title={t('product.manufacturer')} />
 
-        <div className={cls.label}>Описание</div>
-        <textarea className={cls.input} name="description" value={item?.description} onChange={onChangeHandler} title="description"></textarea>
+        <div className={cls.label}>{t('product.descr_title')}</div>
+        <textarea className={cls.input} name="description" value={item?.description} onChange={onChangeHandler} title={t('product.descr_title')}></textarea>
 
-        <div className={cls.label}>Тип размера</div>
-        <label htmlFor={`weight${item.id}`}>Вес</label>
+        <div className={cls.label}>{t('product.typesize')}</div>
+        <label htmlFor={`weight${item.id}`}>{t('product.weight')}</label>
         <input className={cls.radio} type="radio" name="typesize" value="вес" id={`weight${item.id}`}
           checked={item?.typesize === 'вес' ? true : false} onChange={onChangeHandler} />
-        <label htmlFor={`volume${item.id}`}>Объем</label>
-
+        <label htmlFor={`volume${item.id}`}>{t('product.volume')}</label>
         <input className={cls.radio} type="radio" name="typesize" value="объем" id={`volume${item.id}`}
           checked={item?.typesize === 'вес' ? false : true} onChange={onChangeHandler} />
 
-        <div className={cls.label}>Размер</div>
-        <input className={cls.input} name="size" type="text" value={item?.size} onChange={onChangeHandler} required title="size" />
+        <div className={cls.label}>{t('product.size')}</div>
+        <input className={cls.input} name="size" type="text" value={item?.size} onChange={onChangeHandler} required title={t('product.size')} />
 
-        <div className={cls.label}>Тип ухода</div>
+        <div className={cls.label}>{t('product.typecare')}</div>
         <ul>
           {categories.length && categories.map(category => (
             <Checkbox item={category.title} key={category.id} checked={item.typecare.includes(category.title)} change={onCheckHandler} />
           ))}
         </ul>
 
-        <div className={cls.label}>Цена</div>
-        <input className={cls.input} name="price" type="number" value={item?.price} onChange={onChangeNumberHandler} required title="price" />
+        <div className={cls.label}>{t('product.price')}</div>
+        <input className={cls.input} name="price" type="number" value={item?.price} onChange={onChangeNumberHandler} required title={t('product.price')} />
 
-        {isErrorAdd && <div className={cls.error}>Ошибка при создании записи</div>}
-        {isErrorUpdate && <div className={cls.error}>Ошибка при сохранении записи</div>}
+        {isErrorAdd && <div className={cls.error}>{t('messages.error_create_record')}</div>}
+        {isErrorUpdate && <div className={cls.error}>{t('messages.error_save_record')}</div>}
         <Button className={cls.submit} type="submit" width="200px" height="59px" onClick={onSubmitHandler}>
           {(isLoadingAdd || isLoadingUpdate) && <span className={cls.spinner}></span>}
-          <div>Сохранить</div>
+          <div>{t('buttons.save')}</div>
         </Button>
       </form>
     </div>

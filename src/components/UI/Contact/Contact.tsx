@@ -26,8 +26,8 @@ export const Contact = (props: ContactProps) => {
         (<a href="#!">
           {isIcon && (<img src={IconLocation} alt="location" />)}
           <div>
-            г. Кокчетав, ул. Ж. Ташенова 129Б
-            <p>({t('market')})</p>
+            {t('header.address')}
+            <p>({t('header.market')})</p>
           </div>
         </a>)}
       {variant === 'email' &&
@@ -35,7 +35,7 @@ export const Contact = (props: ContactProps) => {
           {isIcon && (<img src={IconEmail} alt="email" />)}
           <div>
             opt.sultan@mail.ru
-            <p>На связи в любое время</p>
+            <p>{t('header.any_time')}</p>
           </div>
         </a>)}
       {variant === 'sales' &&
@@ -43,10 +43,10 @@ export const Contact = (props: ContactProps) => {
           {isIcon && (<img src={IconSales} alt="sales department" />)}
           <div>
             <div>
-              Отдел продаж
+              {t('header.sales')}
               <p>+7 (777) 490-00-91</p>
             </div>
-            <p className={cls.hour}>время работы: 9:00-20:00</p>
+            <p className={cls.hour}>{t('header.working_hours')}: 9:00-20:00</p>
           </div>
         </a>)}
     </div>

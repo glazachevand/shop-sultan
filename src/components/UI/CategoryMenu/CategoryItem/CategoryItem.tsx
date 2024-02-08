@@ -6,6 +6,7 @@ import Save from 'assets/icons/save.png';
 import { useState } from "react";
 import { ICategory } from "types/products";
 import { useCreateCategoryMutation, useDeleteCategoryMutation, useUpdateCategoryMutation } from "services/products.api";
+import { useTranslation } from 'react-i18next';
 
 interface CategoryItemProps {
   className?: string;
@@ -16,6 +17,7 @@ interface CategoryItemProps {
 
 export const CategoryItem = (props: CategoryItemProps) => {
   const { className, category, variant, add } = props;
+  const { t } = useTranslation();
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState(category.title);
 
@@ -28,7 +30,7 @@ export const CategoryItem = (props: CategoryItemProps) => {
       try {
         await fetchUpdateCategory({ id: category.id, title: value }).unwrap();
       } catch (error) {
-        console.log('Ошибка при сохранении категории: ', error);
+        console.log(t('messages.error_save_category'), ': ', error);
       }
     }
     setEdit(prev => !prev);
@@ -38,7 +40,7 @@ export const CategoryItem = (props: CategoryItemProps) => {
     try {
       await fetchDaleteCategory(category.id).unwrap();
     } catch (error) {
-      console.log('Ошибка при удалении категории: ', error);
+      console.log(t('messages.error_remove_category'), ': ', error);
     }
   }
 
@@ -47,7 +49,7 @@ export const CategoryItem = (props: CategoryItemProps) => {
       await fetchAddCategory({ id: category.id, title: value }).unwrap();
       if (add) { add() }
     } catch (error) {
-      console.log('Ошибка при создании категории: ', error);
+      console.log(t('messages.error_create_category'), ': ', error);
     }
   }
 
@@ -63,13 +65,13 @@ export const CategoryItem = (props: CategoryItemProps) => {
               onChange={(e) => setValue(e.target.value)}
             />
             <button className={cls.editBtn} type="button" onClick={addHandler}>
-              <img src={Save} alt="save" title="Сохранить" />
+              <img src={Save} alt="save" title={t('buttons.save')} />
             </button>
             <button className={cls.deleteBtn} type="button" onClick={() => { if (add) { add() } }}>
-              <img src={Close} alt="close" title="Удалить" />
+              <img src={Close} alt="close" title={t('buttons.remove')} />
             </button>
           </li>
-          {isErrorAdd && <div className={cls.error}>Ошибка при создании категории</div>}
+          {isErrorAdd && <div className={cls.error}>{t('messages.error_create_category')}</div>}
         </>
 
       ) : (
@@ -83,14 +85,14 @@ export const CategoryItem = (props: CategoryItemProps) => {
               disabled={!edit}
             />
             <button className={cls.editBtn} type="button" onClick={editHandler}>
-              {edit ? <img src={Save} alt="save" title="Сохранить" /> : <img src={Edit} alt="edit" title="Редактировать" />}
+              {edit ? <img src={Save} alt="save" title={t('buttons.save')} /> : <img src={Edit} alt="edit" title={t('buttons.edit')} />}
             </button>
             <button className={cls.deleteBtn} type="button" onClick={deleteHandler}>
-              <img src={Close} alt="close" title="Удалить" />
+              <img src={Close} alt="close" title={t('buttons.remove')} />
             </button>
           </li>
-          {isErrorUpdate && <div className={cls.error}>Ошибка при сохранении категории</div>}
-          {isErrorDelete && <div className={cls.error}>Ошибка при удалении категории</div>}
+          {isErrorUpdate && <div className={cls.error}>{t('messages.error_save_category')}</div>}
+          {isErrorDelete && <div className={cls.error}>{t('messages.error_remove_category')}</div>}
         </>
       )
       }

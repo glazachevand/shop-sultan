@@ -9,12 +9,14 @@ import Arrow from "assets/icons/triangle-black.svg";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { clearParameters, setParameters } from "store/reducers/filterSlice";
 import { manufactureCount } from "types/const/manufacture";
+import { useTranslation } from 'react-i18next';
 interface ParametersProps {
   className?: string;
 }
 
 export const Parameters = (props: ParametersProps) => {
   const { className } = props;
+  const { t } = useTranslation();
   const isMobile = useMediaQuery({ maxWidth: 1024 });
 
   const dispatch = useAppDispatch();
@@ -81,7 +83,7 @@ export const Parameters = (props: ParametersProps) => {
   return (
     <div className={classNames(cls.parameters, {}, [className])}>
       <div className={cls.titleRow}>
-        <h2 className={cls.title}>ПОДБОР ПО ПАРАМЕТРАМ</h2>
+        <h2 className={cls.title}>{t('parameters.title')}</h2>
         {isMobile && (
           showParam ?
             <Button icon="up" form="circ" color="mustard" width="32px" height="32px" onClick={onClickShowParam} />
@@ -92,7 +94,7 @@ export const Parameters = (props: ParametersProps) => {
         <form action="#" method="GET" name="parametersForm">
           <div className={cls.content}>
             <div>
-              <div className={cls.price}>Цена ₽</div>
+              <div className={cls.price}>{t('parameters.price')} ₽</div>
               <div className={cls.inputs}>
                 <input type="text" name="priceRangeMin" value={min} onChange={(e) => setMin(Number(e.target.value))} className={cls.input} placeholder="10" />
                 -
@@ -100,20 +102,20 @@ export const Parameters = (props: ParametersProps) => {
               </div>
             </div>
             <div className={cls.manufacturer}>
-              <h3 className={cls.manufacturerTitle}>Производитель</h3>
+              <h3 className={cls.manufacturerTitle}>{t('parameters.manufacturer')}</h3>
               <Search variant="param" value={searchManuf} setValue={setSearchManuf} />
               <CheckboxList manufShow={showManuf} change={onChangeHandler} checkedManuf={checkedManuf} />
               {!searchManuf && (
                 <div className={`${cls.showAll} ${showAll ? cls.show : ''}`} onClick={() => setShowAll(prev => !prev)}>
-                  <div>{showAll ? 'Скрыть' : 'Показать все'}</div>
+                  <div>{showAll ? t('parameters.hide') : t('parameters.show_all')}</div>
                   <img className={cls.arrow} src={Arrow} alt="" />
                 </div>
               )}
             </div>
             <div className={cls.actions}>
               {isMobile ?
-                <Button text="Показать" width="216px" height="59px" onClick={onSubmitHandler} />
-                : <Button text="Показать" width="169px" height="59px" onClick={onSubmitHandler} />
+                <Button text={t('show')} width="216px" height="59px" onClick={onSubmitHandler} />
+                : <Button text={t('show')} width="169px" height="59px" onClick={onSubmitHandler} />
               }
               <Button icon="remove" form="circ" width="59px" height="59px" onClick={onClickClear} />
             </div>

@@ -11,6 +11,7 @@ import { CountContainer } from "components/UI/CountContainer/CountContainer";
 import { addProductToCart, minusProductInCart } from "store/reducers/cartSlice";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { ICartItem } from "types/cart";
+import { useTranslation } from 'react-i18next';
 
 
 interface ProductFullProps {
@@ -20,6 +21,7 @@ interface ProductFullProps {
 
 export const ProductFull = (props: ProductFullProps) => {
   const { className = '', product } = props;
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const items = useAppSelector(state => state.cart.items);
 
@@ -39,7 +41,7 @@ export const ProductFull = (props: ProductFullProps) => {
             <img src={imgSrc} alt="product" />
           </div>
           <div className={cls.body}>
-            <div className={cls.available}>В наличии</div>
+            <div className={cls.available}>{t('product.in_stock')}</div>
             <h1 className={cls.title}><span>{product.brand} </span>{product.title}</h1>
             {!isMobile &&
               <div className="product__size">
@@ -57,7 +59,7 @@ export const ProductFull = (props: ProductFullProps) => {
               />
               <Button
                 className={cls.cartBtn}
-                text='В корзину'
+                text={t('product.add_to_cart')}
                 icon='cart'
                 width='184px'
                 height='59px'
@@ -66,21 +68,21 @@ export const ProductFull = (props: ProductFullProps) => {
               <div className={cls.w100}></div>
               <Button className={cls.subscrBtn} icon='subscr' form="rectangle" color='white' width='77px' height='77px' />
               <div className={cls.delivery}>
-                <div>При покупке от <b>10 000 ₸</b> бесплатная доставка по Кокчетаву и области</div>
+                <div>{t('product.delivery1')} <b>10 000 ₸ </b>{t('product.delivery2')}</div>
               </div>
-              <Button className={cls.priceList} text='Прайс-лист' icon='download' form="rectangle" color="white" width='186px' height='77px' />
+              <Button className={cls.priceList} text={t('buttons.price_list')} icon='download' form="rectangle" color="white" width='186px' height='77px' />
             </div>
             <div className={`product__properties ${cls.propertiesTop}`}>
-              <div><span className="product__label">Производитель:</span>{product.manufacturer}</div>
-              <div><span className="product__label">Бренд:</span>{product.brand}</div>
-              <div><span className="product__label">Артикул:</span>460404</div>
-              <div><span className="product__label">Штрихкод:</span>{product.barcode}</div>
+              <div><span className="product__label">{t('product.manufacturer')}:</span>{product.manufacturer}</div>
+              <div><span className="product__label">{t('product.brand')}:</span>{product.brand}</div>
+              <div><span className="product__label">{t('product.article')}:</span>460404</div>
+              <div><span className="product__label">{t('product.barcode')}:</span>{product.barcode}</div>
             </div>
             <div
               className={`${cls.descriptionTitle} ${showDescr ? cls.show : ''}`}
               onClick={() => setDescrShow(prev => !prev)}
             >
-              <h4 >Описание</h4>
+              <h4 >{t('product.descr_title')}</h4>
               <img className={cls.arrow} src={Arrow} alt="" />
             </div>
             <p className={`${cls.description} ${showDescr ? cls.show : ''}`} data-testid="description">
@@ -90,21 +92,21 @@ export const ProductFull = (props: ProductFullProps) => {
               className={`${cls.descriptionTitle} ${showProp ? cls.show : ''}`}
               onClick={() => setPropShow(prev => !prev)}
             >
-              <h4 >Характеристики</h4>
+              <h4 >{t('product.charact_title')}</h4>
               <img className={cls.arrow} src={Arrow} alt="" />
             </div>
             <div className={`product__properties ${cls.propertiesBottom}  ${showProp ? cls.show : ''}`} data-testid="properties">
-              <div><span className="product__label">Назначение:</span>BioMio</div>
-              <div><span className="product__label">Тип:</span>BioMio</div>
-              <div><span className="product__label">Производитель:</span>{product.manufacturer}</div>
-              <div><span className="product__label">Бренд:</span>{product.brand}</div>
-              <div><span className="product__label">Артикул:</span>460404</div>
-              <div><span className="product__label">Штрихкод:</span>{product.barcode}</div>
-              <div><span className="product__label">Вес:</span>{product.size}</div>
-              <div><span className="product__label">Кол-во в коробке:</span>2</div>
+              <div><span className="product__label">{t('product.purpose')}:</span>BioMio</div>
+              <div><span className="product__label">{t('product.type')}:</span>BioMio</div>
+              <div><span className="product__label">{t('product.manufacturer')}:</span>{product.manufacturer}</div>
+              <div><span className="product__label">{t('product.brand')}:</span>{product.brand}</div>
+              <div><span className="product__label">{t('product.article')}:</span>460404</div>
+              <div><span className="product__label">{t('product.barcode')}:</span>{product.barcode}</div>
+              <div><span className="product__label">{t('product.weight')}:</span>{product.size}</div>
+              <div><span className="product__label">{t('product.count')}:</span>2</div>
             </div>
             <div className="product__properties">
-              <h4 className="product__care-title">Тип ухода</h4>
+              <h4 className="product__care-title">{t('product.typecare')}</h4>
               {product.typecare.map(item => <span className="product__care" key={item}>{item}</span>)}
             </div>
           </div>

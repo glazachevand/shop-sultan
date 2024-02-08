@@ -10,8 +10,10 @@ import { CartBtn } from 'components/UI/CartBtn/CartBtn';
 import { Button } from 'components/UI/Button/Button';
 import { AdminLogin } from 'components/AdminLogin/AdminLogin';
 import { LangSwitcher } from 'components/UI/LangSwitcher/LangSwitcher';
+import { useTranslation } from 'react-i18next';
 
 export const HeaderDesktop = () => {
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -30,13 +32,13 @@ export const HeaderDesktop = () => {
         <div className={`${cls.botttomContainer} _container`}>
           <Link to="/" className={cls.logo}><img src={Logo} alt="logo" /></Link>
           <Link to="/">
-            <Button text='Каталог' icon='catalog' width='192px' height='59px' />
+            <Button text={t('buttons.catalog')} icon='catalog' width='192px' height='59px' />
           </Link>
           <Search variant='header' />
           <BackCall color='dark' isIcon={false} isText={true} className={cls.backCall} aligh='right' />
           <div className={cls.callImg}><img src={Call} alt="call" /></div>
           <Link to="#!">
-            <Button text='Прайс-лист' icon='download' width='200px' height='59px' />
+            <Button text={t('buttons.price_list')} icon='download' width='200px' height='59px' />
           </Link>
           <CartBtn isText={true} className={cls.cartBtn} />
         </div>

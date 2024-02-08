@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { SortList } from "types/const/sort";
 import { setSort } from "store/reducers/filterSlice";
 import { SortType } from "types/filters";
+import { useTranslation } from 'react-i18next';
 
 interface SortProps {
   className?: string;
@@ -13,6 +14,7 @@ interface SortProps {
 
 export const Sort = (props: SortProps) => {
   const { className } = props;
+  const { t, i18n } = useTranslation();
   const dispatch = useAppDispatch();
   const [open, setOpen] = useState(false);
   const sort = useAppSelector(state => state.filters.sort);
@@ -21,9 +23,9 @@ export const Sort = (props: SortProps) => {
   useEffect(() => {
     const find = SortList.find(item => item.value === sort.join('_'));
     if (find) {
-      setChoice(find.title);
+      setChoice(i18n.language == 'ru' ? find.title : find.enTitle);
     }
-  }, [sort]);
+  }, [sort, i18n.language]);
 
   const onChangeSort = (elem: SortType) => {
     setOpen(false);
@@ -36,7 +38,7 @@ export const Sort = (props: SortProps) => {
         className={`${cls.titleRow} ${open ? cls.open : ''}`}
         onClick={() => setOpen(prev => !prev)}
       >
-        <div className={cls.label} >Сортировка:</div>
+        <div className={cls.label} >{t('catalog.sort_title')}:</div>
         <div className={cls.choice}>{choice}</div>
         <img className={cls.arrow} src={Arrow} alt="" />
       </div>
@@ -48,10 +50,10 @@ export const Sort = (props: SortProps) => {
               name="sort"
               id={item.value}
               value={item.value}
-              defaultChecked={item.title === choice}
+              defaultChecked={i18n.language == 'ru' ? item.title === choice : item.enTitle === choice}
               onChange={() => onChangeSort(item.sortProperties)}
             />
-            <label htmlFor={item.value}>{item.title}</label>
+            <label htmlFor={item.value}>{i18n.language == 'ru' ? item.title : item.enTitle}</label>
           </div>
         ))}
       </div>
