@@ -4,6 +4,12 @@ import { componentRender } from "utils/tests/componentRender";
 import { AdminLogin } from "./AdminLogin";
 
 describe('AdminLogin.test', () => {
+  beforeEach(() => {
+    if (localStorage.getItem('auth-token')) {
+      localStorage.removeItem('auth-token');
+    }
+  });
+
   test('Test render AdminLogin', () => {
     const preloadedState: Partial<RootState> = {
       user: {

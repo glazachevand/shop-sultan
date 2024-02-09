@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithRouter } from 'utils/tests/renderWithRouter';
 import { Contact } from './Contact';
 
 describe('Contact.test', () => {
 
   test('Test location contact in header', () => {
-    render(<Contact
+    renderWithRouter(<Contact
       variant='location'
       color='dark'
       isIcon={true} />
@@ -18,7 +19,7 @@ describe('Contact.test', () => {
   });
 
   test('Test email contact in footer', () => {
-    render(<Contact
+    renderWithRouter(<Contact
       variant='email'
       color='white'
       isIcon={false} />
@@ -31,7 +32,7 @@ describe('Contact.test', () => {
   });
 
   test('Test email contact in header', () => {
-    render(<Contact
+    renderWithRouter(<Contact
       variant='email'
       color='dark'
       isIcon={true} />
@@ -45,7 +46,7 @@ describe('Contact.test', () => {
   });
 
   test('Test sales in burger', () => {
-    render(<Contact
+    renderWithRouter(<Contact
       variant='sales'
       color='dark'
       isIcon={true} />

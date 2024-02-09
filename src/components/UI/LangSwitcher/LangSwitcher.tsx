@@ -16,6 +16,7 @@ export const LangSwitcher = () => {
         type="button"
         onClick={() => changeLanguage('ru')}
         title={t('header.ru')}
+        data-testid="russian"
       >
         ru
       </button>
@@ -25,6 +26,7 @@ export const LangSwitcher = () => {
         type="button"
         onClick={() => changeLanguage('en')}
         title={t('header.en')}
+        data-testid="english"
       >
         en
       </button>

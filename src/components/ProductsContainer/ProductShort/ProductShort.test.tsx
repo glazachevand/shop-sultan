@@ -38,7 +38,7 @@ describe('ProductShort.test', () => {
 
     const cartBtn = await screen.findByTestId('cartBtn');
     expect(cartBtn).toContainHTML('cart-white.svg');
-    expect(cartBtn).toHaveTextContent('В КОРЗИНУ');
+    expect(cartBtn).toHaveTextContent('В корзину');
     expect(screen.queryByTestId("editBtn")).toBeNull;
     expect(screen.queryByTestId("removeBtn")).toBeNull;
   });

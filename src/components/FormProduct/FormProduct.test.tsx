@@ -24,10 +24,10 @@ describe('FormProduct.test', () => {
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveTextContent('добавление товара');
     // ввести название
-    let title = await screen.findByTitle('title');
+    let title = await screen.findByTitle('Название');
     expect(title).toHaveValue('');
     fireEvent.input(title, { target: { value: 'Крем для лица' } });
-    title = await screen.findByTitle('title');
+    title = await screen.findByTitle('Название');
     expect(title).toHaveDisplayValue('Крем для лица');
     // выбрать тип размера Объем
     const size = await screen.findByLabelText('Объем');
@@ -63,11 +63,11 @@ describe('FormProduct.test', () => {
     const elem = screen.getByTestId('formProduct');
     screen.debug();
     expect(elem).toHaveTextContent('Шампунь: вода, анионный ПАВ');
-    let title = await screen.findByTitle('title');
+    let title = await screen.findByTitle('Название');
     expect(title).toHaveValue('Набор шампунь и бальзам для волос для объема и восстановления');
     // ввести название
     fireEvent.input(title, { target: { value: 'Крем для лица' } });
-    title = await screen.findByTitle('title');
+    title = await screen.findByTitle('Название');
     expect(title).toHaveDisplayValue('Крем для лица');
   });
 });

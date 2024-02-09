@@ -114,8 +114,8 @@ export const Parameters = (props: ParametersProps) => {
             </div>
             <div className={cls.actions}>
               {isMobile ?
-                <Button text={t('show')} width="216px" height="59px" onClick={onSubmitHandler} />
-                : <Button text={t('show')} width="169px" height="59px" onClick={onSubmitHandler} />
+                <Button text={t('buttons.show')} width="216px" height="59px" onClick={onSubmitHandler} />
+                : <Button text={t('buttons.show')} width="169px" height="59px" onClick={onSubmitHandler} />
               }
               <Button icon="remove" form="circ" width="59px" height="59px" onClick={onClickClear} />
             </div>

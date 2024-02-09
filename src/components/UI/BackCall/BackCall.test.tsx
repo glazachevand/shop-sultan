@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithRouter } from 'utils/tests/renderWithRouter';
 import { BackCall } from './BackCall';
 
 describe('BackCall.test', () => {
 
   test('Test render BackCall in header', () => {
-    render(<BackCall color="dark" isIcon={false} isText={true} aligh='right' />);
+    renderWithRouter(<BackCall color="dark" isIcon={false} isText={true} aligh='right' />);
     expect(screen.getByText(/90-00-91/i)).toBeInTheDocument();
     expect(screen.getByText(/Заказать звонок/)).toBeInTheDocument();
     const elem = screen.getByTestId('backcall');
@@ -15,7 +16,7 @@ describe('BackCall.test', () => {
   });
 
   test('Test render BackCall in footer', () => {
-    render(<BackCall color="white" isIcon={false} isText={true} />);
+    renderWithRouter(<BackCall color="white" isIcon={false} isText={true} />);
     expect(screen.getByText(/90-00-91/i)).toBeInTheDocument();
     expect(screen.getByText(/Заказать звонок/)).toBeInTheDocument();
     const elem = screen.getByTestId('backcall');
@@ -25,7 +26,7 @@ describe('BackCall.test', () => {
   });
 
   test('Test render BackCall in burger', () => {
-    render(<BackCall color="dark" isIcon={true} isText={false} />);
+    renderWithRouter(<BackCall color="dark" isIcon={true} isText={false} />);
     expect(screen.queryByText(/90-00-91/i)).toBeNull();
     expect(screen.getByText(/Заказать звонок/)).toBeInTheDocument();
     const elem = screen.getByTestId('backcall');

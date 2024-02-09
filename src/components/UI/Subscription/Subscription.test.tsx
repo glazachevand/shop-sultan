@@ -1,10 +1,11 @@
 import { Subscription } from "./Subscription";
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
+import { renderWithRouter } from "utils/tests/renderWithRouter";
 
 
 describe('Subscription.test', () => {
   test('Test render subscription', () => {
-    render(<Subscription />);
+    renderWithRouter(<Subscription />);
     const elem = screen.getByTestId('subscription');
     expect(elem).toBeInTheDocument();
     expect(elem).toHaveTextContent('Подпишись');
@@ -13,7 +14,7 @@ describe('Subscription.test', () => {
   });
 
   test('Test enter text', () => {
-    render(<Subscription />);
+    renderWithRouter(<Subscription />);
     const input = screen.getByRole('textbox');
     expect(input).toBeInTheDocument();
     fireEvent.input(input, { target: { value: 'qwerty@gmail.com' } });

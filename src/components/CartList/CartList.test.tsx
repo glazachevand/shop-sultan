@@ -75,7 +75,7 @@ describe('CartList.test', () => {
     componentRender(<CartList />, { preloadedState });
     const elem = screen.getByTestId('cartList');
     expect(elem).toBeInTheDocument();
-    expect(elem).toHaveTextContent('в корзине ничего нет');
+    expect(elem).toHaveTextContent('В корзине ничего нет');
     expect(elem).not.toContainHTML('src="remove.svg"');
   });
 
