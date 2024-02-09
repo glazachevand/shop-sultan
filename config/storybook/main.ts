@@ -11,6 +11,7 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@storybook/preset-scss",
     "storybook-addon-react-router-v6",
+    "storybook-react-i18next",
   ],
   framework: {
     name: "@storybook/react-webpack5",

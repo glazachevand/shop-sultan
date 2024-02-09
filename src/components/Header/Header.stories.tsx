@@ -16,4 +16,14 @@ const meta: Meta<typeof Header> = {
 export default meta;
 type Story = StoryObj<typeof Header>;
 
-export const Primary: Story = {}
+export const HeaderRussian: Story = {
+  parameters: {
+    locale: 'ru',
+  }
+}
+
+export const HeaderEnglish: Story = {
+  parameters: {
+    locale: 'en',
+  }
+}

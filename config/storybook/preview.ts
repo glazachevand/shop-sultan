@@ -1,7 +1,15 @@
 import type { Preview } from "@storybook/react";
 import "styles/index.scss";
+import i18n from "../../src/i18n/i18nForTests";
 
 const preview: Preview = {
+  globals: {
+    locale: "ru",
+    locales: {
+      en: "English",
+      ru: "Russian",
+    },
+  },
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -21,6 +29,7 @@ const preview: Preview = {
       ],
     },
     decorators: [],
+    i18n,
   },
 };
 
