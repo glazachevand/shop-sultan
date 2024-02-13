@@ -105,7 +105,7 @@ export const Parameters = (props: ParametersProps) => {
               <h3 className={cls.manufacturerTitle}>{t('parameters.manufacturer')}</h3>
               <Search variant="param" value={searchManuf} setValue={setSearchManuf} />
               <CheckboxList manufShow={showManuf} change={onChangeHandler} checkedManuf={checkedManuf} />
-              {!searchManuf && (
+              {!searchManuf && manuf.length > manufactureCount && (
                 <div className={`${cls.showAll} ${showAll ? cls.show : ''}`} onClick={() => setShowAll(prev => !prev)}>
                   <div>{showAll ? t('parameters.hide') : t('parameters.show_all')}</div>
                   <img className={cls.arrow} src={Arrow} alt="" />

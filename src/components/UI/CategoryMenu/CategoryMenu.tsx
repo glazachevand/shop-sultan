@@ -3,13 +3,14 @@ import cls from "./CategoryMenu.module.scss";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { setFilteredCategories } from "store/reducers/filterSlice";
 import { CategoryItem } from "./CategoryItem/CategoryItem";
+import React from "react";
 
 interface CategoryMenuProps {
   className?: string;
   variant: 'top' | 'left' | 'admin';
 }
 
-export const CategoryMenu = (props: CategoryMenuProps) => {
+export const CategoryMenu = React.memo((props: CategoryMenuProps) => {
   const { className = '', variant } = props;
 
   const mods = {
@@ -38,4 +39,4 @@ export const CategoryMenu = (props: CategoryMenuProps) => {
       )}
     </ul>
   )
-};
+});

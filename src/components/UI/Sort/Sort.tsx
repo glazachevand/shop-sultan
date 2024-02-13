@@ -1,7 +1,7 @@
 import { classNames } from "utils/classNames/classNames";
 import cls from "./Sort.module.scss";
 import Arrow from "assets/icons/triangle-black.svg";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { SortList } from "types/const/sort";
 import { setSort } from "store/reducers/filterSlice";
@@ -12,7 +12,7 @@ interface SortProps {
   className?: string;
 }
 
-export const Sort = (props: SortProps) => {
+export const Sort = React.memo((props: SortProps) => {
   const { className } = props;
   const { t, i18n } = useTranslation();
   const dispatch = useAppDispatch();
@@ -59,4 +59,4 @@ export const Sort = (props: SortProps) => {
       </div>
     </div>
   );
-};
+});

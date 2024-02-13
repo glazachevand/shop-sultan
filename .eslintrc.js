@@ -60,6 +60,7 @@ module.exports = {
     'react/display-name': 'warn',
     // будет подсвечивать отсутствие переводов только в jsx
     'i18next/no-literal-string': ['warn', { markupOnly: true }],
+    'react/display-name': 'off'
   },
   settings: {
     react: {
