@@ -11,7 +11,9 @@ describe('ProductsContainer.test', () => {
         filteredProducts: [],
         categories: [],
         manufactures: [],
-        countProducts: 18
+        countProducts: 18,
+        minPrice: 10,
+        maxPrice: 10000
       },
       filters: {
         typecare: [],

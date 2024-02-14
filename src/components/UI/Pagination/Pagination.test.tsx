@@ -19,7 +19,9 @@ describe('Pagination.test', () => {
         filteredProducts: [],
         categories: [],
         manufactures: [],
-        countProducts: 45
+        countProducts: 45,
+        minPrice: 10,
+        maxPrice: 10000
       },
     }
     componentRender(

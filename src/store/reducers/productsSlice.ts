@@ -8,6 +8,8 @@ const initialState: IProductsState = {
   categories: [],
   manufactures: [],
   countProducts: 0,
+  minPrice: 10,
+  maxPrice: 10000,
 };
 
 export const productsSlice = createSlice({
@@ -18,6 +20,8 @@ export const productsSlice = createSlice({
       state.filteredProducts = action.payload;
       state.manufactures = getManufactures(action.payload);
       state.countProducts = action.payload.length;
+      state.minPrice = Math.min(...action.payload.flatMap((product) => product.price));
+      state.maxPrice = Math.max(...action.payload.flatMap((product) => product.price));
     },
     setCategories: (state, action: PayloadAction<ICategory[]>) => {
       state.categories = action.payload;

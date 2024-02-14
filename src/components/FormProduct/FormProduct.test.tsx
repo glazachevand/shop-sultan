@@ -14,7 +14,9 @@ describe('FormProduct.test', () => {
       categories: [
         { id: 1, title: 'Уход за лицом' },
         { id: 1, title: 'Средства для загара' }
-      ]
+      ],
+      minPrice: 10,
+      maxPrice: 10000
     }
   }
 

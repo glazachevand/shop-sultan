@@ -20,8 +20,8 @@ export const Parameters = (props: ParametersProps) => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });
 
   const dispatch = useAppDispatch();
-  const { priceMin, priceMax, manufacturers: filteredManuf } = useAppSelector((state) => state.filters);
-  const { manufactures: manuf } = useAppSelector((state) => state.products);
+  const { manufacturers: filteredManuf } = useAppSelector((state) => state.filters);
+  const { minPrice, maxPrice, manufactures: manuf } = useAppSelector((state) => state.products);
   // выбранные производители
   const [checkedManuf, setCheckedManuf] = useState<string[]>(filteredManuf);
   const [showManuf, setShowManuf] = useState<[string, number][]>(manuf);
@@ -29,8 +29,8 @@ export const Parameters = (props: ParametersProps) => {
   const [searchManuf, setSearchManuf] = useState('');
   // был ли сделан поиск
   const isSearch = useRef(false);
-  const [min, setMin] = useState(priceMin);
-  const [max, setMax] = useState(priceMax);
+  const [min, setMin] = useState(minPrice);
+  const [max, setMax] = useState(maxPrice);
 
   // показать параметры на мобильных экранах
   const [showParam, setParamShow] = useState(true);
@@ -58,9 +58,12 @@ export const Parameters = (props: ParametersProps) => {
     setCheckedManuf([]);
     dispatch(clearParameters());
     setSearchManuf('');
-    setMin(10);
-    setMax(10000);
   }
+
+  useEffect(() => {
+    setMin(minPrice);
+    setMax(maxPrice);
+  }, [minPrice, maxPrice]);
 
   useEffect(() => {
     if (searchManuf) {
@@ -96,9 +99,9 @@ export const Parameters = (props: ParametersProps) => {
             <div>
               <div className={cls.price}>{t('parameters.price')} ₽</div>
               <div className={cls.inputs}>
-                <input type="text" name="priceRangeMin" value={min} onChange={(e) => setMin(Number(e.target.value))} className={cls.input} placeholder="10" />
+                <input type="number" name="priceRangeMin" value={min} onChange={(e) => setMin(Number(e.target.value))} className={cls.input} placeholder="10" />
                 -
-                <input type="text" name="priceRangeMax" value={max} onChange={(e) => setMax(Number(e.target.value))} className={cls.input} placeholder="10000" />
+                <input type="number" name="priceRangeMax" value={max} onChange={(e) => setMax(Number(e.target.value))} className={cls.input} placeholder="10000" />
               </div>
             </div>
             <div className={cls.manufacturer}>
@@ -117,7 +120,7 @@ export const Parameters = (props: ParametersProps) => {
                 <Button text={t('buttons.show')} width="216px" height="59px" onClick={onSubmitHandler} />
                 : <Button text={t('buttons.show')} width="169px" height="59px" onClick={onSubmitHandler} />
               }
-              <Button icon="remove" form="circ" width="59px" height="59px" onClick={onClickClear} />
+              <Button icon="remove" form="circ" width="59px" height="59px" onClick={onClickClear} title={t('parameters.clear')} />
             </div>
           </div>
         </form>}

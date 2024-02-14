@@ -11,6 +11,8 @@ describe('CategoryMenu.test', () => {
         filteredProducts: [],
         manufactures: [],
         countProducts: 0,
+        minPrice: 10,
+        maxPrice: 10000,
         categories: [
           {
             "id": 3,

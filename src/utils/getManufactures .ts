@@ -9,7 +9,8 @@ export const getManufactures = (products: IProduct[]) => {
       newMap.set(product.manufacturer, 1);
     }
   });
-  const arr = Array.from(newMap.entries()).sort((a, b) => b[1] - a[1]);
-
+  const arr = Array.from(newMap.entries());
+  arr.sort();
+  arr.sort((a, b) => b[1] - a[1]);
   return arr;
 };

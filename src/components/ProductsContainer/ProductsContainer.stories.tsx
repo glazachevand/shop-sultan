@@ -9,7 +9,9 @@ const preloadedState: Partial<RootState> = {
     filteredProducts: [],
     categories: [],
     manufactures: [],
-    countProducts: 17
+    countProducts: 17,
+    minPrice: 10,
+    maxPrice: 10000
   },
   filters: {
     typecare: [],

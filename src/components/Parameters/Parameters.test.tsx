@@ -6,9 +6,9 @@ import { Parameters } from "./Parameters";
 describe('Parameters.test', () => {
   test('Test render parameters with initialState', async () => {
     componentRender(<Parameters />);
-    const minMax = await screen.findAllByRole('textbox');
-    expect(minMax[0]).toHaveValue('10');
-    expect(minMax[1]).toHaveValue('10000');
+    const minMax = await screen.findAllByRole('spinbutton');
+    expect(minMax[0]).toHaveValue(10);
+    expect(minMax[1]).toHaveValue(10000);
     expect(screen.getByTestId('search')).toBeInTheDocument();
     expect(screen.getByText('Показать')).toBeInTheDocument();
     expect(screen.getByAltText('remove')).toBeInTheDocument();
@@ -28,7 +28,9 @@ describe('Parameters.test', () => {
           ["Tresemme", 5],
           ["Consly", 1]
         ],
-        countProducts: 0
+        countProducts: 0,
+        minPrice: 10,
+        maxPrice: 10000
       },
       filters: {
         typecare: [],
@@ -43,9 +45,9 @@ describe('Parameters.test', () => {
 
     componentRender(<Parameters />, { preloadedState });
 
-    const minMax = await screen.findAllByRole('textbox');
-    expect(minMax[0]).toHaveValue('100');
-    expect(minMax[1]).toHaveValue('5000');
+    const minMax = await screen.findAllByRole('spinbutton');
+    expect(minMax[0]).toHaveValue(10);
+    expect(minMax[1]).toHaveValue(10000);
 
     const checkboxes = await screen.findAllByRole('checkbox');
     expect(checkboxes.length).toBe(4);
@@ -71,7 +73,9 @@ describe('Parameters.test', () => {
           ["Tresemme", 5],
           ["Consly", 1]
         ],
-        countProducts: 0
+        countProducts: 0,
+        minPrice: 10,
+        maxPrice: 10000
       },
       filters: {
         typecare: [],
@@ -98,14 +102,14 @@ describe('Parameters.test', () => {
   test('Test change range of price', async () => {
     componentRender(<Parameters />,);
 
-    let minMax = await screen.findAllByRole('textbox');
-    expect(minMax[0]).toHaveValue('10');
-    expect(minMax[1]).toHaveValue('10000');
+    let minMax = await screen.findAllByRole('spinbutton');
+    expect(minMax[0]).toHaveValue(10);
+    expect(minMax[1]).toHaveValue(10000);
     fireEvent.input(minMax[0], { target: { value: "200" } })
     fireEvent.input(minMax[1], { target: { value: "2000" } })
-    minMax = await screen.findAllByRole('textbox');
-    expect(minMax[0]).toHaveValue('200');
-    expect(minMax[1]).toHaveValue('2000');
+    minMax = await screen.findAllByRole('spinbutton');
+    expect(minMax[0]).toHaveValue(200);
+    expect(minMax[1]).toHaveValue(2000);
   });
 
   test('Test click on button "show more"', async () => {
@@ -122,7 +126,9 @@ describe('Parameters.test', () => {
           ["Tresemme", 5],
           ["Consly", 1]
         ],
-        countProducts: 0
+        countProducts: 0,
+        minPrice: 10,
+        maxPrice: 10000
       },
       filters: {
         typecare: [],
@@ -162,7 +168,9 @@ describe('Parameters.test', () => {
           ["Tresemme", 5],
           ["Consly", 1]
         ],
-        countProducts: 0
+        countProducts: 0,
+        minPrice: 100,
+        maxPrice: 5000
       },
       filters: {
         typecare: [],
@@ -176,17 +184,19 @@ describe('Parameters.test', () => {
     }
 
     componentRender(<Parameters />, { preloadedState });
-    let minMax = await screen.findAllByRole('textbox');
-    expect(minMax[0]).toHaveValue('100');
-    expect(minMax[1]).toHaveValue('5000');
+    let minMax = await screen.findAllByRole('spinbutton');
+    expect(minMax[0]).toHaveValue(100);
+    expect(minMax[1]).toHaveValue(5000);
     const checkboxes = await screen.findAllByRole('checkbox');
     expect(checkboxes.length).toBe(4);
+    let checked = await screen.findByDisplayValue(/Клинса/);
+    expect(checked).toBeChecked();
 
     const remove = await screen.getByAltText('remove');
     fireEvent.click(remove);
-    minMax = await screen.findAllByRole('textbox');
-    expect(minMax[0]).toHaveValue('10');
-    expect(minMax[1]).toHaveValue('10000');
+    minMax = await screen.findAllByRole('spinbutton');
+    checked = await screen.findByDisplayValue(/Клинса/);
+    expect(checked).not.toBeChecked();
   });
 
 });

@@ -24,7 +24,8 @@
     "price": "Price",
     "manufacturer": "Manufacturer",
     "hide": "Hide",
-    "show_all": "Show all"
+    "show_all": "Show all",
+    "clear": "Clear"
   },
   "product": {
     "in_stock": "In stock",

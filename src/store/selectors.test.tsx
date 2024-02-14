@@ -21,6 +21,8 @@ describe("selectors.test", () => {
       categories: [],
       manufactures: [],
       countProducts: 0,
+      minPrice: 10,
+      maxPrice: 10000
     },
     filters: {
       typecare: ["Уход за волосами"],

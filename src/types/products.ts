@@ -22,4 +22,6 @@ export interface IProductsState {
   categories: ICategory[];
   manufactures: [string, number][];
   countProducts: number;
+  minPrice: number;
+  maxPrice: number;
 }

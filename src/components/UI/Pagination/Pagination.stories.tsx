@@ -18,7 +18,9 @@ const preloadedState: Partial<RootState> = {
     filteredProducts: [],
     categories: [],
     manufactures: [],
-    countProducts: 100
+    countProducts: 100,
+    minPrice: 10,
+    maxPrice: 10000
   },
 }
 

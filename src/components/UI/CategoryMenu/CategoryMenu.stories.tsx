@@ -30,7 +30,9 @@ const preloadedState: Partial<RootState> = {
       },
     ],
     manufactures: [],
-    countProducts: 0
+    countProducts: 0,
+    minPrice: 10,
+    maxPrice: 10000
   },
   filters: {
     typecare: ["Уход за волосами"],

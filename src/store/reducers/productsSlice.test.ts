@@ -39,6 +39,8 @@ describe("productsSlice.test", () => {
       categories: [],
       manufactures: [],
       countProducts: 0,
+      minPrice: 10,
+      maxPrice: 10000,
     };
   });
 
@@ -78,6 +80,8 @@ describe("productsSlice.test", () => {
       categories: [],
       manufactures: [["Tresemme", 1]],
       countProducts: 1,
+      maxPrice: 200,
+      minPrice: 200,
     };
 
     expect(productsReducer(initialState, setFilteredProducts(payload))).toEqual(finishState);
@@ -136,6 +140,8 @@ describe("productsSlice.test", () => {
       ],
       manufactures: [],
       countProducts: 0,
+      minPrice: 10,
+      maxPrice: 10000,
     };
 
     expect(productsReducer(initialState, setCategories(payload))).toEqual(finishState);

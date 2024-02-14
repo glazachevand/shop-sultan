@@ -17,7 +17,9 @@ const preloadedState: Partial<RootState> = {
       ["Tresemme", 5],
       ["Consly", 1]
     ],
-    countProducts: 0
+    countProducts: 0,
+    minPrice: 10,
+    maxPrice: 10000
   },
   filters: {
     typecare: [],
