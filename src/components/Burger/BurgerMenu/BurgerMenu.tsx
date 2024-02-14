@@ -1,10 +1,12 @@
-import { Contact } from "components/UI/Contact/Contact";
-import { BackCall } from "components/UI/BackCall/BackCall";
-import cls from "./BurgerMenu.module.scss";
-import { Menu } from "components/UI/Menu/Menu";
-import { Button } from "components/UI/Button/Button";
 import { Dispatch, SetStateAction } from "react";
+
+import { BackCall } from "components/UI/BackCall/BackCall";
+import { Button } from "components/UI/Button/Button";
+import { Contact } from "components/UI/Contact/Contact";
+import { Menu } from "components/UI/Menu/Menu";
 import { useTranslation } from 'react-i18next';
+
+import cls from "./BurgerMenu.module.scss";
 
 interface BurgerMenuProps {
   onClose?: Dispatch<SetStateAction<boolean>>;

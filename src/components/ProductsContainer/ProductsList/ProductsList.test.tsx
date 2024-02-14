@@ -1,6 +1,7 @@
 import { screen } from "@testing-library/react";
 import { IProduct } from "types/products";
 import { componentRender } from "utils/tests/componentRender";
+
 import { ProductsList } from "./ProductsList";
 
 describe('ProductsList.test', () => {

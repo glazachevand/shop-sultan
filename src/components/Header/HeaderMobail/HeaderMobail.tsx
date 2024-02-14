@@ -1,16 +1,18 @@
-import { Link } from 'react-router-dom';
-import Logo from 'assets/img/header/logo.png';
-import CatalogIcon from 'assets/icons/catalog-square-black.svg';
-import SearchIcon from 'assets/icons/search-black.svg';
-import cls from "./HeaderMobail.module.scss";
-import { CartBtn } from 'components/UI/CartBtn/CartBtn';
-import { Burger } from 'components/Burger/Burger';
 import { useState } from 'react';
-import { Search } from 'components/UI/Search/Search';
+
+import CatalogIcon from 'assets/icons/catalog-square-black.svg';
 import RemoveBtn from 'assets/icons/close.svg';
+import SearchIcon from 'assets/icons/search-black.svg';
+import Logo from 'assets/img/header/logo.png';
 import { AdminLogin } from 'components/AdminLogin/AdminLogin';
+import { Burger } from 'components/Burger/Burger';
+import { CartBtn } from 'components/UI/CartBtn/CartBtn';
 import { LangSwitcher } from 'components/UI/LangSwitcher/LangSwitcher';
+import { Search } from 'components/UI/Search/Search';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
+import cls from "./HeaderMobail.module.scss";
 
 export const HeaderMobail = () => {
   const [showSearch, setShowSearch] = useState(false);

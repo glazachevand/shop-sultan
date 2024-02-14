@@ -1,25 +1,27 @@
-import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
-import { CategoryMenu } from 'components/UI/CategoryMenu/CategoryMenu';
 import { FC, useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
-import cls from './CatalogPage.module.scss';
-import { Parameters } from 'components/Parameters/Parameters';
-import { BackButton } from 'components/UI/BackButton/BackButton';
-import { Sort } from 'components/UI/Sort/Sort';
-import { ProductsContainer } from 'components/ProductsContainer/ProductsContainer';
-import { useGetCategoriesQuery, useGetProductsQuery } from "services/products.api";
-import { useAppDispatch, useAppSelector } from "hooks/redux";
-import { setCategories, setFilteredProducts } from 'store/reducers/productsSlice';
-import { Button } from 'components/UI/Button/Button';
-import { Modal } from 'components/UI/Modal/Modal';
+
 import { FormProduct } from 'components/FormProduct/FormProduct';
-import { setPage } from 'store/reducers/filterSlice';
+import { Parameters } from 'components/Parameters/Parameters';
+import { ProductsContainer } from 'components/ProductsContainer/ProductsContainer';
+import { BackButton } from 'components/UI/BackButton/BackButton';
+import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
+import { Button } from 'components/UI/Button/Button';
 import { CategoryItem } from 'components/UI/CategoryMenu/CategoryItem/CategoryItem';
-import { ICategory } from 'types/products';
+import { CategoryMenu } from 'components/UI/CategoryMenu/CategoryMenu';
 import { Loader } from 'components/UI/Loader/Loader';
-import { limitPerPage } from "types/pages";
-import { setLimit } from "store/reducers/filterSlice";
+import { Modal } from 'components/UI/Modal/Modal';
+import { Sort } from 'components/UI/Sort/Sort';
+import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
+import { useGetCategoriesQuery, useGetProductsQuery } from "services/products.api";
+import { setLimit } from "store/reducers/filterSlice";
+import { setPage } from 'store/reducers/filterSlice';
+import { setCategories, setFilteredProducts } from 'store/reducers/productsSlice';
+import { limitPerPage } from "types/pages";
+import { ICategory } from 'types/products';
+
+import cls from './CatalogPage.module.scss';
 
 const CatalogPage: FC = () => {
   const { t } = useTranslation();

@@ -1,8 +1,9 @@
 
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'types/const/routes';
+
 import cls from "./Breadcrumbs.module.scss";
-import { useTranslation } from 'react-i18next';
 
 interface BreadcrumbsProps {
   item: string;

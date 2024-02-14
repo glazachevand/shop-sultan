@@ -1,11 +1,14 @@
+import { ChangeEvent, MouseEvent, useState } from "react";
+
 import { Button } from "components/UI/Button/Button";
 import { Modal } from "components/UI/Modal/Modal";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { setAdminAuth } from "store/reducers/userSlice";
 import { adminAuth } from "types/const/admin";
+
 import cls from "./AdminLogin.module.scss";
-import { useTranslation } from 'react-i18next';
+
 
 export const AdminLogin = () => {
   const { t } = useTranslation();

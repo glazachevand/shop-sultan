@@ -1,5 +1,6 @@
-import { BankCards } from "./BankCards";
 import { render, screen } from '@testing-library/react';
+
+import { BankCards } from "./BankCards";
 
 
 describe('BankCards.test', () => {

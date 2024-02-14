@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Menu.module.scss";
-import { MenuList } from "types/const/menu";
 import { Dispatch, SetStateAction } from "react";
+
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
+import { MenuList } from "types/const/menu";
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Menu.module.scss";
 
 interface MenuProps {
   className?: string;

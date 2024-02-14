@@ -1,8 +1,9 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Pagination.module.scss";
 import Next from "assets/icons/arrow-yellow.svg"
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { setPage } from "store/reducers/filterSlice";
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Pagination.module.scss";
 interface PaginationProps {
   className?: string;
 }

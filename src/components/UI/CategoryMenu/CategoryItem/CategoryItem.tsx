@@ -1,12 +1,14 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./CategoryItem.module.scss";
+import { useState } from "react";
+
 import Close from 'assets/icons/close.svg';
 import Edit from 'assets/icons/edit.svg';
 import Save from 'assets/icons/save.png';
-import { useState } from "react";
-import { ICategory } from "types/products";
-import { useCreateCategoryMutation, useDeleteCategoryMutation, useUpdateCategoryMutation } from "services/products.api";
 import { useTranslation } from 'react-i18next';
+import { useCreateCategoryMutation, useDeleteCategoryMutation, useUpdateCategoryMutation } from "services/products.api";
+import { ICategory } from "types/products";
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./CategoryItem.module.scss";
 
 interface CategoryItemProps {
   className?: string;

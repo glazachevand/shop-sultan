@@ -1,6 +1,7 @@
 import { screen } from "@testing-library/react";
 import { ICartItem } from "types/cart";
 import { componentRender } from "utils/tests/componentRender";
+
 import { CartItem } from "./CartItem";
 
 describe('CartItem.test', () => {

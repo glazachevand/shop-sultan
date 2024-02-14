@@ -1,4 +1,5 @@
 import { ICartState } from "types/cart";
+
 import {
   addProductToCart,
   calculateCountAndPrice,

@@ -1,4 +1,5 @@
 import { ICartItem } from "types/cart";
+
 import { calcTotalPrice } from "./calcTotalPrice";
 
 describe("calcTotalPrice.test", () => {

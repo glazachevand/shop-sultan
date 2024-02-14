@@ -1,8 +1,9 @@
+import { FC } from 'react';
+
 import { BackButton } from 'components/UI/BackButton/BackButton';
 import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
-import { FC } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
 
 const NotFoundPage: FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });

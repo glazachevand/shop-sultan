@@ -1,12 +1,14 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Search.module.scss";
-import SearchBtn from 'assets/img/header/search.png';
-import RemoveBtn from 'assets/icons/close.svg';
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+
+import RemoveBtn from 'assets/icons/close.svg';
+import SearchBtn from 'assets/img/header/search.png';
 import { useDebounce } from "hooks/debounce";
-import { useGetProductsQuery } from "services/products.api";
-import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
+import { useGetProductsQuery } from "services/products.api";
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Search.module.scss";
 
 interface SearchProps {
   className?: string;

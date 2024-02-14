@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
+
+import { Loader } from 'components/UI/Loader/Loader';
 import { Route, Routes } from 'react-router-dom';
 import { ROUTES } from 'types/const/routes';
-import { Loader } from 'components/UI/Loader/Loader';
 
 const CatalogPage = React.lazy(() => import(/*webpackChunkName: "CatalogPage"*/'pages/CatalogPage/CatalogPage'));
 const FullProductPage = React.lazy(() => import(/*webpackChunkName: "FullProductPage"*/'pages/FullProductPage/FullProductPage'));

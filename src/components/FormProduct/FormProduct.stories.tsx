@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { IProduct } from "types/products";
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
+
 import { FormProduct } from "./FormProduct";
 
 const meta: Meta<typeof FormProduct> = {

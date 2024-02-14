@@ -1,7 +1,9 @@
+import { ChangeEventHandler } from "react";
+
 import { Checkbox } from "components/UI/Checkbox/Checkbox";
 import { classNames } from "utils/classNames/classNames";
+
 import cls from "./CheckboxList.module.scss";
-import { ChangeEventHandler } from "react";
 
 interface CheckboxListProps {
   className?: string;

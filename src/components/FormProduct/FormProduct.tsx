@@ -1,12 +1,15 @@
+import { ChangeEvent, Dispatch, MouseEvent, SetStateAction, useState } from "react";
+
 import { Button } from "components/UI/Button/Button";
 import { Checkbox } from "components/UI/Checkbox/Checkbox";
 import { useAppSelector } from "hooks/redux";
-import { ChangeEvent, Dispatch, MouseEvent, SetStateAction, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { useCreateProductMutation, useGetProductsQuery, useUpdateProductMutation } from "services/products.api";
 import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
+
 import cls from "./FormProduct.module.scss";
-import { useTranslation } from 'react-i18next';
+
 
 interface FormProductProps {
   className?: string;

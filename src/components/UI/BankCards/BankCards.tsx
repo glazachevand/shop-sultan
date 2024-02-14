@@ -1,7 +1,8 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./BankCards.module.scss";
-import Visa from 'assets/img/footer/visa.png';
 import Mastercard from 'assets/img/footer/mastercard.png';
+import Visa from 'assets/img/footer/visa.png';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./BankCards.module.scss";
 
 interface BankCardsProps {
   className?: string;

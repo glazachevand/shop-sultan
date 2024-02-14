@@ -1,9 +1,13 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./CategoryMenu.module.scss";
+import React from "react";
+
 import { useAppDispatch, useAppSelector } from "hooks/redux";
 import { setFilteredCategories } from "store/reducers/filterSlice";
+import { classNames } from "utils/classNames/classNames";
+
 import { CategoryItem } from "./CategoryItem/CategoryItem";
-import React from "react";
+import cls from "./CategoryMenu.module.scss";
+
+
 
 interface CategoryMenuProps {
   className?: string;

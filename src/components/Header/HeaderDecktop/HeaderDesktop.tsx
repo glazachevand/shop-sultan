@@ -1,16 +1,17 @@
-import { Link } from 'react-router-dom';
-import { Contact } from "components/UI/Contact/Contact";
-import { Menu } from "components/UI/Menu/Menu";
-import Logo from 'assets/img/header/logo.png';
 import Call from 'assets/img/header/call.png';
-import cls from "./HeaderDesktop.module.scss";
-import { BackCall } from 'components/UI/BackCall/BackCall';
-import { Search } from 'components/UI/Search/Search';
-import { CartBtn } from 'components/UI/CartBtn/CartBtn';
-import { Button } from 'components/UI/Button/Button';
+import Logo from 'assets/img/header/logo.png';
 import { AdminLogin } from 'components/AdminLogin/AdminLogin';
+import { BackCall } from 'components/UI/BackCall/BackCall';
+import { Button } from 'components/UI/Button/Button';
+import { CartBtn } from 'components/UI/CartBtn/CartBtn';
+import { Contact } from "components/UI/Contact/Contact";
 import { LangSwitcher } from 'components/UI/LangSwitcher/LangSwitcher';
+import { Menu } from "components/UI/Menu/Menu";
+import { Search } from 'components/UI/Search/Search';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
+import cls from "./HeaderDesktop.module.scss";
 
 export const HeaderDesktop = () => {
   const { t } = useTranslation();

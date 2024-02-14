@@ -1,15 +1,17 @@
 import React, { useCallback, useState } from 'react';
 import { FC } from 'react';
-import cls from './CartPage.module.scss';
-import { useMediaQuery } from 'react-responsive';
-import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
-import { BackButton } from 'components/UI/BackButton/BackButton';
-import { Button } from 'components/UI/Button/Button';
+
 import { CartList } from 'components/CartList/CartList';
-import { useAppDispatch, useAppSelector } from 'hooks/redux';
-import { clearCart } from 'store/reducers/cartSlice';
+import { BackButton } from 'components/UI/BackButton/BackButton';
+import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
+import { Button } from 'components/UI/Button/Button';
 import { Modal } from 'components/UI/Modal/Modal';
+import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
+import { clearCart } from 'store/reducers/cartSlice';
+
+import cls from './CartPage.module.scss';
 
 const CartPage: FC = () => {
   const { t } = useTranslation();

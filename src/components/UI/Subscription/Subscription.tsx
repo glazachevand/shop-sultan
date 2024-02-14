@@ -1,7 +1,8 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Subscription.module.scss";
 import SubIcon from 'assets/icons/subscription.svg';
 import { useTranslation } from 'react-i18next';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Subscription.module.scss";
 
 interface SubscriptionProps {
   className?: string;

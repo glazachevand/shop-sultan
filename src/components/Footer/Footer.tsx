@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
-import { CategoryGlobalMenu } from "components/UI/CategoryGlobalMenu/CategoryGlobalMenu";
-import cls from "./Footer.module.scss";
 import Logo from 'assets/img/footer/logo_footer.png';
-import { Menu } from "components/UI/Menu/Menu";
-import { Button } from "components/UI/Button/Button";
-import { Contact } from "components/UI/Contact/Contact";
 import { BackCall } from "components/UI/BackCall/BackCall";
-import { Socials } from "components/UI/Socials/Socials";
 import { BankCards } from "components/UI/BankCards/BankCards";
+import { Button } from "components/UI/Button/Button";
+import { CategoryGlobalMenu } from "components/UI/CategoryGlobalMenu/CategoryGlobalMenu";
+import { Contact } from "components/UI/Contact/Contact";
+import { Menu } from "components/UI/Menu/Menu";
+import { Socials } from "components/UI/Socials/Socials";
 import { Subscription } from "components/UI/Subscription/Subscription";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
+
+import cls from "./Footer.module.scss";
 
 export const Footer = () => {
   const { t } = useTranslation();

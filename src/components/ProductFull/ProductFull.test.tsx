@@ -2,6 +2,7 @@ import { fireEvent, screen } from "@testing-library/react";
 import { RootState } from "store/store";
 import { IProduct } from "types/products";
 import { componentRender } from "utils/tests/componentRender";
+
 import { ProductFull } from "./ProductFull";
 
 describe('ProductFull.test', () => {

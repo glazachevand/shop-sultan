@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { RootState } from "store/store";
 import { withRouter } from "storybook-addon-react-router-v6";
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
+
 import { ProductShort } from "./ProductShort";
 
 const preloadedStateNoAdmin: Partial<RootState> = {

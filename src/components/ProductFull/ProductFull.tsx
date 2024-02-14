@@ -1,17 +1,19 @@
 import { useState } from "react";
-import cls from "./ProductFull.module.scss";
-import { classNames } from "utils/classNames/classNames";
-import { IProduct } from "types/products";
-import weightImage from "assets/icons/box.svg";
+
 import volumeImage from "assets/icons/bottle.svg";
-import { useMediaQuery } from 'react-responsive';
+import weightImage from "assets/icons/box.svg";
 import Arrow from "assets/icons/triangle-black.svg";
 import { Button } from "components/UI/Button/Button";
 import { CountContainer } from "components/UI/CountContainer/CountContainer";
-import { addProductToCart, minusProductInCart } from "store/reducers/cartSlice";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
-import { ICartItem } from "types/cart";
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
+import { addProductToCart, minusProductInCart } from "store/reducers/cartSlice";
+import { ICartItem } from "types/cart";
+import { IProduct } from "types/products";
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./ProductFull.module.scss";
 
 
 interface ProductFullProps {

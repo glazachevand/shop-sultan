@@ -1,17 +1,20 @@
-import { Link } from 'react-router-dom';
-import cls from "./ProductShort.module.scss";
-import { Button } from "components/UI/Button/Button";
-import weightImage from "assets/icons/box.svg";
+import { useState } from 'react';
+
 import volumeImage from "assets/icons/bottle.svg";
-import { IProduct } from 'types/products';
+import weightImage from "assets/icons/box.svg";
+import { FormProduct } from 'components/FormProduct/FormProduct';
+import { Button } from "components/UI/Button/Button";
+import { Modal } from 'components/UI/Modal/Modal';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { useDeleteProductMutation } from 'services/products.api';
 import { addProductToCart } from 'store/reducers/cartSlice';
 import { ICartItem } from 'types/cart';
-import { Modal } from 'components/UI/Modal/Modal';
-import { FormProduct } from 'components/FormProduct/FormProduct';
-import { useState } from 'react';
-import { useDeleteProductMutation } from 'services/products.api';
-import { useTranslation } from 'react-i18next';
+import { IProduct } from 'types/products';
+
+import cls from "./ProductShort.module.scss";
+
 
 interface ProductShorttProps {
   product: IProduct;

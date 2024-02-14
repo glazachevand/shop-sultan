@@ -1,18 +1,20 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Button.module.scss";
-import CatalogIcon from 'assets/icons/catalog-square-white.svg';
-import DownloadIcon from 'assets/icons/download-white.svg';
-import DownloadBlackIcon from 'assets/icons/download-black.svg';
-import CartIcon from 'assets/icons/cart-white.svg';
-import RemoveIcon from 'assets/icons/remove.svg';
-import BackIcon from 'assets/icons/back.svg';
-import SubscrIcon from 'assets/icons/subscr.svg';
+
 import DownIcon from 'assets/icons/arrow-black-down.svg';
 import UpIcon from 'assets/icons/arrow-black-up.svg';
-import OrderIcon from 'assets/icons/order-btn.svg';
+import BackIcon from 'assets/icons/back.svg';
+import CartIcon from 'assets/icons/cart-white.svg';
+import CatalogIcon from 'assets/icons/catalog-square-white.svg';
+import DownloadBlackIcon from 'assets/icons/download-black.svg';
+import DownloadIcon from 'assets/icons/download-white.svg';
 import AdminLogin from 'assets/icons/login.svg';
 import AdminLogout from 'assets/icons/logout.svg';
+import OrderIcon from 'assets/icons/order-btn.svg';
+import RemoveIcon from 'assets/icons/remove.svg';
+import SubscrIcon from 'assets/icons/subscr.svg';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Button.module.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

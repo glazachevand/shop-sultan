@@ -1,6 +1,7 @@
 import { classNames } from "utils/classNames/classNames";
-import { Button } from "../Button/Button";
+
 import cls from "./CountContainer.module.scss";
+import { Button } from "../Button/Button";
 
 interface CountContainerProps {
   className?: string;

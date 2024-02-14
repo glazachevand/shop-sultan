@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { RootState } from "store/store";
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
+
 import { ProductFull } from "./ProductFull";
 
 const preloadedState: Partial<RootState> = {

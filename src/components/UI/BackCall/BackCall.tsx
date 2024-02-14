@@ -1,7 +1,8 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./BackCall.module.scss";
 import Call from 'assets/img/header/backCall.png';
 import { useTranslation } from 'react-i18next';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./BackCall.module.scss";
 
 interface BackCallProps {
   className?: string;

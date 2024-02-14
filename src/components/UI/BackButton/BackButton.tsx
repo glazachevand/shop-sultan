@@ -1,8 +1,10 @@
-import { classNames } from "utils/classNames/classNames";
 import { Button } from "components/UI/Button/Button";
-import { useNavigate } from 'react-router-dom';
-import cls from "./BackButton.module.scss";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./BackButton.module.scss";
+
 
 interface BackButtonProps {
   className?: string;

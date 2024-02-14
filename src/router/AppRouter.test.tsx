@@ -1,5 +1,6 @@
-import { screen } from "@testing-library/react";
 import React from "react";
+
+import { screen } from "@testing-library/react";
 import { AppRouter } from "router/AppRouter";
 import { componentRender } from "utils/tests/componentRender";
 

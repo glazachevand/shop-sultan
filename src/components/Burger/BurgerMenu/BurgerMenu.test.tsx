@@ -1,5 +1,6 @@
 import { screen } from "@testing-library/react";
 import { renderWithRouter } from "utils/tests/renderWithRouter";
+
 import { BurgerMenu } from "./BurgerMenu";
 
 describe('BurgerMenu.test', () => {

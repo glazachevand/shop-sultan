@@ -1,6 +1,7 @@
-import { RootState, } from "store/store";
 import { fireEvent, screen } from "@testing-library/react";
+import { RootState, } from "store/store";
 import { componentRender } from "utils/tests/componentRender";
+
 import { CartList } from "./CartList";
 
 describe('CartList.test', () => {

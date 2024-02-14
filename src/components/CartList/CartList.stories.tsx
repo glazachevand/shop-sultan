@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CartList } from "./CartList";
 import { RootState, } from "store/store";
-import { StoreDecorator } from "utils/storybook/StoreDecorator";
 import { withRouter } from "storybook-addon-react-router-v6";
+import { StoreDecorator } from "utils/storybook/StoreDecorator";
+
+import { CartList } from "./CartList";
 
 const preloadedState: Partial<RootState> = {
   cart: {

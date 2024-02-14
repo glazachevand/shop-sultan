@@ -3,8 +3,9 @@ import { BurgerMenu } from 'components/Burger/BurgerMenu/BurgerMenu';
 import { FormProduct } from 'components/FormProduct/FormProduct';
 import { componentRender } from 'utils/tests/componentRender';
 import { renderWithRouter } from 'utils/tests/renderWithRouter';
-import { Button } from '../Button/Button';
+
 import { Modal } from './Modal';
+import { Button } from '../Button/Button';
 
 describe('Modal.test', () => {
 

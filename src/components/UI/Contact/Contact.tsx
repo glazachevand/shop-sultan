@@ -1,9 +1,10 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Contact.module.scss";
 import IconLocation from "assets/icons/location.svg";
 import IconEmail from "assets/icons/mail.svg";
 import IconSales from "assets/icons/phone.svg";
 import { useTranslation } from 'react-i18next';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Contact.module.scss";
 
 interface ContactProps {
   className?: string;

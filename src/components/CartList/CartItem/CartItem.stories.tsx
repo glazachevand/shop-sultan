@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from "storybook-addon-react-router-v6";
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
+
 import { CartItem } from "./CartItem";
 
 const meta: Meta<typeof CartItem> = {

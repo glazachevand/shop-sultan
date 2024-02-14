@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import { classNames } from "utils/classNames/classNames";
-import cls from "./CategoryGlobalMenu.module.scss";
-import { CategoryGlobalMenuList } from "types/const/categoryGlobal";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
+import { CategoryGlobalMenuList } from "types/const/categoryGlobal";
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./CategoryGlobalMenu.module.scss";
 
 interface CategoryGlobalMenuProps {
   className?: string;

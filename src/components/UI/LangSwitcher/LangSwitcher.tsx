@@ -1,6 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
-import cls from "./LangSwitcher.module.scss";
 import { useTranslation } from 'react-i18next';
+
+import cls from "./LangSwitcher.module.scss";
 
 export const LangSwitcher = () => {
   const { t, i18n } = useTranslation();

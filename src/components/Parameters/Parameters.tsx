@@ -1,15 +1,17 @@
-import { Button } from "components/UI/Button/Button";
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Parameters.module.scss";
-import { useMediaQuery } from 'react-responsive';
 import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { Search } from "components/UI/Search/Search";
-import { CheckboxList } from "components/UI/CheckboxList/CheckboxList";
+
 import Arrow from "assets/icons/triangle-black.svg";
+import { Button } from "components/UI/Button/Button";
+import { CheckboxList } from "components/UI/CheckboxList/CheckboxList";
+import { Search } from "components/UI/Search/Search";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
+import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
 import { clearParameters, setParameters } from "store/reducers/filterSlice";
 import { manufactureCount } from "types/const/manufacture";
-import { useTranslation } from 'react-i18next';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Parameters.module.scss";
 interface ParametersProps {
   className?: string;
 }

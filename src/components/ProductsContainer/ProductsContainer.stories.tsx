@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ProductsContainer } from "./ProductsContainer";
 import { RootState, } from "store/store";
 import { withRouter } from "storybook-addon-react-router-v6";
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
+
+import { ProductsContainer } from "./ProductsContainer";
 
 const preloadedState: Partial<RootState> = {
   products: {

@@ -1,6 +1,7 @@
-import { Subscription } from "./Subscription";
 import { fireEvent, screen } from '@testing-library/react';
 import { renderWithRouter } from "utils/tests/renderWithRouter";
+
+import { Subscription } from "./Subscription";
 
 
 describe('Subscription.test', () => {

@@ -1,5 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
 import { ChangeEvent, useState } from "react";
+
+import type { Meta, StoryObj } from "@storybook/react";
+
 import { CheckboxList } from "./CheckboxList";
 
 const meta: Meta<typeof CheckboxList> = {

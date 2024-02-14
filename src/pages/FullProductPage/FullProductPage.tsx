@@ -1,13 +1,15 @@
 import { FC } from 'react';
-import cls from './FullProductPage.module.scss';
-import { useMediaQuery } from 'react-responsive';
-import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
-import { BackButton } from 'components/UI/BackButton/BackButton';
-import { useParams } from 'react-router-dom';
+
 import { ProductFull } from 'components/ProductFull/ProductFull';
-import { productsApi } from 'services/products.api';
+import { BackButton } from 'components/UI/BackButton/BackButton';
+import { Breadcrumbs } from 'components/UI/Breadcrumbs/Breadcrumbs';
 import { Loader } from 'components/UI/Loader/Loader';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
+import { useParams } from 'react-router-dom';
+import { productsApi } from 'services/products.api';
+
+import cls from './FullProductPage.module.scss';
 
 const FullProductPage: FC = () => {
   const { t } = useTranslation();

@@ -1,4 +1,5 @@
 import { IFilterState, ParametersType, SortType } from "types/filters";
+
 import {
   clearParameters,
   filterReducer,

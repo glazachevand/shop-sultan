@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
-import { ROUTES } from 'types/const/routes';
-import { classNames } from "utils/classNames/classNames";
-import cls from "./CartBtn.module.scss";
 import Cart from 'assets/icons/cart-black.svg';
 import { useAppSelector } from 'hooks/redux';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { ROUTES } from 'types/const/routes';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./CartBtn.module.scss";
 
 interface CartBtnProps {
   className?: string;

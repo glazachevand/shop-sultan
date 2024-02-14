@@ -1,5 +1,7 @@
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
+
 import { Modal } from "components/UI/Modal/Modal";
+
 import cls from "./Burger.module.scss";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 

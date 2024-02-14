@@ -1,4 +1,5 @@
 import { classNames } from "utils/classNames/classNames";
+
 import cls from "./Loader.module.scss";
 
 interface LoaderProps {

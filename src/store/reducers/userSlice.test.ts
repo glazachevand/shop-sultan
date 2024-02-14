@@ -1,4 +1,5 @@
 import { IUserState } from "types/user";
+
 import { setAdminAuth, userReducer } from "./userSlice";
 
 describe("userSlice.test", () => {

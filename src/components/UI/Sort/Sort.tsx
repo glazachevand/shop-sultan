@@ -1,12 +1,14 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Sort.module.scss";
-import Arrow from "assets/icons/triangle-black.svg";
 import React, { useEffect, useState } from "react";
+
+import Arrow from "assets/icons/triangle-black.svg";
 import { useAppDispatch, useAppSelector } from "hooks/redux";
-import { SortList } from "types/const/sort";
-import { setSort } from "store/reducers/filterSlice";
-import { SortType } from "types/filters";
 import { useTranslation } from 'react-i18next';
+import { setSort } from "store/reducers/filterSlice";
+import { SortList } from "types/const/sort";
+import { SortType } from "types/filters";
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Sort.module.scss";
 
 interface SortProps {
   className?: string;

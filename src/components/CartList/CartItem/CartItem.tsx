@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
-import { ICartItem } from "types/cart";
-import cls from "./CartItem.module.scss";
-import weightImage from "assets/icons/box.svg";
 import volumeImage from "assets/icons/bottle.svg";
-import { CountContainer } from "components/UI/CountContainer/CountContainer";
+import weightImage from "assets/icons/box.svg";
 import { Button } from "components/UI/Button/Button";
+import { CountContainer } from "components/UI/CountContainer/CountContainer";
 import { useAppDispatch } from "hooks/redux";
+import { Link } from "react-router-dom";
 import { addProductToCart, minusProductInCart, removeProductInCart } from "store/reducers/cartSlice";
+import { ICartItem } from "types/cart";
+
+import cls from "./CartItem.module.scss";
 
 interface CartItemProps {
   cartItem: ICartItem;

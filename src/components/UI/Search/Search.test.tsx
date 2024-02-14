@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from 'utils/tests/componentRender';
+
 import { Search } from './Search';
 
 describe('Search.test', () => {

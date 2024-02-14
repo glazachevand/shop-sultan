@@ -1,4 +1,5 @@
 import { ICategory, IProduct, IProductsState } from "types/products";
+
 import { productsReducer, setCategories, setFilteredProducts } from "./productsSlice";
 
 describe("productsSlice.test", () => {

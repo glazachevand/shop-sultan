@@ -1,4 +1,5 @@
 import { IProduct } from "types/products";
+
 import { getManufactures } from "./getManufactures ";
 
 describe("getManufactures.test", () => {

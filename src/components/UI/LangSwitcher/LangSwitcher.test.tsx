@@ -1,5 +1,6 @@
 import { fireEvent, screen } from "@testing-library/react";
 import { renderWithTranslation } from "utils/tests/renderWithTranslation";
+
 import { LangSwitcher } from "./LangSwitcher";
 
 describe('LangSwitcher.test', () => {

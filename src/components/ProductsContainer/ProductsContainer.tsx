@@ -1,13 +1,15 @@
+import { useEffect, useState } from "react";
+
+import { Loader } from "components/UI/Loader/Loader";
 import { Pagination } from "components/UI/Pagination/Pagination";
+import { useAppSelector } from "hooks/redux";
+import { useTranslation } from 'react-i18next';
+import { useGetProductsQuery } from "services/products.api";
+import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
+
 import cls from "./ProductsContainer.module.scss";
 import { ProductsList } from "./ProductsList/ProductsList";
-import { useGetProductsQuery } from "services/products.api";
-import { useEffect, useState } from "react";
-import { useAppSelector } from "hooks/redux";
-import { Loader } from "components/UI/Loader/Loader";
-import { IProduct } from "types/products";
-import { useTranslation } from 'react-i18next';
 
 interface ProductsContainerProps {
   className?: string;

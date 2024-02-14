@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { BurgerMenu } from "components/Burger/BurgerMenu/BurgerMenu";
-import { withRouter } from 'storybook-addon-react-router-v6';
-import { Button } from "components/UI/Button/Button";
-import { Modal } from "./Modal";
-import cls from "pages/CartPage/CartPage.module.scss";
 import { FormProduct } from "components/FormProduct/FormProduct";
+import { Button } from "components/UI/Button/Button";
+import cls from "pages/CartPage/CartPage.module.scss";
+import { withRouter } from 'storybook-addon-react-router-v6';
 import { StoreDecorator } from "utils/storybook/StoreDecorator";
+
+import { Modal } from "./Modal";
+
 
 const meta: Meta<typeof Modal> = {
   title: "UI/Modal",

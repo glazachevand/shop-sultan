@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Modal.module.scss";
+
 import Close from 'assets/icons/close.svg';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Modal.module.scss";
 import { Portal } from "../Portal/Portal";
 
 interface ModalProps {

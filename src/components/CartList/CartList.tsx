@@ -1,8 +1,9 @@
 import { useAppSelector } from "hooks/redux";
+import { useTranslation } from 'react-i18next';
 import { classNames } from "utils/classNames/classNames";
+
 import { CartItem } from "./CartItem/CartItem";
 import cls from "./CartList.module.scss";
-import { useTranslation } from 'react-i18next';
 
 interface CartListProps {
   className?: string;

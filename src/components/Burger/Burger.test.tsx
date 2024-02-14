@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { renderWithRouter } from 'utils/tests/renderWithRouter';
+
 import { Burger } from './Burger';
 
 describe('Burger.test', () => {

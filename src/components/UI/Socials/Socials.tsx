@@ -1,8 +1,9 @@
-import { classNames } from "utils/classNames/classNames";
-import cls from "./Socials.module.scss";
-import Whatsapp from 'assets/icons/whatsapp.svg';
 import Telegram from 'assets/icons/telegram.svg';
+import Whatsapp from 'assets/icons/whatsapp.svg';
 import { useTranslation } from 'react-i18next';
+import { classNames } from "utils/classNames/classNames";
+
+import cls from "./Socials.module.scss";
 
 interface SocialsProps {
   className?: string;

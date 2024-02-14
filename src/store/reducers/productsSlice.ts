@@ -20,8 +20,8 @@ export const productsSlice = createSlice({
       state.filteredProducts = action.payload;
       state.manufactures = getManufactures(action.payload);
       state.countProducts = action.payload.length;
-      state.minPrice = Math.min(...action.payload.flatMap((product) => product.price));
-      state.maxPrice = Math.max(...action.payload.flatMap((product) => product.price));
+      state.minPrice = Math.min(...action.payload.map((product) => product.price));
+      state.maxPrice = Math.max(...action.payload.map((product) => product.price));
     },
     setCategories: (state, action: PayloadAction<ICategory[]>) => {
       state.categories = action.payload;

@@ -1,7 +1,8 @@
+import { IProduct } from "types/products";
 import { classNames } from "utils/classNames/classNames";
+
 import cls from "./ProductsList.module.scss";
 import { ProductShort } from "../ProductShort/ProductShort";
-import { IProduct } from "types/products";
 
 interface ProductsListProps {
   className?: string;
