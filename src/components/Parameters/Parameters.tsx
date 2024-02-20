@@ -86,7 +86,7 @@ export const Parameters = (props: ParametersProps) => {
   }, [showAll, manuf]);
 
   return (
-    <div className={classNames(cls.parameters, {}, [className])}>
+    <div className={classNames(cls.parameters, {}, [className])} data-testid="parameters">
       <div className={cls.titleRow}>
         <h2 className={cls.title}>{t('parameters.title')}</h2>
         {isMobile && (

@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { renderWithRouter } from 'utils/tests/renderWithRouter';
+
 import { Contact } from './Contact';
 
 describe('Contact.test', () => {
