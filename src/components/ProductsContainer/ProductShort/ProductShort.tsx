@@ -39,7 +39,7 @@ export const ProductShort = (props: ProductShorttProps) => {
   };
 
   return (
-    <div className={cls.productShort} data-testid="productShort">
+    <div className={cls.productShort} data-testid="productShort" id={`${product.id}`}>
       {product.popular && <Button className={cls.popular} text='Популярное' form='rectangle-green' color='green' width="96px" height="25px" />}
 
       <div className={cls.body}>
