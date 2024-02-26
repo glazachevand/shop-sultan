@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 
 import { Button } from "components/UI/Button/Button";
 import { Modal } from "components/UI/Modal/Modal";
@@ -17,6 +17,12 @@ export const AdminLogin = () => {
   const { isAdmin } = useAppSelector(state => state.user);
   const dispatch = useAppDispatch();
   const [user, setUser] = useState({ isAdmin, login: '', password: '' });
+
+  useEffect(() => {
+    if (!isAdmin && localStorage.getItem('auth-token')) {
+      dispatch(setAdminAuth(true));
+    }
+  }, []);
 
   const onBtnClick = () => {
     if (isAdmin) {
