@@ -30,6 +30,7 @@ const preview: Preview = {
     },
     decorators: [],
     i18n,
+    locale: "ru",
   },
 };
 

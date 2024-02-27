@@ -16,7 +16,7 @@ export type QueryParams = {
 export const productsApi = createApi({
   reducerPath: "products/api",
   tagTypes: ["Product", "Categories"],
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_SERVER }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], QueryParams>({
       query: ({ priceMin, priceMax, typecare, manufacturers, sort, search, page, limit = 9 }) => {
