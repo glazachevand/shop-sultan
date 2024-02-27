@@ -1,21 +1,23 @@
 const { _ } = Cypress;
 
 describe("Pagination test", () => {
-  it("Test click to page 2", async () => {
+  beforeEach(() => {
     cy.clearAllLocalStorage();
     cy.visit("/");
+  });
+
+  it("Test click to page 2", () => {
     const list = cy.get('[class^="Pagination_list"]');
-    list.should("exist");
     const firstPage = cy.get('[class^="Pagination_list"] li').first();
     firstPage.should("have.text", "1");
     list.find('[class*="active"]').should("have.text", "1");
-    const productsTitle1 = await cy.get('[class^="ProductShort_productShort__"] h3');
+    const productsTitle1 = cy.get('[class^="ProductShort_productShort__"] h3');
 
     const getTitle = (items) => {
       return _.map(items, (item) => item.textContent);
     };
 
-    const titles1 = await getTitle(productsTitle1);
+    const titles1 = getTitle(productsTitle1);
     cy.scrollTo("bottom");
     cy.wait(2000);
 
