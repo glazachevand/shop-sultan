@@ -11,7 +11,6 @@ describe("NotFound page test", () => {
   it("Test correct autorization", () => {
     const adminLogin = cy.get('[data-testid="adminLogin"]');
     adminLogin.find('[title="Войти как администратор"]').should("exist");
-    cy.contains(/Авторизация/i).should("not.be.visible");
     cy.wait(3000);
 
     // Авторизация
@@ -70,7 +69,6 @@ describe("NotFound page test", () => {
 
   it("Test uncorrect autorization", () => {
     cy.wait(1000);
-    cy.contains(/Авторизация/i).should("not.be.visible");
     cy.get('[data-testid="adminLogin"]').click();
     cy.get('form[name="loginform"]').within(() => {
       cy.get('input[name="login"]').type("admin");

@@ -24,10 +24,8 @@ describe('Modal.test', () => {
 
   test('Test close modal', () => {
     render(<Modal isOpen={false} />);
-    const elem = screen.getByTestId('modal');
-    expect(elem).toBeInTheDocument();
-    expect(elem).not.toHaveClass('opened');
-    expect(screen.queryByTestId('closeBtn')).toBeNull();
+    const elem = screen.queryByTestId('modal');
+    expect(elem).toBeNull();
   });
 
   test('Test modal with burger', () => {

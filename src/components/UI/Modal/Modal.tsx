@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 import Close from 'assets/icons/close.svg';
 import { classNames } from "utils/classNames/classNames";
@@ -21,6 +21,17 @@ export const Modal = (props: ModalProps) => {
     [cls.opened]: isOpen,
     [cls[variant]]: true,
   };
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

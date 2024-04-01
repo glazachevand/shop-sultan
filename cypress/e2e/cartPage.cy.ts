@@ -63,7 +63,6 @@ describe("Cart page test", () => {
 
     // заказ
     cy.wait(3000);
-    cy.contains(/Спасибо за заказ/i).should("not.be.visible");
     cy.contains(/Оформить заказ/i).click();
     cy.get('[class*="orderModal"]')
       .closest('[data-testid="modal"]')
